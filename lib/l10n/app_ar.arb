@@ -1,5 +1,12 @@
 {
     "identifiantTitre": "إسم المستخدم",
     "motDePasseTitre": "كلمة المرور",
-    "connexionTitre": "تسجيل الدخول"
+    "connexionTitre": "تسجيل الدخول",
+    "menuTitre" : "القائمة",
+    "ficheDGATitre":"ورقة GDA",
+    "saisirDonneesTitre":"إدخال المعلومات",
+    "consultationTitre":"التشاور",
+    "statistiquesTitre": "إحصائيات",
+    "modifierMotdePasseTitre":"تغيير كلمة المرور",
+    "deconnexionTitre":"تسجيل خروج"
 }

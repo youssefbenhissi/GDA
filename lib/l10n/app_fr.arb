@@ -1,5 +1,12 @@
 {
     "identifiantTitre": "Identifiant",
     "motDePasseTitre": "Mot de passe",
-    "connexionTitre": "connexion"
+    "connexionTitre": "connexion",
+    "menuTitre" : "Menu",
+    "ficheDGATitre":"Fiche GDA",
+    "saisirDonneesTitre":"Saisir des données",
+    "consultationTitre":"Consultation",
+    "statistiquesTitre": "Statistiques",
+    "modifierMotdePasseTitre":"Modifier Mot de passe",
+    "deconnexionTitre":"Déconnexion"
 }
