@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
+import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/provider/locale_provider.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 
@@ -106,7 +107,11 @@ class LoginScreen extends StatelessWidget {
                           ),
                         );
                       } else {
-                        context.gNavigationService.openHomeScreen(context);
+                        context.read<LoginBloc>().login(email, password);
+                        var state = context.watch<LoginBloc>().state;
+                        if (state is GDALoginState) {
+                          context.gNavigationService.openHomeScreen(context);
+                        }
                       }
                     },
                     style: ButtonStyle(
