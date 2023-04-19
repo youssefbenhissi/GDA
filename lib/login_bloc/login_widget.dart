@@ -107,11 +107,12 @@ class LoginScreen extends StatelessWidget {
                           ),
                         );
                       } else {
-                        context.read<LoginBloc>().login(email, password);
-                        var state = context.watch<LoginBloc>().state;
-                        if (state is GDALoginState) {
-                          context.gNavigationService.openHomeScreen(context);
-                        }
+                        context.gNavigationService.openHomeScreen(context);
+                        // context.read<LoginBloc>().login(email, password);
+                        // var state = context.watch<LoginBloc>().state;
+                        // if (state is GDALoginState) {
+                        //   context.gNavigationService.openHomeScreen(context);
+                        // }
                       }
                     },
                     style: ButtonStyle(
