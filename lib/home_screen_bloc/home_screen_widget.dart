@@ -55,15 +55,17 @@ class HomePage extends StatelessWidget {
               color: Colors.white,
             ),
             ListTile(
-              title:  Text(AppLocalizations.of(context)!.modifierMotdePasseTitre,
+              title: Text(AppLocalizations.of(context)!.modifierMotdePasseTitre,
                   style: const TextStyle(color: Colors.white)),
-              onTap: () {},
+              onTap: () {
+                context.gNavigationService.openModifyPasswordScreen(context);
+              },
             ),
             const Divider(
               color: Colors.white,
             ),
             ListTile(
-              title:  Text(AppLocalizations.of(context)!.deconnexionTitre,
+              title: Text(AppLocalizations.of(context)!.deconnexionTitre,
                   style: const TextStyle(color: Colors.white)),
               onTap: () {
                 context.gNavigationService.openLoginScreen(context);
