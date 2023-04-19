@@ -16,4 +16,8 @@ class NavigationService {
   Future<void> openModifyPasswordScreen(BuildContext context) {
     return Navigator.of(context).pushNamed(_modifyPasswordRouteName);
   }
+
+  Future<void> openStatisticsScreen(BuildContext context) {
+    return Navigator.of(context).pushNamed(_statisticsRouteName);
+  }
 }

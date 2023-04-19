@@ -4,6 +4,7 @@ import 'package:pfe_iheb/login_bloc/login_page_route_builder.dart';
 import 'package:pfe_iheb/modify_password_bloc/modify_password_page_route_builder.dart';
 import 'package:pfe_iheb/navigation/navigation.dart';
 import 'package:pfe_iheb/splash_screen_bloc/splash_screen_page_route_builder.dart';
+import 'package:pfe_iheb/statistics_bloc/statistics_page_route_builder.dart';
 
 class AppRoutesFactory extends RoutesFactory {
   AppRoutesFactory();
@@ -32,6 +33,13 @@ class AppRoutesFactory extends RoutesFactory {
   Route<dynamic> createModifyPasswordScreenPageRoute() {
     return MaterialPageRoute<String?>(
       builder: ModifyPasswordScreenRouteBuilder(),
+    );
+  }
+
+  @override
+  Route<dynamic> createStatisticsScreenPageRoute() {
+    return MaterialPageRoute<String?>(
+      builder: StatisticsScreenRouteBuilder(),
     );
   }
 }

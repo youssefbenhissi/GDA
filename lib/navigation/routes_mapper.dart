@@ -13,6 +13,8 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
         return routesFactory.createLoginScreenPageRoute();
       case _modifyPasswordRouteName:
         return routesFactory.createModifyPasswordScreenPageRoute();
+      case _statisticsRouteName:
+        return routesFactory.createStatisticsScreenPageRoute();
       default:
         return routesFactory.createLoginScreenPageRoute();
     }

@@ -45,7 +45,9 @@ class ApplicationDrawer extends StatelessWidget {
           ListTile(
             title: Text(AppLocalizations.of(context)!.statistiquesTitre,
                 style: const TextStyle(color: Colors.white)),
-            onTap: () {},
+            onTap: () {
+              context.gNavigationService.openStatisticsScreen(context);
+            },
           ),
           const Divider(
             color: Colors.white,
