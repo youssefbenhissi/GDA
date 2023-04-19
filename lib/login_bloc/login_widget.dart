@@ -73,7 +73,7 @@ class LoginScreen extends StatelessWidget {
                             color: Colors.black,
                             fontWeight: FontWeight.w300,
                             fontSize: 13),
-                        enabledBorder: OutlineInputBorder(
+                        enabledBorder: const OutlineInputBorder(
                             borderSide:
                                 BorderSide(width: 0.5, color: Colors.grey)),
                         border: InputBorder.none),
@@ -90,12 +90,14 @@ class LoginScreen extends StatelessWidget {
                         showDialog(
                           context: context,
                           builder: (context) => AlertDialog(
-                            title: const Text('Erreur'),
-                            content:
-                                const Text('Veuillez remplir tous les champs.'),
+                            title:
+                                Text(AppLocalizations.of(context)!.erreurTitre),
+                            content: Text(AppLocalizations.of(context)!
+                                .veuillezRemplirTousLesChampsTitre),
                             actions: <Widget>[
                               TextButton(
-                                child: const Text('OK'),
+                                child:
+                                    Text(AppLocalizations.of(context)!.okTitre),
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },

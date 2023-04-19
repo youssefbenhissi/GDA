@@ -1,6 +1,8 @@
 {
     "identifiantTitre": "إسم المستخدم",
     "motDePasseTitre": "كلمة المرور",
+    "nouveauMotDePasseTitre": "كلمة مرور جديدة",
+    "confirmerMotDePasseTitre": "تأكيد كلمة المرور الجديدة",
     "connexionTitre": "تسجيل الدخول",
     "menuTitre" : "القائمة",
     "ficheDGATitre":"ورقة GDA",
@@ -8,5 +10,10 @@
     "consultationTitre":"التشاور",
     "statistiquesTitre": "إحصائيات",
     "modifierMotdePasseTitre":"تغيير كلمة المرور",
-    "deconnexionTitre":"تسجيل خروج"
+    "deconnexionTitre":"تسجيل خروج",
+    "confirmPasswordTitre": "كلمة المرور الجديدة المؤكدة لا تتطابق مع كلمة المرور الجديدة",
+    "okTitre" :"نعم",
+    "erreurTitre" : "خطأ",
+    "veuillezRemplirTousLesChampsTitre":"رجاءا اكمل جميع الحقول.",
+    "changerTitre" : "تغيير"
 }

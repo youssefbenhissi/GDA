@@ -1,6 +1,8 @@
 {
     "identifiantTitre": "Identifiant",
     "motDePasseTitre": "Mot de passe",
+    "nouveauMotDePasseTitre": "Nouveau Mot de passe",
+    "confirmerMotDePasseTitre": "Confirmer nouveau mot de passe",
     "connexionTitre": "connexion",
     "menuTitre" : "Menu",
     "ficheDGATitre":"Fiche GDA",
@@ -8,5 +10,12 @@
     "consultationTitre":"Consultation",
     "statistiquesTitre": "Statistiques",
     "modifierMotdePasseTitre":"Modifier Mot de passe",
-    "deconnexionTitre":"Déconnexion"
+    "deconnexionTitre":"Déconnexion",
+    "confirmPasswordTitre": "nouveaue mot de passe confimé ne correspond pas au nouveau mot de passe",
+    "okTitre" :"d'accord",
+    "erreurTitre" : "erreur",
+    "veuillezRemplirTousLesChampsTitre":"Veuillez remplir tous les champs.",
+    "changerTitre" : "changer"
+
+
 }
