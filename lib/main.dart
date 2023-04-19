@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
           child: MaterialApp(
             supportedLocales: L10n.all,
             onGenerateRoute: onGenerateAppRoute(
-              AppRoutesFactory(widget.serviceLocator),
+              AppRoutesFactory(),
             ),
             localizationsDelegates: const [
               AppLocalizations.delegate,

@@ -13,7 +13,7 @@ class ApplicationDrawer extends StatelessWidget {
       child: ListView(
         padding: EdgeInsets.zero,
         children: <Widget>[
-          Container(
+          SizedBox(
             height: 100,
             child: DrawerHeader(
               child: Text(AppLocalizations.of(context)!.menuTitre,

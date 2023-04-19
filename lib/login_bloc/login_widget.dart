@@ -116,7 +116,7 @@ class LoginScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(25)))),
                     child: Text(
                       AppLocalizations.of(context)!.connexionTitre,
-                      style: TextStyle(color: Colors.black),
+                      style: const TextStyle(color: Colors.black),
                     )),
                 const SizedBox(
                   height: 25,
