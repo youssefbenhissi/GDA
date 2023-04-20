@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 
 class ApplicationDrawer extends StatelessWidget {
@@ -8,6 +9,7 @@ class ApplicationDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var state = context.currentLoginBloc.state;
     return Drawer(
       backgroundColor: AppColors.primaryblue,
       child: ListView(
@@ -20,20 +22,28 @@ class ApplicationDrawer extends StatelessWidget {
                   style: const TextStyle(color: Colors.white, fontSize: 30)),
             ),
           ),
-          ListTile(
-            title: Text(AppLocalizations.of(context)!.ficheDGATitre,
-                style: const TextStyle(color: Colors.white)),
-            onTap: () {},
-          ),
-          const Divider(color: Colors.white),
-          ListTile(
-            title: Text(AppLocalizations.of(context)!.saisirDonneesTitre,
-                style: const TextStyle(color: Colors.white)),
-            onTap: () {},
-          ),
-          const Divider(
-            color: Colors.white,
-          ),
+          state is GDALoginState
+              ? ListTile(
+                  title: Text(AppLocalizations.of(context)!.ficheDGATitre,
+                      style: const TextStyle(color: Colors.white)),
+                  onTap: () {},
+                )
+              : const SizedBox.shrink(),
+          state is GDALoginState
+              ? const Divider(color: Colors.white)
+              : const SizedBox.shrink(),
+          state is GDALoginState
+              ? ListTile(
+                  title: Text(AppLocalizations.of(context)!.saisirDonneesTitre,
+                      style: const TextStyle(color: Colors.white)),
+                  onTap: () {},
+                )
+              : const SizedBox.shrink(),
+          state is GDALoginState
+              ? const Divider(
+                  color: Colors.white,
+                )
+              : const SizedBox.shrink(),
           ListTile(
             title: Text(AppLocalizations.of(context)!.consultationTitre,
                 style: const TextStyle(color: Colors.white)),

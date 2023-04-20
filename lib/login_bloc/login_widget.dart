@@ -84,7 +84,7 @@ class LoginScreen extends StatelessWidget {
                   height: 25,
                 ),
                 ElevatedButton(
-                    onPressed: () {
+                    onPressed: () async {
                       final String email = emailController.value.text;
                       final String password = passwordController.value.text;
                       if (email.isEmpty || password.isEmpty) {
@@ -107,12 +107,15 @@ class LoginScreen extends StatelessWidget {
                           ),
                         );
                       } else {
-                        context.gNavigationService.openHomeScreen(context);
-                        // context.read<LoginBloc>().login(email, password);
-                        // var state = context.watch<LoginBloc>().state;
-                        // if (state is GDALoginState) {
-                        //   context.gNavigationService.openHomeScreen(context);
-                        // }
+                        context.currentLoginBloc.login(email, password);
+                        await Future.delayed(const Duration(milliseconds: 20))
+                            .then((value) {
+                          var loginState = context.currentLoginBloc.state;
+                          if (loginState is! FailedLoginState &&
+                              loginState is! InitialLoginState) {
+                            context.gNavigationService.openHomeScreen(context);
+                          }
+                        });
                       }
                     },
                     style: ButtonStyle(

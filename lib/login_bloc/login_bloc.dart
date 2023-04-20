@@ -13,7 +13,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     LoginFuncEvent event,
     Emitter<LoginState> emitter,
   ) {
-    emit(const GDALoginState._());
+    emitter(const GDALoginState._());
   }
 
   void login(String username, String password) {
