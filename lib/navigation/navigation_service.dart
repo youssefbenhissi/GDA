@@ -21,6 +21,10 @@ class NavigationService {
     return Navigator.of(context).pushNamed(_statisticsRouteName);
   }
 
+  Future<void> openIndicateursScreen(BuildContext context) {
+    return Navigator.of(context).pushNamed(_indicateursRouteName);
+  }
+
   Future<void> openConsultationScreen(BuildContext context) {
     return Navigator.of(context).pushNamed(_consultationRouteName);
   }

@@ -18,6 +18,6 @@
     "changerTitre" : "changer",
     "indicateursTitre" : "Indicateurs",
     "indicateursGenerauxTitre" : "Indicateurs Généraux",
-    "consulterTitre":"Consulter"
-
+    "consulterTitre":"Consulter",
+    "consultationTitre" : "Consultation"
 }

@@ -64,7 +64,9 @@ class IndicateurPage extends StatelessWidget {
                     foregroundColor:
                         MaterialStateProperty.all<Color>(Colors.white),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    context.gNavigationService.openConsultationScreen(context);
+                  },
                   child: Text(AppLocalizations.of(context)!.consulterTitre),
                 ),
               ),

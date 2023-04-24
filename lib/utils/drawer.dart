@@ -48,7 +48,7 @@ class ApplicationDrawer extends StatelessWidget {
             title: Text(AppLocalizations.of(context)!.consultationTitre,
                 style: const TextStyle(color: Colors.white)),
             onTap: () {
-              context.gNavigationService.openConsultationScreen(context);
+              context.gNavigationService.openIndicateursScreen(context);
             },
           ),
           const Divider(

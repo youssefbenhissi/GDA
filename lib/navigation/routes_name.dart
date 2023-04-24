@@ -5,4 +5,5 @@ const _homePageRouteName = '/home';
 const _loginPageRouteName = "/login";
 const _modifyPasswordRouteName = "/modifyPassword";
 const _statisticsRouteName = "/statistics";
+const _indicateursRouteName = "/indicateurs";
 const _consultationRouteName = "/consultation";

@@ -18,5 +18,6 @@
     "changerTitre" : "تغيير",
     "indicateursTitre" : "المؤشرات",
     "indicateursGenerauxTitre" : "المؤشرات العامة",
-    "consulterTitre":"تشاور"
+    "consulterTitre":"تشاور",
+    "consultationTitre" : "التشاور"
 }
