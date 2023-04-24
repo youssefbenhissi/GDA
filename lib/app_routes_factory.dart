@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pfe_iheb/consultation_bloc/consultation_page_route_builder.dart';
 import 'package:pfe_iheb/home_screen_bloc/home_screen_page_route_builder.dart';
 import 'package:pfe_iheb/login_bloc/login_page_route_builder.dart';
 import 'package:pfe_iheb/modify_password_bloc/modify_password_page_route_builder.dart';
@@ -40,6 +41,13 @@ class AppRoutesFactory extends RoutesFactory {
   Route<dynamic> createStatisticsScreenPageRoute() {
     return MaterialPageRoute<String?>(
       builder: StatisticsScreenRouteBuilder(),
+    );
+  }
+
+  @override
+  Route<dynamic> createConsultationScreenPageRoute() {
+    return MaterialPageRoute<String?>(
+      builder: ConsultationScreenRouteBuilder(),
     );
   }
 }

@@ -6,4 +6,5 @@ abstract class RoutesFactory {
   Route<dynamic> createLoginScreenPageRoute();
   Route<dynamic> createModifyPasswordScreenPageRoute();
   Route<dynamic> createStatisticsScreenPageRoute();
+  Route<dynamic> createConsultationScreenPageRoute();
 }

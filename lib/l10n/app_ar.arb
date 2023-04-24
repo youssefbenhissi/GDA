@@ -15,5 +15,6 @@
     "okTitre" :"نعم",
     "erreurTitre" : "خطأ",
     "veuillezRemplirTousLesChampsTitre":"رجاءا اكمل جميع الحقول.",
-    "changerTitre" : "تغيير"
+    "changerTitre" : "تغيير",
+    "indicateursTitre" : "المؤشرات"
 }

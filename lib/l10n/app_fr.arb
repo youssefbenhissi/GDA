@@ -15,7 +15,6 @@
     "okTitre" :"d'accord",
     "erreurTitre" : "erreur",
     "veuillezRemplirTousLesChampsTitre":"Veuillez remplir tous les champs.",
-    "changerTitre" : "changer"
-
-
+    "changerTitre" : "changer",
+    "indicateursTitre" : "Indicateurs"
 }
