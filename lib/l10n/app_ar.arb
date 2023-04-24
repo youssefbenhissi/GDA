@@ -19,5 +19,8 @@
     "indicateursTitre" : "المؤشرات",
     "indicateursGenerauxTitre" : "المؤشرات العامة",
     "consulterTitre":"تشاور",
-    "consultationTitre" : "التشاور"
+    "consultationTitre" : "التشاور",
+    "moisTitre" : "شهر",
+    "anneeTitre" : "سنة",
+    "gdaTitre" :"GDA"
 }

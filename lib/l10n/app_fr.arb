@@ -19,5 +19,8 @@
     "indicateursTitre" : "Indicateurs",
     "indicateursGenerauxTitre" : "Indicateurs Généraux",
     "consulterTitre":"Consulter",
-    "consultationTitre" : "Consultation"
+    "consultationTitre" : "Consultation",
+    "moisTitre" : "Mois",
+    "anneeTitre" : "Année",
+    "gdaTitre" :"GDA"
 }
