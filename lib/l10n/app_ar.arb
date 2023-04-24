@@ -16,5 +16,6 @@
     "erreurTitre" : "خطأ",
     "veuillezRemplirTousLesChampsTitre":"رجاءا اكمل جميع الحقول.",
     "changerTitre" : "تغيير",
-    "indicateursTitre" : "المؤشرات"
+    "indicateursTitre" : "المؤشرات",
+    "indicateursGenerauxTitre" : "المؤشرات العامة"
 }

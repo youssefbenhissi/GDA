@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pfe_iheb/app_page_injectable.dart';
 import 'package:pfe_iheb/consultation_bloc/statistic_widget.dart';
+import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -9,22 +11,25 @@ class ConsultationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var state = context.currentLoginBloc.state;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.primaryblue,
       drawer: const ApplicationDrawer(),
       appBar: AppBar(
           title: Text(
-        AppLocalizations.of(context)!.indicateursTitre,
+        state is GDALoginState
+            ? AppLocalizations.of(context)!.indicateursTitre
+            : AppLocalizations.of(context)!.indicateursGenerauxTitre,
       )),
       body: SingleChildScrollView(
-        child: ColoredBox(
-          color: Colors.white,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const <Widget>[
-              ConsultationStatisticsCard(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            const ColoredBox(
+              color: Colors.white,
+              child: ConsultationStatisticsCard(
                 tauxDePerteTitre: "tauxDePerteTitre",
                 tauxDeRecouvrementTitre: "tauxDeRecouvrementTitre",
                 tauxDeRecouvrementValeur: 80,
@@ -39,8 +44,16 @@ class ConsultationPage extends StatelessWidget {
                 nombreDeJourArretTitre: "nombreDeJourArretTitre",
                 nombreDeJourArretValeur: 85,
               ),
-            ],
-          ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Image.asset(
+              state is GDALoginState
+                  ? "assets/images/indicateurs.png"
+                  : "assets/images/goutte.png",
+            ),
+          ],
         ),
       ),
     );

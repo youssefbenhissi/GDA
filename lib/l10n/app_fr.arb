@@ -16,5 +16,6 @@
     "erreurTitre" : "erreur",
     "veuillezRemplirTousLesChampsTitre":"Veuillez remplir tous les champs.",
     "changerTitre" : "changer",
-    "indicateursTitre" : "Indicateurs"
+    "indicateursTitre" : "Indicateurs",
+    "indicateursGenerauxTitre" : "Indicateurs Généraux"
 }
