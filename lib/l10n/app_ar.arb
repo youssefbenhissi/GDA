@@ -17,5 +17,6 @@
     "veuillezRemplirTousLesChampsTitre":"رجاءا اكمل جميع الحقول.",
     "changerTitre" : "تغيير",
     "indicateursTitre" : "المؤشرات",
-    "indicateursGenerauxTitre" : "المؤشرات العامة"
+    "indicateursGenerauxTitre" : "المؤشرات العامة",
+    "consulterTitre":"تشاور"
 }

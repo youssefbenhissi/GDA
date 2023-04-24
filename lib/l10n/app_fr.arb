@@ -17,5 +17,7 @@
     "veuillezRemplirTousLesChampsTitre":"Veuillez remplir tous les champs.",
     "changerTitre" : "changer",
     "indicateursTitre" : "Indicateurs",
-    "indicateursGenerauxTitre" : "Indicateurs Généraux"
+    "indicateursGenerauxTitre" : "Indicateurs Généraux",
+    "consulterTitre":"Consulter"
+
 }

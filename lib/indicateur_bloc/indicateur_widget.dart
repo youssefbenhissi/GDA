@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
-import 'package:pfe_iheb/consultation_bloc/statistic_widget.dart';
+import 'package:pfe_iheb/indicateur_bloc/statistic_widget.dart';
 import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class ConsultationPage extends StatelessWidget {
-  const ConsultationPage({super.key});
+class IndicateurPage extends StatelessWidget {
+  const IndicateurPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -53,6 +53,22 @@ class ConsultationPage extends StatelessWidget {
                   ? "assets/images/indicateurs.png"
                   : "assets/images/goutte.png",
             ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+                child: TextButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.green),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                  ),
+                  onPressed: () {},
+                  child: Text(AppLocalizations.of(context)!.consulterTitre),
+                ),
+              ),
+            )
           ],
         ),
       ),
