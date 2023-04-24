@@ -22,5 +22,7 @@
     "consultationTitre" : "Consultation",
     "moisTitre" : "Mois",
     "anneeTitre" : "Année",
-    "gdaTitre" :"GDA"
+    "gdaTitre" :"GDA",
+    "rechercheTitre" : "recherche",
+    "validerTitre" : "valider"
 }

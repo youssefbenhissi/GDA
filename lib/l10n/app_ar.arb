@@ -22,5 +22,7 @@
     "consultationTitre" : "التشاور",
     "moisTitre" : "شهر",
     "anneeTitre" : "سنة",
-    "gdaTitre" :"GDA"
+    "gdaTitre" :"GDA",
+    "rechercheTitre" : "بحث",
+    "validerTitre" : "يثبت"
 }

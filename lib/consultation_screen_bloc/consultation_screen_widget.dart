@@ -2,14 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:searchfield/searchfield.dart';
 part 'gda_popup.dart';
 
 class ConsultationPage extends StatelessWidget {
   const ConsultationPage({super.key});
-
   @override
   Widget build(BuildContext context) {
-    String dropdownValue = 'Dog';
+    const List<String> months = [
+      'janvier',
+      'février',
+      'mars',
+      'avril',
+      'mai',
+      'juin',
+      'juillet',
+      'août',
+      'septembre',
+      'octobre',
+      'novembre',
+      'décembre',
+    ];
+    const List<String> years = ['2019', '2020', '2021', '2022', '2023', '2024'];
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.primaryblue,
@@ -35,9 +49,9 @@ class ConsultationPage extends StatelessWidget {
                     ),
                     DropdownButton<String>(
                       isExpanded: true,
-                      value: dropdownValue,
-                      items: <String>['Dog', 'Cat', 'Tiger', 'Lion']
-                          .map<DropdownMenuItem<String>>((String value) {
+                      value: months.first,
+                      items:
+                          months.map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(
@@ -56,9 +70,9 @@ class ConsultationPage extends StatelessWidget {
                     ),
                     DropdownButton<String>(
                       isExpanded: true,
-                      value: dropdownValue,
-                      items: <String>['Dog', 'Cat', 'Tiger', 'Lion']
-                          .map<DropdownMenuItem<String>>((String value) {
+                      value: years.first,
+                      items:
+                          years.map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
                           child: Text(
@@ -90,6 +104,25 @@ class ConsultationPage extends StatelessWidget {
                         onChanged: (String? newValue) {},
                       ),
                     ),
+                    Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+                        child: TextButton(
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.green),
+                            foregroundColor:
+                                MaterialStateProperty.all<Color>(Colors.white),
+                          ),
+                          onPressed: () {
+                            print("*" * 80);
+                          },
+                          child: Text(
+                              AppLocalizations.of(context)!.consulterTitre),
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
