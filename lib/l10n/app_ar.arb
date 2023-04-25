@@ -19,10 +19,10 @@
     "indicateursTitre" : "المؤشرات",
     "indicateursGenerauxTitre" : "المؤشرات العامة",
     "consulterTitre":"تشاور",
-    "consultationTitre" : "التشاور",
     "moisTitre" : "شهر",
     "anneeTitre" : "سنة",
     "gdaTitre" :"GDA",
     "rechercheTitre" : "بحث",
-    "validerTitre" : "يثبت"
+    "validerTitre" : "يثبت",
+    "donnesIdentificationTitre" : "بيانات تحديد الهوية"
 }

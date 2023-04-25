@@ -1,6 +1,8 @@
 part of 'consultation_screen_widget.dart';
 
 Widget _buildPopupDialog(BuildContext context) {
+  final TextEditingController gdaController = TextEditingController();
+
   List<String> countries = [
     'Carthage',
     'La Medina',
@@ -25,11 +27,15 @@ Widget _buildPopupDialog(BuildContext context) {
       mainAxisSize: MainAxisSize.min,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
+        const Divider(
+          color: Colors.white12,
+        ),
         SearchField<String>(
+          controller: gdaController,
           hint: AppLocalizations.of(context)!.rechercheTitre,
           searchInputDecoration: const InputDecoration(
-            prefixIcon: Icon(Icons.search),
-          ),
+              prefixIcon: Icon(Icons.search), focusColor: Colors.white),
+          // suggestionItemDecoration: const BoxDecoration(color: Colors.white),
           suggestions: countries
               .map(
                 (e) => SearchFieldListItem<String>(
@@ -64,7 +70,7 @@ Widget _buildPopupDialog(BuildContext context) {
     actions: <Widget>[
       TextButton(
         onPressed: () {
-          Navigator.of(context).pop();
+          Navigator.of(context).pop(gdaController.text);
         },
         child: Text(AppLocalizations.of(context)!.validerTitre),
       ),

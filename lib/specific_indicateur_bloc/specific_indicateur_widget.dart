@@ -16,12 +16,7 @@ class SpecificIndicateurPage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.primaryblue,
       drawer: const ApplicationDrawer(),
-      appBar: AppBar(
-          title: Text(
-        state is GDALoginState
-            ? AppLocalizations.of(context)!.indicateursTitre
-            : AppLocalizations.of(context)!.indicateursGenerauxTitre,
-      )),
+      appBar: AppBar(title: const Text('Indificateur specifique')),
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,

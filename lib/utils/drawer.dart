@@ -26,7 +26,9 @@ class ApplicationDrawer extends StatelessWidget {
               ? ListTile(
                   title: Text(AppLocalizations.of(context)!.ficheDGATitre,
                       style: const TextStyle(color: Colors.white)),
-                  onTap: () {},
+                  onTap: () {
+                    context.gNavigationService.openFicheGDAScreen(context);
+                  },
                 )
               : const SizedBox.shrink(),
           state is GDALoginState

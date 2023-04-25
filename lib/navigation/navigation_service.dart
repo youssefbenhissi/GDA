@@ -5,10 +5,6 @@ class NavigationService {
     return Navigator.of(context).pushNamed(_splashScreenPageRouteName);
   }
 
-  Future<void> openHomeScreen(BuildContext context) {
-    return Navigator.of(context).pushNamed(_homePageRouteName);
-  }
-
   Future<void> openLoginScreen(BuildContext context) {
     return Navigator.of(context).pushNamed(_loginPageRouteName);
   }
@@ -25,7 +21,15 @@ class NavigationService {
     return Navigator.of(context).pushNamed(_indicateursRouteName);
   }
 
+  Future<void> openIndicateursSpecifiqueScreen(BuildContext context) {
+    return Navigator.of(context).pushNamed(_indicateursSpecifiqueRouteName);
+  }
+
   Future<void> openConsultationScreen(BuildContext context) {
     return Navigator.of(context).pushNamed(_consultationRouteName);
+  }
+
+  Future<void> openFicheGDAScreen(BuildContext context) {
+    return Navigator.of(context).pushNamed(_ficheGDARouteName);
   }
 }

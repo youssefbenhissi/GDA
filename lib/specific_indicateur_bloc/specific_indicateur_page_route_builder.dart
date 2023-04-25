@@ -4,8 +4,8 @@ import 'package:pfe_iheb/specific_indicateur_bloc/specific_indicateur_bloc.dart'
 import 'package:pfe_iheb/specific_indicateur_bloc/specific_indicateur_widget.dart';
 import 'package:provider/provider.dart';
 
-class IndicateurScreenRouteBuilder {
-  IndicateurScreenRouteBuilder();
+class IndicateurSpecifiqueScreenRouteBuilder {
+  IndicateurSpecifiqueScreenRouteBuilder();
 
   Widget call(BuildContext context) {
     return MultiProvider(

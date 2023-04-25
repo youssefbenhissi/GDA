@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pfe_iheb/consultation_screen_bloc/consultation_screen_page_route_builder.dart';
+import 'package:pfe_iheb/fiche_gda_bloc/fiche_gda_page_route_builder.dart';
 import 'package:pfe_iheb/indicateur_bloc/indicateur_page_route_builder.dart';
-import 'package:pfe_iheb/home_screen_bloc/home_screen_page_route_builder.dart';
 import 'package:pfe_iheb/login_bloc/login_page_route_builder.dart';
 import 'package:pfe_iheb/modify_password_bloc/modify_password_page_route_builder.dart';
 import 'package:pfe_iheb/navigation/navigation.dart';
+import 'package:pfe_iheb/specific_indicateur_bloc/specific_indicateur_page_route_builder.dart';
 import 'package:pfe_iheb/splash_screen_bloc/splash_screen_page_route_builder.dart';
 import 'package:pfe_iheb/statistics_bloc/statistics_page_route_builder.dart';
 
@@ -14,13 +15,6 @@ class AppRoutesFactory extends RoutesFactory {
   Route<dynamic> createSplashScreenPageRoute() {
     return MaterialPageRoute<String?>(
       builder: SplashScreenRouteBuilder(),
-    );
-  }
-
-  @override
-  Route<dynamic> createHomeScreenPageRoute() {
-    return MaterialPageRoute<String?>(
-      builder: HomeScreenRouteBuilder(),
     );
   }
 
@@ -53,9 +47,23 @@ class AppRoutesFactory extends RoutesFactory {
   }
 
   @override
+  Route<dynamic> createIndicateursSpecifiqueScreenPageRoute() {
+    return MaterialPageRoute<String?>(
+      builder: IndicateurSpecifiqueScreenRouteBuilder(),
+    );
+  }
+
+  @override
   Route<dynamic> createConsultationScreenPageRoute() {
     return MaterialPageRoute<String?>(
       builder: ConsultationScreenRouteBuilder(),
+    );
+  }
+
+  @override
+  Route<dynamic> createFicheGDAScreenPageRoute() {
+    return MaterialPageRoute<String?>(
+      builder: FicheGDAScreenRouteBuilder(),
     );
   }
 }

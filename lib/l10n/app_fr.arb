@@ -19,10 +19,10 @@
     "indicateursTitre" : "Indicateurs",
     "indicateursGenerauxTitre" : "Indicateurs Généraux",
     "consulterTitre":"Consulter",
-    "consultationTitre" : "Consultation",
     "moisTitre" : "Mois",
     "anneeTitre" : "Année",
     "gdaTitre" :"GDA",
     "rechercheTitre" : "recherche",
-    "validerTitre" : "valider"
+    "validerTitre" : "valider",
+    "donnesIdentificationTitre" : "Données d'Identification"
 }

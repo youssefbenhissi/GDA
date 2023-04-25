@@ -7,8 +7,7 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
     switch (settings.name) {
       case _splashScreenPageRouteName:
         return routesFactory.createSplashScreenPageRoute();
-      case _homePageRouteName:
-        return routesFactory.createHomeScreenPageRoute();
+
       case _loginPageRouteName:
         return routesFactory.createLoginScreenPageRoute();
       case _modifyPasswordRouteName:
@@ -17,8 +16,12 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
         return routesFactory.createStatisticsScreenPageRoute();
       case _indicateursRouteName:
         return routesFactory.createIndicateursScreenPageRoute();
+      case _indicateursSpecifiqueRouteName:
+        return routesFactory.createIndicateursSpecifiqueScreenPageRoute();
       case _consultationRouteName:
         return routesFactory.createConsultationScreenPageRoute();
+      case _ficheGDARouteName:
+        return routesFactory.createFicheGDAScreenPageRoute();
       default:
         return routesFactory.createLoginScreenPageRoute();
     }
