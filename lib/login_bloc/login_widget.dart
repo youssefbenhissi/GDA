@@ -113,8 +113,13 @@ class LoginScreen extends StatelessWidget {
                           var loginState = context.currentLoginBloc.state;
                           if (loginState is! FailedLoginState &&
                               loginState is! InitialLoginState) {
-                            context.gNavigationService
-                                .openFicheGDAScreen(context);
+                            if (loginState is GDALoginState) {
+                              context.gNavigationService
+                                  .openFicheGDAScreen(context);
+                            } else {
+                              context.gNavigationService
+                                  .openIndicateursScreen(context);
+                            }
                           }
                         });
                       }
