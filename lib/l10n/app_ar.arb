@@ -24,5 +24,6 @@
     "gdaTitre" :"GDA",
     "rechercheTitre" : "بحث",
     "validerTitre" : "يثبت",
-    "donnesIdentificationTitre" : "بيانات تحديد الهوية"
+    "donnesIdentificationTitre" : "بيانات تحديد الهوية",
+    "detailsGDATitre":"تفاصيل GDA"
 }

@@ -24,5 +24,6 @@
     "gdaTitre" :"GDA",
     "rechercheTitre" : "recherche",
     "validerTitre" : "valider",
-    "donnesIdentificationTitre" : "Données d'Identification"
+    "donnesIdentificationTitre" : "Données d'Identification",
+    "detailsGDATitre":"Détails GDA"
 }
