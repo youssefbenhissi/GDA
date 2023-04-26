@@ -9,4 +9,5 @@ abstract class RoutesFactory {
   Route<dynamic> createIndicateursSpecifiqueScreenPageRoute();
   Route<dynamic> createConsultationScreenPageRoute();
   Route<dynamic> createFicheGDAScreenPageRoute();
+  Route<dynamic> createDetailsScreenPageRoute();
 }

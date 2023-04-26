@@ -8,3 +8,4 @@ const _indicateursRouteName = "/indicateurs";
 const _indicateursSpecifiqueRouteName = "/indicateursSpecifique";
 const _consultationRouteName = "/consultation";
 const _ficheGDARouteName = "/ficheGDA";
+const _detailsRouteName = "/details";

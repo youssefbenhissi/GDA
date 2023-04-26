@@ -25,5 +25,6 @@
     "rechercheTitre" : "بحث",
     "validerTitre" : "يثبت",
     "donnesIdentificationTitre" : "بيانات تحديد الهوية",
-    "detailsGDATitre":"تفاصيل GDA"
+    "detailsGDATitre":"تفاصيل GDA",
+    "detailsTitre":"تفاصيل"
 }
