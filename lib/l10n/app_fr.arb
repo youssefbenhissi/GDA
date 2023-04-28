@@ -26,5 +26,6 @@
     "validerTitre" : "valider",
     "donnesIdentificationTitre" : "Données d'Identification",
     "detailsGDATitre":"Détails GDA",
-    "detailsTitre":"Détails"
+    "detailsTitre":"Détails",
+    "saisirLesDonneesTechniquesTitre" : "Saisir les données Techniques -->"
 }

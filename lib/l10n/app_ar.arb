@@ -26,5 +26,6 @@
     "validerTitre" : "يثبت",
     "donnesIdentificationTitre" : "بيانات تحديد الهوية",
     "detailsGDATitre":"تفاصيل GDA",
-    "detailsTitre":"تفاصيل"
+    "detailsTitre":"تفاصيل",
+    "saisirLesDonneesTechniquesTitre" : "أدخل البيانات الفنية -->"
 }

@@ -11,20 +11,29 @@ class DetailsPage extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.primaryblue,
         appBar: AppBar(
-            leading: IconButton(
-              icon: const Icon(Icons.cancel, color: Colors.white),
-              onPressed: () => Navigator.of(context).pop(),
+            leading: SizedBox(
+              height: 10,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.pop(context);
+                },
+                child: Image.asset(
+                  height: 10,
+                  "assets/images/cross.png",
+                ),
+              ),
             ),
             centerTitle: true,
             actions: <Widget>[
-              Padding(
-                  padding: const EdgeInsets.only(right: 20.0),
-                  child: GestureDetector(
-                    onTap: () {},
-                    child: Image.asset(
-                      "assets/images/tick.png",
-                    ),
-                  )),
+              SizedBox(
+                height: 10,
+                child: GestureDetector(
+                  onTap: () {},
+                  child: Image.asset(
+                    "assets/images/tick.png",
+                  ),
+                ),
+              ),
             ],
             title: Text(
               AppLocalizations.of(context)!.detailsTitre,
@@ -288,6 +297,127 @@ class DetailsPage extends StatelessWidget {
                   const Divider(),
                   const SizedBox(
                     height: 10,
+                  ),
+                  const Text(
+                    'Nombre de bénéficiaires',
+                    style: TextStyle(color: Colors.lightBlue),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    '3600',
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Divider(
+                    color: Colors.green,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    'ur de réseau',
+                    style: TextStyle(color: Colors.lightBlue),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    '',
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Divider(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    'Nombre stations de pompage',
+                    style: TextStyle(color: Colors.lightBlue),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    '',
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Divider(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    'Nombre réservoire',
+                    style: TextStyle(color: Colors.lightBlue),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    '',
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Divider(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    'Nombre BI',
+                    style: TextStyle(color: Colors.lightBlue),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    '',
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Divider(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    'Nombre BEP',
+                    style: TextStyle(color: Colors.lightBlue),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    '',
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Divider(),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+                      child: TextButton(
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.green),
+                          foregroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                        ),
+                        onPressed: () {},
+                        child: Text(AppLocalizations.of(context)!
+                            .saisirLesDonneesTechniquesTitre),
+                      ),
+                    ),
                   ),
                 ]),
           ),
