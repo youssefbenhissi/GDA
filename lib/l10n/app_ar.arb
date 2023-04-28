@@ -27,5 +27,6 @@
     "donnesIdentificationTitre" : "بيانات تحديد الهوية",
     "detailsGDATitre":"تفاصيل GDA",
     "detailsTitre":"تفاصيل",
-    "saisirLesDonneesTechniquesTitre" : "أدخل البيانات الفنية -->"
+    "saisirLesDonneesTechniquesTitre" : "أدخل البيانات الفنية -->",
+    "donneesTechniquesTitre":"البيانات التقنية"
 }

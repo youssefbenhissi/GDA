@@ -27,5 +27,6 @@
     "donnesIdentificationTitre" : "Données d'Identification",
     "detailsGDATitre":"Détails GDA",
     "detailsTitre":"Détails",
-    "saisirLesDonneesTechniquesTitre" : "Saisir les données Techniques -->"
+    "saisirLesDonneesTechniquesTitre" : "Saisir les données Techniques -->",
+    "donneesTechniquesTitre":"Données Techniques"
 }

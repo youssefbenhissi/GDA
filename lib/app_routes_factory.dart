@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pfe_iheb/consultation_screen_bloc/consultation_screen_page_route_builder.dart';
 import 'package:pfe_iheb/details_bloc/details_page_route_builder.dart';
+import 'package:pfe_iheb/donnees_techniques_bloc/donnees_techniques_page_route_builder.dart';
 import 'package:pfe_iheb/fiche_gda_bloc/fiche_gda_page_route_builder.dart';
 import 'package:pfe_iheb/indicateur_bloc/indicateur_page_route_builder.dart';
 import 'package:pfe_iheb/login_bloc/login_page_route_builder.dart';
@@ -72,6 +73,13 @@ class AppRoutesFactory extends RoutesFactory {
   Route<dynamic> createDetailsScreenPageRoute() {
     return MaterialPageRoute<String?>(
       builder: DetailsScreenRouteBuilder(),
+    );
+  }
+
+  @override
+  Route<dynamic> createDonneesTechniquesPageRoute() {
+    return MaterialPageRoute<String?>(
+      builder: SaisirDonneesTechniquesScreenRouteBuilder(),
     );
   }
 }
