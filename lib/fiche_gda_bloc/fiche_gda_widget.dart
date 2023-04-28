@@ -21,7 +21,10 @@ class FicheGDAPage extends StatelessWidget {
           Padding(
               padding: const EdgeInsets.only(right: 20.0),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  context.gNavigationService
+                      .openDonneesTechniquesScreen(context);
+                },
                 child: const Icon(
                   Icons.arrow_right_alt,
                   size: 26.0,

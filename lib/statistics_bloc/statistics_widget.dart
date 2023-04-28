@@ -21,7 +21,7 @@ class StatisticsPage extends StatelessWidget {
         itemCount: 15,
         itemBuilder: (context, index) {
           return const StatisticsCard(
-            date: "youssef",
+            date: "date",
             tauxDePerteTitre: "tauxDePerteTitre",
             tauxDePerteValeur: 5.2,
             consommationSpecifiqueTitre: "consommationSpecifiqueTitre",
