@@ -7,7 +7,7 @@ import 'package:searchfield/searchfield.dart';
 part 'gda_popup.dart';
 
 class ConsultationPage extends StatefulWidget {
-  const ConsultationPage({super.key});
+  const ConsultationPage({Key? key}) : super(key: key);
 
   @override
   State<ConsultationPage> createState() => _ConsultationPageState();
@@ -34,6 +34,17 @@ class _ConsultationPageState extends State<ConsultationPage> {
     String gdaValue = "";
     String month = "janvier";
     String year = "2019";
+    final List<String> items = [
+      'Item1',
+      'Item2',
+      'Item3',
+      'Item4',
+      'Item5',
+      'Item6',
+      'Item7',
+      'Item8',
+    ];
+    String selectedValue = "Vanilla";
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.primaryblue,
@@ -57,23 +68,25 @@ class _ConsultationPageState extends State<ConsultationPage> {
                         style: const TextStyle(color: Colors.lightBlue),
                       ),
                     ),
-                    DropdownButton<String>(
-                      isExpanded: true,
-                      value: month,
-                      items:
-                          months.map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(
-                            value,
-                          ),
-                        );
-                      }).toList(),
-                      onChanged: (String? newValue) {
-                        setState(() {
-                          month = newValue!;
-                        });
-                      },
+                    StatefulBuilder(
+                      builder: (context, setState) => DropdownButton<String>(
+                        isExpanded: true,
+                        value: month,
+                        items: months
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(
+                              value,
+                            ),
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            month = newValue!;
+                          });
+                        },
+                      ),
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
@@ -82,23 +95,25 @@ class _ConsultationPageState extends State<ConsultationPage> {
                         style: const TextStyle(color: Colors.lightBlue),
                       ),
                     ),
-                    DropdownButton<String>(
-                      isExpanded: true,
-                      value: year,
-                      items:
-                          years.map<DropdownMenuItem<String>>((String value) {
-                        return DropdownMenuItem<String>(
-                          value: value,
-                          child: Text(
-                            value,
-                          ),
-                        );
-                      }).toList(),
-                      onChanged: (String? newValue) {
-                        setState(() {
-                          year = newValue!;
-                        });
-                      },
+                    StatefulBuilder(
+                      builder: (context, setState) => DropdownButton<String>(
+                        isExpanded: true,
+                        value: year,
+                        items:
+                            years.map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(
+                              value,
+                            ),
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            year = newValue!;
+                          });
+                        },
+                      ),
                     ),
                     Align(
                       alignment: Alignment.centerLeft,
