@@ -32,5 +32,6 @@
     "saisirLesRecettesTitre" : "أدخل الإيصالات -->",
     "recettesRealiseesTitre":"وصفات مصنوعة",
     "saisirDepenseTitre":"أدخل المصاريف -->",
-    "envoyerTitre":"يرسل"
+    "envoyerTitre":"يرسل",
+    "totalTitre" : "مجموع"
 }

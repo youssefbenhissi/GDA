@@ -32,5 +32,6 @@
     "saisirLesRecettesTitre" : "saisir les recettes -->",
     "recettesRealiseesTitre":"Recettes Réalisées",
     "saisirDepenseTitre":"Saisir les dépenses -->",
-    "envoyerTitre":"Envoyer"
+    "envoyerTitre":"Envoyer",
+    "totalTitre" : "Total"
 }

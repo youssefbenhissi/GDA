@@ -59,7 +59,7 @@ class RecettesRealiseePage extends StatelessWidget {
                     textEditingController: autresRecettesTextEditingController,
                   ),
                   WidgetField(
-                    titre: "Total",
+                    titre: AppLocalizations.of(context)!.totalTitre,
                     textEditingController: recetteAdhesionTextEditingController,
                   ),
                   Align(

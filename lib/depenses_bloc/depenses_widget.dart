@@ -99,7 +99,7 @@ class DepensesPage extends StatelessWidget {
                 ),
                 WidgetField(
                   enabled: false,
-                  titre: "Total",
+                  titre: AppLocalizations.of(context)!.totalTitre,
                   textEditingController: depensesTotalTextEditingController,
                 ),
                 ColoredBox(
