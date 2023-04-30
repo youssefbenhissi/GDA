@@ -31,5 +31,6 @@
     "donneesTechniquesTitre":"البيانات التقنية",
     "saisirLesRecettesTitre" : "أدخل الإيصالات -->",
     "recettesRealiseesTitre":"وصفات مصنوعة",
-    "saisirDepenseTitre":"أدخل المصاريف -->"
+    "saisirDepenseTitre":"أدخل المصاريف -->",
+    "envoyerTitre":"يرسل"
 }

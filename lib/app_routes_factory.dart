@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pfe_iheb/consultation_screen_bloc/consultation_screen_page_route_builder.dart';
+import 'package:pfe_iheb/depenses_bloc/depenses_page_toute_builder.dart';
 import 'package:pfe_iheb/details_bloc/details_page_route_builder.dart';
 import 'package:pfe_iheb/donnees_techniques_bloc/donnees_techniques_page_route_builder.dart';
 import 'package:pfe_iheb/fiche_gda_bloc/fiche_gda_page_route_builder.dart';
@@ -88,6 +89,13 @@ class AppRoutesFactory extends RoutesFactory {
   Route<dynamic> createRecettesRealiseesPageRoute() {
     return MaterialPageRoute<String?>(
       builder: RecettesRealiseesScreenRouteBuilder(),
+    );
+  }
+
+  @override
+  Route<dynamic> createDepensesRealiseesPageRoute() {
+    return MaterialPageRoute<String?>(
+      builder: DepensesRealiseesScreenRouteBuilder(),
     );
   }
 }

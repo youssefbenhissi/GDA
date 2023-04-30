@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pfe_iheb/app_page_injectable.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -72,7 +73,10 @@ class RecettesRealiseePage extends StatelessWidget {
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.white),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          context.gNavigationService
+                              .openDepensesRealiseesScreen(context);
+                        },
                         child: Text(
                             AppLocalizations.of(context)!.saisirDepenseTitre),
                       ),
