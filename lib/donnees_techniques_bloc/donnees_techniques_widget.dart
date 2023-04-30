@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -52,9 +53,41 @@ class _SaisirDonneesTechniquesPageState
         backgroundColor: AppColors.primaryblue,
         drawer: const ApplicationDrawer(),
         appBar: AppBar(
-            title: Text(
-          AppLocalizations.of(context)!.donneesTechniquesTitre,
-        )),
+          automaticallyImplyLeading: false,
+          centerTitle: true,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  context.gNavigationService.openFicheGDAScreen(context);
+                },
+                child: SvgPicture.asset(
+                  fit: BoxFit.contain,
+                  width: 25,
+                  color: Colors.white,
+                  "assets/images/arrow-left-solid.svg",
+                ),
+              ),
+              Text(
+                AppLocalizations.of(context)!.donneesTechniquesTitre,
+              ),
+              GestureDetector(
+                onTap: () {
+                  context.gNavigationService
+                      .openRecettesRealiseesScreen(context);
+                },
+                child: SvgPicture.asset(
+                  fit: BoxFit.contain,
+                  width: 25,
+                  color: Colors.white,
+                  "assets/images/arrow-right-solid.svg",
+                ),
+              ),
+            ],
+          ),
+        ),
         body: Column(
           children: [
             ColoredBox(

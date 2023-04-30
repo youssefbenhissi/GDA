@@ -12,33 +12,38 @@ class DetailsPage extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.primaryblue,
         appBar: AppBar(
-            leading: SizedBox(
-              height: 10,
-              child: GestureDetector(
+          automaticallyImplyLeading: false,
+          centerTitle: true,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              GestureDetector(
                 onTap: () {
                   Navigator.pop(context);
                 },
                 child: Image.asset(
-                  height: 10,
+                  fit: BoxFit.contain,
+                  width: 25,
+                  color: Colors.white,
                   "assets/images/cross.png",
                 ),
               ),
-            ),
-            centerTitle: true,
-            actions: <Widget>[
-              SizedBox(
-                height: 10,
-                child: GestureDetector(
-                  onTap: () {},
-                  child: Image.asset(
-                    "assets/images/tick.png",
-                  ),
+              Text(
+                AppLocalizations.of(context)!.detailsTitre,
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Image.asset(
+                  fit: BoxFit.contain,
+                  width: 25,
+                  color: Colors.white,
+                  "assets/images/tick.png",
                 ),
               ),
             ],
-            title: Text(
-              AppLocalizations.of(context)!.detailsTitre,
-            )),
+          ),
+        ),
         body: SingleChildScrollView(
             child: ColoredBox(
           color: Colors.white,
@@ -275,7 +280,7 @@ class DetailsPage extends StatelessWidget {
                     height: 10,
                   ),
                   const Row(
-                    children:  [
+                    children: [
                       SizedBox(
                         width: 15,
                       ),

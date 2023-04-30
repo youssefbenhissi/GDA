@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
@@ -19,17 +20,19 @@ class FicheGDAPage extends StatelessWidget {
         ),
         actions: <Widget>[
           Padding(
-              padding: const EdgeInsets.only(right: 20.0),
-              child: GestureDetector(
-                onTap: () {
-                  context.gNavigationService
-                      .openDonneesTechniquesScreen(context);
-                },
-                child: const Icon(
-                  Icons.arrow_right_alt,
-                  size: 26.0,
-                ),
-              )),
+            padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+            child: GestureDetector(
+              onTap: () {
+                context.gNavigationService.openDonneesTechniquesScreen(context);
+              },
+              child: SvgPicture.asset(
+                "assets/images/arrow-right-solid.svg",
+                fit: BoxFit.contain,
+                width: 25,
+                color: Colors.white,
+              ),
+            ),
+          ),
         ],
       ),
       body: ColoredBox(
@@ -38,10 +41,10 @@ class FicheGDAPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const Padding(
-              padding:  EdgeInsets.only(right: 8.0, left: 8.0, top: 8.0),
+              padding: EdgeInsets.only(right: 8.0, left: 8.0, top: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children:  [
+                children: [
                   Text(
                     "Gouvernorat",
                     style: TextStyle(color: Colors.lightBlue),
@@ -53,10 +56,10 @@ class FicheGDAPage extends StatelessWidget {
             ),
             const Divider(),
             const Padding(
-              padding:  EdgeInsets.only(right: 8.0, left: 8.0),
+              padding: EdgeInsets.only(right: 8.0, left: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children:  [
+                children: [
                   Text(
                     "Délégation",
                     style: TextStyle(color: Colors.lightBlue),
@@ -68,10 +71,10 @@ class FicheGDAPage extends StatelessWidget {
             ),
             const Divider(),
             const Padding(
-              padding:  EdgeInsets.only(right: 8.0, left: 8.0),
+              padding: EdgeInsets.only(right: 8.0, left: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children:  [
+                children: [
                   Text(
                     "GDA",
                     style: TextStyle(color: Colors.lightBlue),

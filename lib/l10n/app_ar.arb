@@ -33,5 +33,6 @@
     "recettesRealiseesTitre":"وصفات مصنوعة",
     "saisirDepenseTitre":"أدخل المصاريف -->",
     "envoyerTitre":"يرسل",
-    "totalTitre" : "مجموع"
+    "totalTitre" : "مجموع",
+    "depensesRealiseesTitre" : "المصروفات الفعلية"
 }

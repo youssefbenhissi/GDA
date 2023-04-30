@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
@@ -23,11 +24,41 @@ class RecettesRealiseePage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.primaryblue,
-      drawer: const ApplicationDrawer(),
       appBar: AppBar(
-          title: Text(
-        AppLocalizations.of(context)!.recettesRealiseesTitre,
-      )),
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            GestureDetector(
+              onTap: () {
+                context.gNavigationService.openDonneesTechniquesScreen(context);
+              },
+              child: SvgPicture.asset(
+                fit: BoxFit.contain,
+                width: 25,
+                color: Colors.white,
+                "assets/images/arrow-left-solid.svg",
+              ),
+            ),
+            Text(
+              AppLocalizations.of(context)!.recettesRealiseesTitre,
+            ),
+            GestureDetector(
+              onTap: () {
+                context.gNavigationService.openDepensesRealiseesScreen(context);
+              },
+              child: SvgPicture.asset(
+                fit: BoxFit.contain,
+                width: 25,
+                color: Colors.white,
+                "assets/images/arrow-right-solid.svg",
+              ),
+            ),
+          ],
+        ),
+      ),
       body: Column(
         children: [
           ColoredBox(
