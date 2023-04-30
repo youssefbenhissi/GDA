@@ -37,11 +37,11 @@ class FicheGDAPage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0, left: 8.0, top: 8.0),
+            const Padding(
+              padding:  EdgeInsets.only(right: 8.0, left: 8.0, top: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children:  [
                   Text(
                     "Gouvernorat",
                     style: TextStyle(color: Colors.lightBlue),
@@ -52,11 +52,11 @@ class FicheGDAPage extends StatelessWidget {
               ),
             ),
             const Divider(),
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+            const Padding(
+              padding:  EdgeInsets.only(right: 8.0, left: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children:  [
                   Text(
                     "Délégation",
                     style: TextStyle(color: Colors.lightBlue),
@@ -67,11 +67,11 @@ class FicheGDAPage extends StatelessWidget {
               ),
             ),
             const Divider(),
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+            const Padding(
+              padding:  EdgeInsets.only(right: 8.0, left: 8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children:  [
                   Text(
                     "GDA",
                     style: TextStyle(color: Colors.lightBlue),

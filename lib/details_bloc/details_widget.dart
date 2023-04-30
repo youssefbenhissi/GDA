@@ -174,8 +174,8 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       SizedBox(
                         width: 15,
                       ),
@@ -199,8 +199,8 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       SizedBox(
                         width: 15,
                       ),
@@ -224,8 +224,8 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       SizedBox(
                         width: 15,
                       ),
@@ -249,8 +249,8 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    children: const [
+                  const Row(
+                    children: [
                       SizedBox(
                         width: 15,
                       ),
@@ -274,8 +274,8 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    children: const [
+                  const Row(
+                    children:  [
                       SizedBox(
                         width: 15,
                       ),
