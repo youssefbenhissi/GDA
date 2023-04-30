@@ -28,5 +28,6 @@
     "detailsGDATitre":"Détails GDA",
     "detailsTitre":"Détails",
     "saisirLesDonneesTechniquesTitre" : "Saisir les données Techniques -->",
-    "donneesTechniquesTitre":"Données Techniques"
+    "donneesTechniquesTitre":"Données Techniques",
+    "saisirLesRecettesTitre" : "saisir les recettes -->"
 }

@@ -34,17 +34,6 @@ class _ConsultationPageState extends State<ConsultationPage> {
     String gdaValue = "";
     String month = "janvier";
     String year = "2019";
-    final List<String> items = [
-      'Item1',
-      'Item2',
-      'Item3',
-      'Item4',
-      'Item5',
-      'Item6',
-      'Item7',
-      'Item8',
-    ];
-    String selectedValue = "Vanilla";
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.primaryblue,

@@ -28,5 +28,6 @@
     "detailsGDATitre":"تفاصيل GDA",
     "detailsTitre":"تفاصيل",
     "saisirLesDonneesTechniquesTitre" : "أدخل البيانات الفنية -->",
-    "donneesTechniquesTitre":"البيانات التقنية"
+    "donneesTechniquesTitre":"البيانات التقنية",
+    "saisirLesRecettesTitre" : "أدخل الإيصالات -->"
 }
