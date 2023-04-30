@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
+part 'field_widget.dart';
 
 class ModifyPasswordScreen extends StatelessWidget {
   const ModifyPasswordScreen({super.key});
@@ -20,106 +21,70 @@ class ModifyPasswordScreen extends StatelessWidget {
       )),
       drawer: const ApplicationDrawer(),
       body: Padding(
-        padding: const EdgeInsets.only(top: 8.0),
+        padding: const EdgeInsets.only(top: 15.0),
         child: Column(
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: TextField(
-                controller: passwordController,
-                keyboardType: TextInputType.text,
-                obscureText: true,
-                decoration: InputDecoration(
-                    hintText: AppLocalizations.of(context)!.motDePasseTitre,
-                    hintStyle: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w300,
-                        fontSize: 13),
-                    enabledBorder: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                    ),
-                    border: InputBorder.none),
-              ),
+            WidgetField(
+              textEditingController: passwordController,
+              titre: AppLocalizations.of(context)!.motDePasseTitre,
             ),
             const SizedBox(
               height: 25,
             ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: TextField(
-                controller: newPasswordController,
-                keyboardType: TextInputType.text,
-                obscureText: true,
-                decoration: InputDecoration(
-                    hintText:
-                        AppLocalizations.of(context)!.nouveauMotDePasseTitre,
-                    hintStyle: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w300,
-                        fontSize: 13),
-                    enabledBorder: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                    ),
-                    border: InputBorder.none),
-              ),
+            WidgetField(
+              textEditingController: newPasswordController,
+              titre: AppLocalizations.of(context)!.nouveauMotDePasseTitre,
             ),
             const SizedBox(
               height: 25,
             ),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: TextField(
-                controller: confirmNewPasswordController,
-                keyboardType: TextInputType.text,
-                obscureText: true,
-                decoration: InputDecoration(
-                    hintText:
-                        AppLocalizations.of(context)!.confirmerMotDePasseTitre,
-                    hintStyle: const TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w300,
-                        fontSize: 13),
-                    enabledBorder: const OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(12)),
-                    ),
-                    border: InputBorder.none),
-              ),
+            WidgetField(
+              textEditingController: confirmNewPasswordController,
+              titre: AppLocalizations.of(context)!.confirmerMotDePasseTitre,
             ),
             const SizedBox(
               height: 25,
             ),
-            ElevatedButton(
-                onPressed: () {
-                  final String newPassword = newPasswordController.value.text;
-                  final String confirmNewPassword =
-                      confirmNewPasswordController.value.text;
-                  if (newPassword != confirmNewPassword) {
-                    showDialog(
-                      context: context,
-                      builder: (context) => AlertDialog(
-                        title: Text(AppLocalizations.of(context)!.erreurTitre),
-                        content: Text(
-                            AppLocalizations.of(context)!.confirmPasswordTitre),
-                        actions: <Widget>[
-                          TextButton(
-                            child: Text(AppLocalizations.of(context)!.okTitre),
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                          )
-                        ],
-                      ),
-                    );
-                  }
-                },
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.white),
-                    shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25)))),
-                child: Text(
-                  AppLocalizations.of(context)!.changerTitre,
-                  style: const TextStyle(color: Colors.black),
-                )),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 15.0, left: 8.0),
+                child: TextButton(
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.green),
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                  ),
+                  onPressed: () {
+                    final String newPassword = newPasswordController.value.text;
+                    final String confirmNewPassword =
+                        confirmNewPasswordController.value.text;
+                    if (newPassword != confirmNewPassword) {
+                      showDialog(
+                        context: context,
+                        builder: (context) => AlertDialog(
+                          title:
+                              Text(AppLocalizations.of(context)!.erreurTitre),
+                          content: Text(AppLocalizations.of(context)!
+                              .confirmPasswordTitre),
+                          actions: <Widget>[
+                            TextButton(
+                              child:
+                                  Text(AppLocalizations.of(context)!.okTitre),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            )
+                          ],
+                        ),
+                      );
+                    }
+                  },
+                  child: Text(AppLocalizations.of(context)!.changerTitre),
+                ),
+              ),
+            ),
           ],
         ),
       ),
