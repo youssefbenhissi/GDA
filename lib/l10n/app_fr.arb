@@ -34,5 +34,6 @@
     "saisirDepenseTitre":"Saisir les dépenses -->",
     "envoyerTitre":"Envoyer",
     "totalTitre" : "Total",
-    "depensesRealiseesTitre" : "Dépenses Réalisées"
+    "depensesRealiseesTitre" : "Dépenses Réalisées",
+    "gouvernoratTitre" : "gouvernorat"
 }

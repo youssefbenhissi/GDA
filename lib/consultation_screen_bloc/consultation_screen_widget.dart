@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
+import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -16,6 +17,7 @@ class ConsultationPage extends StatefulWidget {
 class _ConsultationPageState extends State<ConsultationPage> {
   @override
   Widget build(BuildContext context) {
+    var state = context.currentLoginBloc.state;
     const List<String> months = [
       'janvier',
       'février',
@@ -104,6 +106,36 @@ class _ConsultationPageState extends State<ConsultationPage> {
                         },
                       ),
                     ),
+                    state is! DecideurCentralLoginState
+                        ? Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              AppLocalizations.of(context)!.gouvernoratTitre,
+                              style: const TextStyle(color: Colors.lightBlue),
+                            ),
+                          )
+                        : const SizedBox.shrink(),
+                    state is! DecideurCentralLoginState
+                        ? InkWell(
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) => Theme(
+                                    data: Theme.of(context).copyWith(
+                                      dialogBackgroundColor:
+                                          AppColors.primaryblue,
+                                    ),
+                                    child: _buildPopupDialog(context)),
+                              ).then((value) => gdaValue = value);
+                            },
+                            child: DropdownButton<String>(
+                              isExpanded: true,
+                              items: const [],
+                              iconDisabledColor: Colors.black,
+                              onChanged: (String? newValue) {},
+                            ),
+                          )
+                        : const SizedBox.shrink(),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(

@@ -34,5 +34,6 @@
     "saisirDepenseTitre":"أدخل المصاريف -->",
     "envoyerTitre":"يرسل",
     "totalTitre" : "مجموع",
-    "depensesRealiseesTitre" : "المصروفات الفعلية"
+    "depensesRealiseesTitre" : "المصروفات الفعلية",
+    "gouvernoratTitre" : "محافظة"
 }
