@@ -11,4 +11,5 @@ abstract class RoutesFactory {
   Route<dynamic> createFicheGDAScreenPageRoute();
   Route<dynamic> createDetailsScreenPageRoute();
   Route<dynamic> createDonneesTechniquesPageRoute();
+  Route<dynamic> createRecettesRealiseesPageRoute();
 }

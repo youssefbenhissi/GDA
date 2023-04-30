@@ -29,5 +29,7 @@
     "detailsTitre":"تفاصيل",
     "saisirLesDonneesTechniquesTitre" : "أدخل البيانات الفنية -->",
     "donneesTechniquesTitre":"البيانات التقنية",
-    "saisirLesRecettesTitre" : "أدخل الإيصالات -->"
+    "saisirLesRecettesTitre" : "أدخل الإيصالات -->",
+    "recettesRealiseesTitre":"وصفات مصنوعة",
+    "saisirDepenseTitre":"أدخل المصاريف -->"
 }

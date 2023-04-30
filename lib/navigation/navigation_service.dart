@@ -40,4 +40,7 @@ class NavigationService {
   Future<void> openDonneesTechniquesScreen(BuildContext context) {
     return Navigator.of(context).pushNamed(_saisirDonneesTechniquesRouteName);
   }
+  Future<void> openRecettesRealiseesScreen(BuildContext context) {
+    return Navigator.of(context).pushNamed(_saisirRecettesRealiseesRouteName);
+  }
 }

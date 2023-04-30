@@ -26,6 +26,8 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
         return routesFactory.createDetailsScreenPageRoute();
       case _saisirDonneesTechniquesRouteName:
         return routesFactory.createDonneesTechniquesPageRoute();
+      case _saisirRecettesRealiseesRouteName:
+        return routesFactory.createRecettesRealiseesPageRoute();
       default:
         return routesFactory.createLoginScreenPageRoute();
     }

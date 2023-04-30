@@ -29,5 +29,7 @@
     "detailsTitre":"Détails",
     "saisirLesDonneesTechniquesTitre" : "Saisir les données Techniques -->",
     "donneesTechniquesTitre":"Données Techniques",
-    "saisirLesRecettesTitre" : "saisir les recettes -->"
+    "saisirLesRecettesTitre" : "saisir les recettes -->",
+    "recettesRealiseesTitre":"Recettes Réalisées",
+    "saisirDepenseTitre":"Saisir les dépenses -->"
 }

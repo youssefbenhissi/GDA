@@ -7,6 +7,7 @@ import 'package:pfe_iheb/indicateur_bloc/indicateur_page_route_builder.dart';
 import 'package:pfe_iheb/login_bloc/login_page_route_builder.dart';
 import 'package:pfe_iheb/modify_password_bloc/modify_password_page_route_builder.dart';
 import 'package:pfe_iheb/navigation/navigation.dart';
+import 'package:pfe_iheb/recettes_realisees_screen/recettes_realisees_page_route_builder.dart';
 import 'package:pfe_iheb/specific_indicateur_bloc/specific_indicateur_page_route_builder.dart';
 import 'package:pfe_iheb/splash_screen_bloc/splash_screen_page_route_builder.dart';
 import 'package:pfe_iheb/statistics_bloc/statistics_page_route_builder.dart';
@@ -80,6 +81,13 @@ class AppRoutesFactory extends RoutesFactory {
   Route<dynamic> createDonneesTechniquesPageRoute() {
     return MaterialPageRoute<String?>(
       builder: SaisirDonneesTechniquesScreenRouteBuilder(),
+    );
+  }
+
+  @override
+  Route<dynamic> createRecettesRealiseesPageRoute() {
+    return MaterialPageRoute<String?>(
+      builder: RecettesRealiseesScreenRouteBuilder(),
     );
   }
 }

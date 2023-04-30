@@ -10,3 +10,4 @@ const _consultationRouteName = "/consultation";
 const _ficheGDARouteName = "/ficheGDA";
 const _detailsRouteName = "/details";
 const _saisirDonneesTechniquesRouteName = "/saisirDonneesTechniques";
+const _saisirRecettesRealiseesRouteName = "/saisirRecettesRealisees";
