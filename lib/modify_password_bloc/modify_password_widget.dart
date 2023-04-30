@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
-part 'field_widget.dart';
+import 'package:pfe_iheb/utils/field_widget.dart';
 
 class ModifyPasswordScreen extends StatelessWidget {
   const ModifyPasswordScreen({super.key});
@@ -21,10 +21,11 @@ class ModifyPasswordScreen extends StatelessWidget {
       )),
       drawer: const ApplicationDrawer(),
       body: Padding(
-        padding: const EdgeInsets.only(top: 15.0),
+        padding: const EdgeInsets.only(top: 15.0,left: 10),
         child: Column(
           children: [
             WidgetField(
+              enabled: true,
               textEditingController: passwordController,
               titre: AppLocalizations.of(context)!.motDePasseTitre,
             ),
@@ -32,6 +33,7 @@ class ModifyPasswordScreen extends StatelessWidget {
               height: 25,
             ),
             WidgetField(
+              enabled: true,
               textEditingController: newPasswordController,
               titre: AppLocalizations.of(context)!.nouveauMotDePasseTitre,
             ),
@@ -39,6 +41,7 @@ class ModifyPasswordScreen extends StatelessWidget {
               height: 25,
             ),
             WidgetField(
+              enabled: true,
               textEditingController: confirmNewPasswordController,
               titre: AppLocalizations.of(context)!.confirmerMotDePasseTitre,
             ),

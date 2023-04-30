@@ -4,7 +4,7 @@ import 'package:pfe_iheb/app_page_injectable.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-part 'field_widget.dart';
+import 'package:pfe_iheb/utils/field_widget.dart';
 
 class RecettesRealiseePage extends StatelessWidget {
   const RecettesRealiseePage({super.key});
@@ -68,28 +68,34 @@ class RecettesRealiseePage extends StatelessWidget {
               child: Column(
                 children: [
                   WidgetField(
+                    enabled: true,
                     titre: "Recettes Vente Eau (DT)",
                     textEditingController: recetteVenteTextEditingController,
                   ),
                   WidgetField(
+                    enabled: true,
                     titre: "Recettes Adhésion (DT)",
                     textEditingController: recetteAdhesionTextEditingController,
                   ),
                   WidgetField(
+                    enabled: true,
                     titre: "Recettes Abonnement (DT)",
                     textEditingController:
                         recetteAbonnementTextEditingController,
                   ),
                   WidgetField(
+                    enabled: true,
                     titre: "Recettes Cotisations (DT)",
                     textEditingController:
                         recetteCotisationTextEditingController,
                   ),
                   WidgetField(
+                    enabled: true,
                     titre: "Autres Recettes (DT)",
                     textEditingController: autresRecettesTextEditingController,
                   ),
                   WidgetField(
+                    enabled: true,
                     titre: AppLocalizations.of(context)!.totalTitre,
                     textEditingController: recetteAdhesionTextEditingController,
                   ),

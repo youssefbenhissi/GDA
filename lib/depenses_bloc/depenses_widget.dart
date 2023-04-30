@@ -4,7 +4,7 @@ import 'package:pfe_iheb/app_page_injectable.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-part 'field_widget.dart';
+import 'package:pfe_iheb/utils/field_widget.dart';
 
 class DepensesPage extends StatelessWidget {
   const DepensesPage({super.key});
