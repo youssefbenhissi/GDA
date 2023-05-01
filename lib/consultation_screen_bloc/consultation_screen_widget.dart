@@ -34,8 +34,12 @@ class _ConsultationPageState extends State<ConsultationPage> {
     ];
     const List<String> years = ['2019', '2020', '2021', '2022', '2023', '2024'];
     String gdaValue = "";
+    String gouvernoratValue = "";
+    ValueNotifier<String> _selectedItem = ValueNotifier<String>('janvier');
     String month = "janvier";
     String year = "2019";
+    String _selectedOption = "Option 1";
+    List<String> _options = ['Option 1', 'Option 2', 'Option 3'];
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.primaryblue,
@@ -120,13 +124,39 @@ class _ConsultationPageState extends State<ConsultationPage> {
                             onTap: () {
                               showDialog(
                                 context: context,
-                                builder: (BuildContext context) => Theme(
-                                    data: Theme.of(context).copyWith(
-                                      dialogBackgroundColor:
-                                          AppColors.primaryblue,
-                                    ),
-                                    child: _buildPopupDialog(context)),
-                              ).then((value) => gdaValue = value);
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: const Text('Select an option'),
+                                    content: StatefulBuilder(
+                                        builder: (context, _setState) {
+                                      return Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        children: _options
+                                            .map((option) => RadioListTile(
+                                                title: Text(option),
+                                                value: option,
+                                                groupValue: _selectedOption,
+                                                onChanged: (value) =>
+                                                    _setState(() {
+                                                      _selectedOption = value!;
+                                                    })))
+                                            .toList(),
+                                      );
+                                    }),
+                                    actions: [
+                                      FloatingActionButton(
+                                        onPressed: () => Navigator.pop(context),
+                                        child: Text('Cancel'),
+                                      ),
+                                      FloatingActionButton(
+                                        onPressed: () => Navigator.pop(
+                                            context, _selectedOption),
+                                        child: Text('OK'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
                             },
                             child: DropdownButton<String>(
                               isExpanded: true,
@@ -173,17 +203,19 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                 MaterialStateProperty.all<Color>(Colors.white),
                           ),
                           onPressed: () {
-                            if (gdaValue.isEmpty) {
-                              context.currentConsultationBloc
-                                  .choseMonthAndYear(month, year);
-                              context.gNavigationService
-                                  .openIndicateursSpecifiqueScreen(context);
-                            } else {
-                              context.currentConsultationBloc
-                                  .choseAllfields(month, year, year);
-                              context.gNavigationService
-                                  .openFicheGDAScreen(context);
-                            }
+                            if (state is DecideurGouvernoratLoginState) {
+                              if (gdaValue.isEmpty) {
+                                context.currentConsultationBloc
+                                    .choseMonthAndYear(month, year);
+                                context.gNavigationService
+                                    .openIndicateursSpecifiqueScreen(context);
+                              } else {
+                                context.currentConsultationBloc
+                                    .choseAllfields(month, year, year);
+                                context.gNavigationService
+                                    .openFicheGDAScreen(context);
+                              }
+                            } else {}
                           },
                           child: Text(
                               AppLocalizations.of(context)!.consulterTitre),
