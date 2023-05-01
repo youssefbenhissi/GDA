@@ -21,7 +21,7 @@ class ModifyPasswordScreen extends StatelessWidget {
       )),
       drawer: const ApplicationDrawer(),
       body: Padding(
-        padding: const EdgeInsets.only(top: 15.0,left: 10),
+        padding: const EdgeInsets.only(top: 15.0, left: 10),
         child: Column(
           children: [
             WidgetField(
@@ -73,8 +73,8 @@ class ModifyPasswordScreen extends StatelessWidget {
                               .confirmPasswordTitre),
                           actions: <Widget>[
                             TextButton(
-                              child:
-                                  Text(AppLocalizations.of(context)!.okTitre),
+                              child: Text(
+                                  AppLocalizations.of(context)!.daccordTitre),
                               onPressed: () {
                                 Navigator.of(context).pop();
                               },

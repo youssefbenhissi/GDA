@@ -39,7 +39,32 @@ class _ConsultationPageState extends State<ConsultationPage> {
     String month = "janvier";
     String year = "2019";
     String _selectedOption = "Option 1";
-    List<String> _options = ['Option 1', 'Option 2', 'Option 3'];
+    List<String> _gouvernorats = [
+      'TUNIS',
+      'ARIANA',
+      'BEN AROUS',
+      'MANOUBA',
+      'NABEUL',
+      'ZAGHOUANE',
+      'BIZERTE',
+      'BEJA',
+      'JENDOUBA',
+      'KEF',
+      'SILIANA',
+      'SOUSSE',
+      'MONASTIR',
+      'MEHDIA',
+      'SFAX',
+      'KAIROUAN',
+      'KASSERINE',
+      'SIDI BOUZID',
+      'GABES',
+      'MEDENINE',
+      'TATAOUINE',
+      'GAFSA',
+      'TOZEUR',
+      'KEBELI',
+    ];
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.primaryblue,
@@ -126,37 +151,53 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                 context: context,
                                 builder: (BuildContext context) {
                                   return AlertDialog(
-                                    title: const Text('Select an option'),
-                                    content: StatefulBuilder(
-                                        builder: (context, _setState) {
-                                      return Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: _options
-                                            .map((option) => RadioListTile(
-                                                title: Text(option),
-                                                value: option,
+                                    title: Column(
+                                      children: [
+                                        Text(AppLocalizations.of(context)!
+                                            .gouvernoratTitre),
+                                        const Divider(
+                                          color: Colors.black,
+                                        )
+                                      ],
+                                    ),
+                                    content: SizedBox(
+                                      height: 200,
+                                      child: StatefulBuilder(
+                                          builder: (context, setState) {
+                                        return ListView.builder(
+                                          itemCount: _gouvernorats.length,
+                                          itemBuilder: (context, index) {
+                                            return RadioListTile(
+                                                title:
+                                                    Text(_gouvernorats[index]),
+                                                value: _gouvernorats[index],
                                                 groupValue: _selectedOption,
                                                 onChanged: (value) =>
-                                                    _setState(() {
+                                                    setState(() {
                                                       _selectedOption = value!;
-                                                    })))
-                                            .toList(),
-                                      );
-                                    }),
+                                                    }));
+                                          },
+                                        );
+                                      }),
+                                    ),
                                     actions: [
-                                      FloatingActionButton(
+                                      TextButton(
                                         onPressed: () => Navigator.pop(context),
-                                        child: Text('Cancel'),
+                                        child: Text(
+                                            AppLocalizations.of(context)!
+                                                .annulerTitre),
                                       ),
-                                      FloatingActionButton(
+                                      TextButton(
                                         onPressed: () => Navigator.pop(
                                             context, _selectedOption),
-                                        child: Text('OK'),
+                                        child: Text(
+                                            AppLocalizations.of(context)!
+                                                .okTitre),
                                       ),
                                     ],
                                   );
                                 },
-                              );
+                              ).then((value) => gouvernoratValue = value);
                             },
                             child: DropdownButton<String>(
                               isExpanded: true,
@@ -203,19 +244,17 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                 MaterialStateProperty.all<Color>(Colors.white),
                           ),
                           onPressed: () {
-                            if (state is DecideurGouvernoratLoginState) {
-                              if (gdaValue.isEmpty) {
-                                context.currentConsultationBloc
-                                    .choseMonthAndYear(month, year);
-                                context.gNavigationService
-                                    .openIndicateursSpecifiqueScreen(context);
-                              } else {
-                                context.currentConsultationBloc
-                                    .choseAllfields(month, year, year);
-                                context.gNavigationService
-                                    .openFicheGDAScreen(context);
-                              }
-                            } else {}
+                            if (gdaValue.isEmpty) {
+                              context.currentConsultationBloc
+                                  .choseMonthAndYear(month, year);
+                              context.gNavigationService
+                                  .openIndicateursSpecifiqueScreen(context);
+                            } else {
+                              context.currentConsultationBloc
+                                  .choseAllfields(month, year, year);
+                              context.gNavigationService
+                                  .openFicheGDAScreen(context);
+                            }
                           },
                           child: Text(
                               AppLocalizations.of(context)!.consulterTitre),

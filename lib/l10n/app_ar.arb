@@ -12,7 +12,7 @@
     "modifierMotdePasseTitre":"تغيير كلمة المرور",
     "deconnexionTitre":"تسجيل خروج",
     "confirmPasswordTitre": "كلمة المرور الجديدة المؤكدة لا تتطابق مع كلمة المرور الجديدة",
-    "okTitre" :"نعم",
+    "daccordTitre" :"نعم",
     "erreurTitre" : "خطأ",
     "veuillezRemplirTousLesChampsTitre":"رجاءا اكمل جميع الحقول.",
     "changerTitre" : "تغيير",
@@ -35,5 +35,7 @@
     "envoyerTitre":"يرسل",
     "totalTitre" : "مجموع",
     "depensesRealiseesTitre" : "المصروفات الفعلية",
-    "gouvernoratTitre" : "محافظة"
+    "gouvernoratTitre" : "محافظة",
+    "annulerTitre": "يلغي",
+    "okTitre" : "نعم"
 }

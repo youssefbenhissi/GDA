@@ -12,7 +12,7 @@
     "modifierMotdePasseTitre":"Modifier Mot de passe",
     "deconnexionTitre":"Déconnexion",
     "confirmPasswordTitre": "nouveaue mot de passe confimé ne correspond pas au nouveau mot de passe",
-    "okTitre" :"d'accord",
+    "daccordTitre" :"d'accord",
     "erreurTitre" : "erreur",
     "veuillezRemplirTousLesChampsTitre":"Veuillez remplir tous les champs.",
     "changerTitre" : "changer",
@@ -35,5 +35,7 @@
     "envoyerTitre":"Envoyer",
     "totalTitre" : "Total",
     "depensesRealiseesTitre" : "Dépenses Réalisées",
-    "gouvernoratTitre" : "gouvernorat"
+    "gouvernoratTitre" : "Gouvernorat",
+    "annulerTitre": "ANNULER",
+    "okTitre" : "OK"
 }

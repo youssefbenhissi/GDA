@@ -98,7 +98,7 @@ class LoginScreen extends StatelessWidget {
                             actions: <Widget>[
                               TextButton(
                                 child:
-                                    Text(AppLocalizations.of(context)!.okTitre),
+                                    Text(AppLocalizations.of(context)!.daccordTitre),
                                 onPressed: () {
                                   Navigator.of(context).pop();
                                 },
