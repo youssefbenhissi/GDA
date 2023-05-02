@@ -35,6 +35,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
     const List<String> years = ['2019', '2020', '2021', '2022', '2023', '2024'];
     String gdaValue = "";
     String gouvernoratValue = "";
+    TextEditingController gdaController = TextEditingController();
     ValueNotifier<String> _selectedItem = ValueNotifier<String>('janvier');
     String month = "janvier";
     String year = "2019";
@@ -207,6 +208,9 @@ class _ConsultationPageState extends State<ConsultationPage> {
                             ),
                           )
                         : const SizedBox.shrink(),
+                    const SizedBox(
+                      height: 10,
+                    ),
                     Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
@@ -223,13 +227,17 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                 dialogBackgroundColor: AppColors.primaryblue,
                               ),
                               child: _buildPopupDialog(context)),
-                        ).then((value) => gdaValue = value);
+                        ).then((value) {
+                          gdaValue = value;
+                          gdaController.text = value;
+                        });
                       },
-                      child: DropdownButton<String>(
-                        isExpanded: true,
-                        items: const [],
-                        iconDisabledColor: Colors.black,
-                        onChanged: (String? newValue) {},
+                      child: TextField(
+                        decoration: const InputDecoration(
+                          suffixIcon: Icon(Icons.arrow_drop_down),
+                        ),
+                        controller: gdaController,
+                        enabled: false,
                       ),
                     ),
                     Align(
