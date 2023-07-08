@@ -1,14 +1,62 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
 import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/provider/locale_provider.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'square_tile.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
+import 'package:local_auth/local_auth.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class LoginScreen extends StatefulWidget {
+  LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final LocalAuthentication auth = LocalAuthentication();
+
+  Future<void> _fingerPrintAuthenticate() async {
+    bool authenticated = false;
+    try {
+      print("11111");
+      authenticated = await auth.authenticate(
+        localizedReason: AppLocalizations.of(context)!
+            .letOSetermineAuthenticationMethodTitre,
+        options: const AuthenticationOptions(
+          stickyAuth: true,
+        ),
+      );
+      if (authenticated) {
+        context.currentLoginBloc.login("email", "password");
+        await Future.delayed(const Duration(milliseconds: 20)).then((value) {
+          var loginState = context.currentLoginBloc.state;
+          if (loginState is! FailedLoginState &&
+              loginState is! InitialLoginState) {
+            if (loginState is GDALoginState) {
+              context.gNavigationService.openFicheGDAScreen(context);
+            } else {
+              context.gNavigationService.openIndicateursScreen(context);
+            }
+          }
+        });
+      }
+    } on PlatformException {
+      print("22222");
+
+      return;
+    }
+
+    if (!mounted) {
+      print("3333");
+
+      return;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -83,56 +131,68 @@ class LoginScreen extends StatelessWidget {
                 const SizedBox(
                   height: 25,
                 ),
-                ElevatedButton(
-                    onPressed: () async {
-                      final String email = emailController.value.text;
-                      final String password = passwordController.value.text;
-                      if (email.isEmpty || password.isEmpty) {
-                        showDialog(
-                          context: context,
-                          builder: (context) => AlertDialog(
-                            title:
-                                Text(AppLocalizations.of(context)!.erreurTitre),
-                            content: Text(AppLocalizations.of(context)!
-                                .veuillezRemplirTousLesChampsTitre),
-                            actions: <Widget>[
-                              TextButton(
-                                child:
-                                    Text(AppLocalizations.of(context)!.daccordTitre),
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                              )
-                            ],
-                          ),
-                        );
-                      } else {
-                        context.currentLoginBloc.login(email, password);
-                        await Future.delayed(const Duration(milliseconds: 20))
-                            .then((value) {
-                          var loginState = context.currentLoginBloc.state;
-                          if (loginState is! FailedLoginState &&
-                              loginState is! InitialLoginState) {
-                            if (loginState is GDALoginState) {
-                              context.gNavigationService
-                                  .openFicheGDAScreen(context);
-                            } else {
-                              context.gNavigationService
-                                  .openIndicateursScreen(context);
-                            }
+                Row(
+                  children: [
+                    ElevatedButton(
+                        onPressed: () async {
+                          final String email = emailController.value.text;
+                          final String password = passwordController.value.text;
+                          if (email.isEmpty || password.isEmpty) {
+                            showDialog(
+                              context: context,
+                              builder: (context) => AlertDialog(
+                                title: Text(
+                                    AppLocalizations.of(context)!.erreurTitre),
+                                content: Text(AppLocalizations.of(context)!
+                                    .veuillezRemplirTousLesChampsTitre),
+                                actions: <Widget>[
+                                  TextButton(
+                                    child: Text(AppLocalizations.of(context)!
+                                        .daccordTitre),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                  )
+                                ],
+                              ),
+                            );
+                          } else {
+                            context.currentLoginBloc.login(email, password);
+                            await Future.delayed(
+                                    const Duration(milliseconds: 20))
+                                .then((value) {
+                              var loginState = context.currentLoginBloc.state;
+                              if (loginState is! FailedLoginState &&
+                                  loginState is! InitialLoginState) {
+                                if (loginState is GDALoginState) {
+                                  context.gNavigationService
+                                      .openFicheGDAScreen(context);
+                                } else {
+                                  context.gNavigationService
+                                      .openIndicateursScreen(context);
+                                }
+                              }
+                            });
                           }
-                        });
-                      }
-                    },
-                    style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.white),
-                        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(25)))),
-                    child: Text(
-                      AppLocalizations.of(context)!.connexionTitre,
-                      style: const TextStyle(color: Colors.black),
-                    )),
+                        },
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                            shape: MaterialStateProperty.all(
+                                RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25)))),
+                        child: Text(
+                          AppLocalizations.of(context)!.connexionTitre,
+                          style: const TextStyle(color: Colors.black),
+                        )),
+                    SquareTile(
+                      onTap: () async {
+                        await _fingerPrintAuthenticate();
+                      },
+                      icon: FontAwesomeIcons.fingerprint,
+                    ),
+                  ],
+                ),
                 const SizedBox(
                   height: 25,
                 ),

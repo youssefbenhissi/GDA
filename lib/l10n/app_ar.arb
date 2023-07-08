@@ -37,5 +37,6 @@
     "depensesRealiseesTitre" : "المصروفات الفعلية",
     "gouvernoratTitre" : "محافظة",
     "annulerTitre": "يلغي",
-    "okTitre" : "نعم"
+    "okTitre" : "نعم",
+    "letOSetermineAuthenticationMethodTitre":"دع نظام التشغيل يحدد طريقة المصادقة"
 }

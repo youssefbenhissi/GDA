@@ -37,5 +37,6 @@
     "depensesRealiseesTitre" : "Dépenses Réalisées",
     "gouvernoratTitre" : "Gouvernorat",
     "annulerTitre": "ANNULER",
-    "okTitre" : "OK"
+    "okTitre" : "OK",
+    "letOSetermineAuthenticationMethodTitre":"Laisser le système d'exploitation déterminer la méthode d'authentification"
 }
