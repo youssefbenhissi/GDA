@@ -23,7 +23,6 @@ class _LoginScreenState extends State<LoginScreen> {
   Future<void> _fingerPrintAuthenticate() async {
     bool authenticated = false;
     try {
-      print("11111");
       authenticated = await auth.authenticate(
         localizedReason: AppLocalizations.of(context)!
             .letOSetermineAuthenticationMethodTitre,
@@ -46,14 +45,10 @@ class _LoginScreenState extends State<LoginScreen> {
         });
       }
     } on PlatformException {
-      print("22222");
-
       return;
     }
 
     if (!mounted) {
-      print("3333");
-
       return;
     }
   }
@@ -132,6 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 25,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     ElevatedButton(
                         onPressed: () async {
