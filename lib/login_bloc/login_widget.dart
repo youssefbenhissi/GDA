@@ -5,6 +5,7 @@ import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/provider/locale_provider.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:pfe_iheb/utils/popup_notification.dart';
 import 'square_tile.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -155,7 +156,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           } else {
                             context.currentLoginBloc.login(email, password);
                             await Future.delayed(
-                                    const Duration(milliseconds: 20))
+                                    const Duration(milliseconds: 200))
                                 .then((value) {
                               var loginState = context.currentLoginBloc.state;
                               if (loginState is! FailedLoginState &&
@@ -166,6 +167,16 @@ class _LoginScreenState extends State<LoginScreen> {
                                 } else {
                                   context.gNavigationService
                                       .openIndicateursScreen(context);
+                                }
+                              } else {
+                                if (loginState is FailedLoginState) {
+                                  ErrorPopUpNotification.create(
+                                    context: context,
+                                    title: AppLocalizations.of(context)!
+                                        .wrongCredentialsTitre,
+                                    message: AppLocalizations.of(context)!
+                                        .wrongCredentialsTitre,
+                                  );
                                 }
                               }
                             });

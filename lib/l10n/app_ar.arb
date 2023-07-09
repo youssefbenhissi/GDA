@@ -44,5 +44,6 @@
     "ventsTites" : "الرياح",
     "humiditeTitre":"رطوبة",
     "pressionTitre":"ضغط",
-    "descriptionTitre":"وصف"
+    "descriptionTitre":"وصف",
+    "wrongCredentialsTitre" : "أوراق الإعتماد باطلة"
 }

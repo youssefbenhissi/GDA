@@ -44,5 +44,6 @@
     "ventsTites" : "les vents",
     "humiditeTitre":"humidité",
     "pressionTitre":"pression",
-    "descriptionTitre":"description"
+    "descriptionTitre":"description",
+    "wrongCredentialsTitre" : "Informations d'identification erronées"
 }
