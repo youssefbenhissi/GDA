@@ -13,4 +13,5 @@ abstract class RoutesFactory {
   Route<dynamic> createDonneesTechniquesPageRoute();
   Route<dynamic> createRecettesRealiseesPageRoute();
   Route<dynamic> createDepensesRealiseesPageRoute();
+  Route<dynamic> createWeatherPageRoute();
 }

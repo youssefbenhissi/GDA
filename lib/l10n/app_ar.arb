@@ -38,5 +38,11 @@
     "gouvernoratTitre" : "محافظة",
     "annulerTitre": "يلغي",
     "okTitre" : "نعم",
-    "letOSetermineAuthenticationMethodTitre":"دع نظام التشغيل يحدد طريقة المصادقة"
+    "letOSetermineAuthenticationMethodTitre":"دع نظام التشغيل يحدد طريقة المصادقة",
+    "meteoTitre":"تقرير حالة ألطقس",
+    "informationsSupplementairesTitre":"معلومات إضافية",
+    "ventsTites" : "الرياح",
+    "humiditeTitre":"رطوبة",
+    "pressionTitre":"ضغط",
+    "descriptionTitre":"وصف"
 }

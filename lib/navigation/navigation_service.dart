@@ -48,4 +48,8 @@ class NavigationService {
   Future<void> openDepensesRealiseesScreen(BuildContext context) {
     return Navigator.of(context).pushNamed(_saisirDepensesRealiseesRouteName);
   }
+
+  Future<void> openWeatherScreen(BuildContext context) {
+    return Navigator.of(context).pushNamed(_weatherRouteName);
+  }
 }

@@ -30,6 +30,8 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
         return routesFactory.createRecettesRealiseesPageRoute();
       case _saisirDepensesRealiseesRouteName:
         return routesFactory.createDepensesRealiseesPageRoute();
+      case _weatherRouteName:
+        return routesFactory.createWeatherPageRoute();
       default:
         return routesFactory.createLoginScreenPageRoute();
     }

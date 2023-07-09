@@ -38,5 +38,11 @@
     "gouvernoratTitre" : "Gouvernorat",
     "annulerTitre": "ANNULER",
     "okTitre" : "OK",
-    "letOSetermineAuthenticationMethodTitre":"Laisser le système d'exploitation déterminer la méthode d'authentification"
+    "letOSetermineAuthenticationMethodTitre":"Laisser le système d'exploitation déterminer la méthode d'authentification",
+    "meteoTitre":"Météo",
+    "informationsSupplementairesTitre":"Informations supplémentaires",
+    "ventsTites" : "les vents",
+    "humiditeTitre":"humidité",
+    "pressionTitre":"pression",
+    "descriptionTitre":"description"
 }

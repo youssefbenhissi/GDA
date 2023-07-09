@@ -12,6 +12,7 @@ import 'package:pfe_iheb/recettes_realisees_screen/recettes_realisees_page_route
 import 'package:pfe_iheb/specific_indicateur_bloc/specific_indicateur_page_route_builder.dart';
 import 'package:pfe_iheb/splash_screen_bloc/splash_screen_page_route_builder.dart';
 import 'package:pfe_iheb/statistics_bloc/statistics_page_route_builder.dart';
+import 'package:pfe_iheb/weather_bloc/weather_page_route_builder.dart';
 
 class AppRoutesFactory extends RoutesFactory {
   AppRoutesFactory();
@@ -96,6 +97,13 @@ class AppRoutesFactory extends RoutesFactory {
   Route<dynamic> createDepensesRealiseesPageRoute() {
     return MaterialPageRoute<String?>(
       builder: DepensesRealiseesScreenRouteBuilder(),
+    );
+  }
+
+  @override
+  Route<dynamic> createWeatherPageRoute() {
+    return MaterialPageRoute<String?>(
+      builder: WeatherScreenRouteBuilder(),
     );
   }
 }
