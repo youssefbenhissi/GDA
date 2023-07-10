@@ -125,7 +125,14 @@ app.post('/register',(req,res,next)=>{
       'VALUES ("youssef",157,?,"youssef","benhissi",1,"system",NOW(),?)',[password,salt],function (err,result,fields) {
       if (err) throw err;
       let resultId = result.insertId;
-//	sendVerificationEmail(email,randomCode);
-res.status(200).send(555)
+  res.status(200).send();
 
 })});
+
+app.post('/getdonneesidentification', function (req, res) {
+  let login = req.body.login;
+  con.query('SELECT * FROM jhi_user u , ref_gouvernorat rgo , ref_gda rgd  WHERE u.id_gouv = rgo.id AND u.id_gda = rgd.id AND u.login=? ',[login], function (error, results, fields) {
+      if (error) throw error;
+      return res.send(results);
+  });
+});
