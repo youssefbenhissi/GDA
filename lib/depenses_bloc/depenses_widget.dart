@@ -69,57 +69,67 @@ class DepensesPage extends StatelessWidget {
             child: Column(
               children: [
                 WidgetField(
+                  obscure: false,
                   enabled: true,
                   titre: "Dépenses Achat Eau (DT)",
                   textEditingController: depensesAchatEauTextEditingController,
                 ),
                 WidgetField(
+                  obscure: false,
                   enabled: true,
                   titre: "Dépenses Energie (DT)",
                   textEditingController: depensesEnergieTextEditingController,
                 ),
                 WidgetField(
+                  obscure: false,
                   enabled: true,
                   titre: "Dépenses Salaires et Primes (DT)",
                   textEditingController:
                       depensesSalairesEtPrimesTextEditingController,
                 ),
                 WidgetField(
+                  obscure: false,
                   enabled: true,
                   titre: "Dépenses Maintenance et Entretien (DT)",
                   textEditingController:
                       depensesMaintenaceEtEntretienTextEditingController,
                 ),
                 WidgetField(
+                  obscure: false,
                   enabled: true,
                   titre: "Dépenses Location et Autres Charges d'Exploitation",
                   textEditingController: depensesLocationTextEditingController,
                 ),
                 WidgetField(
+                  obscure: false,
                   enabled: true,
                   titre: "Dépenses Renouvellement des Equipements (DT)",
                   textEditingController:
                       depensesRenouvellementDesEquipementTextEditingController,
                 ),
                 WidgetField(
+                  obscure: false,
                   enabled: true,
                   titre: "Dépenses Gestion GDA (DT)",
                   textEditingController:
                       depensesGestionDGATextEditingController,
                 ),
                 WidgetField(
+                  obscure: false,
                   enabled: true,
                   titre: "Dépenses d'Investissement (DT)",
                   textEditingController:
                       depensesDInvestissementTextEditingController,
                 ),
                 WidgetField(
+                  obscure: false,
                   enabled: true,
                   titre: "Autres Dépenses (DT)",
                   textEditingController:
                       depensesAutresDepensesTextEditingController,
                 ),
                 WidgetField(
+                  obscure: false,
                   enabled: false,
                   titre: AppLocalizations.of(context)!.totalTitre,
                   textEditingController: depensesTotalTextEditingController,

@@ -56,7 +56,7 @@ app.post('/updateuser',(req,res,next)=>{
   var hash_data = saltHashPassword(plaint_password);
   var password = hash_data.passwordHash;  //Get Hash value
   var salt = hash_data.salt; 
-  con.query('SELECT * FROM jhi_user u where u.login=? ',[email],function (err,result,fields) {
+  con.query('SELECT * FROM jhi_user u where u.login=? ',[login],function (err,result,fields) {
     con.on('error', function (err) {
       console.log('[MYSQL ERROR]', err);
     });
@@ -131,8 +131,8 @@ app.post('/register',(req,res,next)=>{
 
 app.post('/getdonneesidentification', function (req, res) {
   let login = req.body.login;
-  con.query('SELECT * FROM jhi_user u , ref_gouvernorat rgo , ref_gda rgd  WHERE u.id_gouv = rgo.id AND u.id_gda = rgd.id AND u.login=? ',[login], function (error, results, fields) {
-      if (error) throw error;
-      return res.send(results);
+  con.query('SELECT * FROM jhi_user u , ref_gda rgd  where  u.login=? AND u.id_gda = rgd.id',[login], function (error, results, fields) {
+      // if (error) throw error;
+      return res.status(200).send(results);
   });
 });

@@ -151,33 +151,39 @@ class _SaisirDonneesTechniquesPageState
                       ),
                     ),
                     WidgetField(
+                      obscure: false,
                       enabled: true,
                       titre: "Volume pompé/acheté (m3)",
                       textEditingController: volumePompeTextEditingController,
                     ),
                     WidgetField(
+                      obscure: false,
                       enabled: true,
                       titre: "Volume distribué/facturé (m3)",
                       textEditingController:
                           volumeDistribueTextEditingController,
                     ),
                     WidgetField(
+                      obscure: false,
                       enabled: true,
                       titre: "Volume Eau de Javal utilisé (l)",
                       textEditingController:
                           volumeEauJavelTextEditingController,
                     ),
                     WidgetField(
+                      obscure: false,
                       enabled: true,
                       textEditingController: tarifAdapteTextEditingController,
                       titre: "Tarif adopté (m3 eau)",
                     ),
                     WidgetField(
+                      obscure: false,
                       enabled: true,
                       textEditingController: coutEauTextEditingController,
                       titre: "Coût m3 Eau",
                     ),
                     WidgetField(
+                      obscure: false,
                       enabled: true,
                       textEditingController: nombreJourTextEditingController,
                       titre: "Nombre de jours d’arrêt",

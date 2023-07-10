@@ -6,6 +6,7 @@ import 'package:pfe_iheb/modify_password_bloc/modify_password_bloc.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
 import 'package:pfe_iheb/utils/field_widget.dart';
 import 'package:pfe_iheb/utils/popup_notification.dart';
+import 'package:pfe_iheb/utils/shared_preferences_helper.dart';
 
 class ModifyPasswordScreen extends StatelessWidget {
   const ModifyPasswordScreen({super.key});
@@ -29,6 +30,7 @@ class ModifyPasswordScreen extends StatelessWidget {
         child: Column(
           children: [
             WidgetField(
+              obscure: true,
               enabled: true,
               textEditingController: passwordController,
               titre: AppLocalizations.of(context)!.motDePasseTitre,
@@ -37,6 +39,7 @@ class ModifyPasswordScreen extends StatelessWidget {
               height: 25,
             ),
             WidgetField(
+              obscure: true,
               enabled: true,
               textEditingController: newPasswordController,
               titre: AppLocalizations.of(context)!.nouveauMotDePasseTitre,
@@ -45,6 +48,7 @@ class ModifyPasswordScreen extends StatelessWidget {
               height: 25,
             ),
             WidgetField(
+              obscure: true,
               enabled: true,
               textEditingController: confirmNewPasswordController,
               titre: AppLocalizations.of(context)!.confirmerMotDePasseTitre,
@@ -76,36 +80,50 @@ class ModifyPasswordScreen extends StatelessWidget {
                             AppLocalizations.of(context)!.wrongCredentialsTitre,
                       );
                     } else {
-                      context.currentModifyPasswordBloc.modifyPassword(
-                          username: "youssef", password: confirmNewPassword);
-                      await Future.delayed(const Duration(milliseconds: 200))
-                          .then((value) {
-                        var modifyPasswordState =
-                            context.currentModifyPasswordBloc.state;
-                        if (modifyPasswordState
-                            is SuccededModifyPasswordState) {
-                          SuccessPopUpNotification.create(
-                            context: context,
-                            title: AppLocalizations.of(context)!
-                                .miseajourMotDePasseTitre,
-                            message: AppLocalizations.of(context)!
-                                .votreMotDePasseEstMisaJourAvecSuccesTitre,
-                          );
-                        } else {
+                      String? email = await SharedPreferencesHelper.getValue(
+                          SharedPreferencesHelper.LOGIN_STRING);
+                      String? oldPassword =
+                          await SharedPreferencesHelper.getValue(
+                              SharedPreferencesHelper.PASSWORD_STRING);
+                      if (oldPassword != newPassword) {
+                        ErrorPopUpNotification.create(
+                          context: context,
+                          title: AppLocalizations.of(context)!
+                              .wrongCredentialsTitre,
+                          message: "l'ancien mot de passe est erroné",
+                        );
+                      } else {
+                        context.currentModifyPasswordBloc.modifyPassword(
+                            username: email!, password: confirmNewPassword);
+                        await Future.delayed(const Duration(milliseconds: 200))
+                            .then((value) {
+                          var modifyPasswordState =
+                              context.currentModifyPasswordBloc.state;
                           if (modifyPasswordState
-                                  is FailedModifyPasswordState ||
-                              modifyPasswordState
-                                  is InitialModifyPasswordState) {
-                            ErrorPopUpNotification.create(
+                              is SuccededModifyPasswordState) {
+                            SuccessPopUpNotification.create(
                               context: context,
                               title: AppLocalizations.of(context)!
-                                  .wrongCredentialsTitre,
+                                  .miseajourMotDePasseTitre,
                               message: AppLocalizations.of(context)!
-                                  .wrongCredentialsTitre,
+                                  .votreMotDePasseEstMisaJourAvecSuccesTitre,
                             );
+                          } else {
+                            if (modifyPasswordState
+                                    is FailedModifyPasswordState ||
+                                modifyPasswordState
+                                    is InitialModifyPasswordState) {
+                              ErrorPopUpNotification.create(
+                                context: context,
+                                title: AppLocalizations.of(context)!
+                                    .wrongCredentialsTitre,
+                                message: AppLocalizations.of(context)!
+                                    .wrongCredentialsTitre,
+                              );
+                            }
                           }
-                        }
-                      });
+                        });
+                      }
                     }
                   },
                   child: Text(AppLocalizations.of(context)!.changerTitre),

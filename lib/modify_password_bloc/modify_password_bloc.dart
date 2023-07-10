@@ -17,7 +17,7 @@ class ModifyPasswordBloc
     ModifyPasswordFuncEvent event,
     Emitter<ModifyPasswordState> emitter,
   ) async {
-    String url = '$link/login';
+    String url = '$link/updateuser';
     Map<String, String> headers = {"Content-type": "application/json"};
     String json =
         '{"login": "${event.username}","password": "${event.password}"}';

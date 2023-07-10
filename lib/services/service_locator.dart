@@ -23,5 +23,8 @@ class ServiceLocator {
     _registry.registerLazySingleton(
       () => ConsultationScreenBloc(),
     );
+    _registry.registerLazySingleton(
+      () => ModifyPasswordBloc(),
+    );
   }
 }

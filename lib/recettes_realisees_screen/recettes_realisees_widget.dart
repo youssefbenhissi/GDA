@@ -68,33 +68,39 @@ class RecettesRealiseePage extends StatelessWidget {
               child: Column(
                 children: [
                   WidgetField(
+                    obscure: false,
                     enabled: true,
                     titre: "Recettes Vente Eau (DT)",
                     textEditingController: recetteVenteTextEditingController,
                   ),
                   WidgetField(
+                    obscure: false,
                     enabled: true,
                     titre: "Recettes Adhésion (DT)",
                     textEditingController: recetteAdhesionTextEditingController,
                   ),
                   WidgetField(
+                    obscure: false,
                     enabled: true,
                     titre: "Recettes Abonnement (DT)",
                     textEditingController:
                         recetteAbonnementTextEditingController,
                   ),
                   WidgetField(
+                    obscure: false,
                     enabled: true,
                     titre: "Recettes Cotisations (DT)",
                     textEditingController:
                         recetteCotisationTextEditingController,
                   ),
                   WidgetField(
+                    obscure: false,
                     enabled: true,
                     titre: "Autres Recettes (DT)",
                     textEditingController: autresRecettesTextEditingController,
                   ),
                   WidgetField(
+                    obscure: false,
                     enabled: true,
                     titre: AppLocalizations.of(context)!.totalTitre,
                     textEditingController: recetteAdhesionTextEditingController,

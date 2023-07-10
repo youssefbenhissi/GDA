@@ -6,6 +6,7 @@ import 'package:pfe_iheb/provider/locale_provider.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:pfe_iheb/utils/popup_notification.dart';
+import 'package:pfe_iheb/utils/shared_preferences_helper.dart';
 import 'square_tile.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
@@ -31,20 +32,32 @@ class _LoginScreenState extends State<LoginScreen> {
           stickyAuth: true,
         ),
       );
-      if (authenticated) {
-        context.currentLoginBloc.login("email", "password");
-        await Future.delayed(const Duration(milliseconds: 20)).then((value) {
-          var loginState = context.currentLoginBloc.state;
-          if (loginState is! FailedLoginState &&
-              loginState is! InitialLoginState) {
-            if (loginState is GDALoginState) {
-              context.gNavigationService.openFicheGDAScreen(context);
-            } else {
-              context.gNavigationService.openIndicateursScreen(context);
-            }
-          }
-        });
+      String? email = await SharedPreferencesHelper.getValue(
+          SharedPreferencesHelper.LOGIN_STRING);
+      String? password = await SharedPreferencesHelper.getValue(
+          SharedPreferencesHelper.PASSWORD_STRING);
+      if (email == null || password == null) {
+        ErrorPopUpNotification.create(
+          context: context,
+          title: "configuration erronée",
+          message:
+              "vous devez au moins vous connecter en utilisant votre login et votre mot de passe",
+        );
+        return;
       }
+      context.currentLoginBloc.login(email, password);
+      await Future.delayed(const Duration(milliseconds: 20)).then((value) {
+        var loginState = context.currentLoginBloc.state;
+        if (authenticated &&
+            (loginState is! FailedLoginState &&
+                loginState is! InitialLoginState)) {
+          if (loginState is GDALoginState) {
+            context.gNavigationService.openFicheGDAScreen(context);
+          } else {
+            context.gNavigationService.openIndicateursScreen(context);
+          }
+        }
+      });
     } on PlatformException {
       return;
     }
@@ -161,6 +174,12 @@ class _LoginScreenState extends State<LoginScreen> {
                               var loginState = context.currentLoginBloc.state;
                               if (loginState is! FailedLoginState &&
                                   loginState is! InitialLoginState) {
+                                SharedPreferencesHelper.setValue(
+                                    SharedPreferencesHelper.LOGIN_STRING,
+                                    email);
+                                SharedPreferencesHelper.setValue(
+                                    SharedPreferencesHelper.PASSWORD_STRING,
+                                    password);
                                 if (loginState is GDALoginState) {
                                   context.gNavigationService
                                       .openFicheGDAScreen(context);
