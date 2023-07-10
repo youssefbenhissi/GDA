@@ -45,5 +45,8 @@
     "humiditeTitre":"رطوبة",
     "pressionTitre":"ضغط",
     "descriptionTitre":"وصف",
-    "wrongCredentialsTitre" : "أوراق الإعتماد باطلة"
+    "wrongCredentialsTitre" : "أوراق الإعتماد باطلة",
+    "miseajourMotDePasseTitre" : "تحديث كلمة المرور",
+    "votreMotDePasseEstMisaJourAvecSuccesTitre" : "تم تحديث كلمة المرور الخاصة بك بنجاح"
+
 }

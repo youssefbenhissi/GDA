@@ -45,5 +45,7 @@
     "humiditeTitre":"humidité",
     "pressionTitre":"pression",
     "descriptionTitre":"description",
-    "wrongCredentialsTitre" : "Informations d'identification erronées"
+    "wrongCredentialsTitre" : "Informations d'identification erronées",
+    "miseajourMotDePasseTitre" : "mise à jour de mot de passe",
+    "votreMotDePasseEstMisaJourAvecSuccesTitre" : "Votre mot de passe est mis à jour avec succès"
 }

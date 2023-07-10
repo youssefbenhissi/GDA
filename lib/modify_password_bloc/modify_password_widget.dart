@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:pfe_iheb/app_page_injectable.dart';
+import 'package:pfe_iheb/modify_password_bloc/modify_password_bloc.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
 import 'package:pfe_iheb/utils/field_widget.dart';
+import 'package:pfe_iheb/utils/popup_notification.dart';
 
 class ModifyPasswordScreen extends StatelessWidget {
   const ModifyPasswordScreen({super.key});
@@ -15,9 +18,6 @@ class ModifyPasswordScreen extends StatelessWidget {
         TextEditingController();
     Locale currentLocale = Localizations.localeOf(context);
     String currentLanguage = currentLocale.languageCode;
-    print("*" * 80);
-    print(currentLanguage);
-    // Use the currentLanguage variable as per your requirement.
     return Scaffold(
       appBar: AppBar(
           title: Text(
@@ -63,29 +63,49 @@ class ModifyPasswordScreen extends StatelessWidget {
                     foregroundColor:
                         MaterialStateProperty.all<Color>(Colors.white),
                   ),
-                  onPressed: () {
+                  onPressed: () async {
                     final String newPassword = newPasswordController.value.text;
                     final String confirmNewPassword =
                         confirmNewPasswordController.value.text;
                     if (newPassword != confirmNewPassword) {
-                      showDialog(
+                      ErrorPopUpNotification.create(
                         context: context,
-                        builder: (context) => AlertDialog(
-                          title:
-                              Text(AppLocalizations.of(context)!.erreurTitre),
-                          content: Text(AppLocalizations.of(context)!
-                              .confirmPasswordTitre),
-                          actions: <Widget>[
-                            TextButton(
-                              child: Text(
-                                  AppLocalizations.of(context)!.daccordTitre),
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                            )
-                          ],
-                        ),
+                        title:
+                            AppLocalizations.of(context)!.wrongCredentialsTitre,
+                        message:
+                            AppLocalizations.of(context)!.wrongCredentialsTitre,
                       );
+                    } else {
+                      context.currentModifyPasswordBloc.modifyPassword(
+                          username: "youssef", password: confirmNewPassword);
+                      await Future.delayed(const Duration(milliseconds: 200))
+                          .then((value) {
+                        var modifyPasswordState =
+                            context.currentModifyPasswordBloc.state;
+                        if (modifyPasswordState
+                            is SuccededModifyPasswordState) {
+                          SuccessPopUpNotification.create(
+                            context: context,
+                            title: AppLocalizations.of(context)!
+                                .miseajourMotDePasseTitre,
+                            message: AppLocalizations.of(context)!
+                                .votreMotDePasseEstMisaJourAvecSuccesTitre,
+                          );
+                        } else {
+                          if (modifyPasswordState
+                                  is FailedModifyPasswordState ||
+                              modifyPasswordState
+                                  is InitialModifyPasswordState) {
+                            ErrorPopUpNotification.create(
+                              context: context,
+                              title: AppLocalizations.of(context)!
+                                  .wrongCredentialsTitre,
+                              message: AppLocalizations.of(context)!
+                                  .wrongCredentialsTitre,
+                            );
+                          }
+                        }
+                      });
                     }
                   },
                   child: Text(AppLocalizations.of(context)!.changerTitre),

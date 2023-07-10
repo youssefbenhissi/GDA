@@ -46,7 +46,32 @@ var sha512 = function (password,salt) {
     };
     
 };
-app.post('/login',(req,res,next)=>{
+
+
+
+app.post('/updateuser',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var plaint_password = post_data.password;
+  var hash_data = saltHashPassword(plaint_password);
+  var password = hash_data.passwordHash;  //Get Hash value
+  var salt = hash_data.salt; 
+  con.query('SELECT * FROM jhi_user u where u.login=? ',[email],function (err,result,fields) {
+    con.on('error', function (err) {
+      console.log('[MYSQL ERROR]', err);
+    });
+    if (result && result.length){
+        con.query("UPDATE `jhi_user` SET `password_hash` =  ? , `salt` = ? WHERE `login` = ?", [password,salt,login], function (error, results, fields) {
+          if (error) throw error;
+          res.status(200).send()
+        });
+    }
+    else{
+      res.status(400).send()
+    }
+  });
+});
+  app.post('/login',(req,res,next)=>{
   var post_data = req.body;
   var user_password = post_data.password;
   var email = post_data.login;
