@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pfe_iheb/fiche_gda_bloc/fiche_gda_model.dart';
 import 'package:pfe_iheb/utils/constants.dart';
 import 'package:http/http.dart' as http;
 
@@ -17,12 +18,18 @@ class FicheGDABloc extends Bloc<FicheGDAEvent, FicheGDAState> {
     LoadGDAFuncEvent event,
     Emitter<FicheGDAState> emitter,
   ) async {
+    emitter(const LoadingFicheGDAState._());
     String url = link + '/getdonneesidentification';
     Map<String, String> headers = {"Content-type": "application/json"};
     String json = '{"login": "${event.login}"}';
     http.Response response = await http.post(url, headers: headers, body: json);
-    var i = jsonDecode(response.body);
-    print(i["id_gda"]);
+    if (response.statusCode == 400) {
+      emitter(const FailedFicheGDAState._());
+    } else if (response.statusCode == 200) {
+      FicheGDAModel model = FicheGDAModel.fromJson(jsonDecode(response.body));
+      emitter(LoadedFicheGDAState._(model));
+    }
+    emitter(const FailedFicheGDAState._());
   }
 
   void loadGDA(String login) {

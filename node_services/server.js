@@ -132,7 +132,9 @@ app.post('/register',(req,res,next)=>{
 app.post('/getdonneesidentification', function (req, res) {
   let login = req.body.login;
   con.query('SELECT * FROM jhi_user u , ref_gda rgd , ref_gouvernorat rgo  where  u.login=? AND u.id_gouv = rgo.id AND u.id_gda = rgd.id',[login], function (error, results, fields) {
-      // if (error) throw error;
+      if (error) {
+        return res.status(400).send();  
+      }
       return res.status(200).send(results);
   });
 });
