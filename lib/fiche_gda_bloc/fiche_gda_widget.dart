@@ -14,7 +14,6 @@ class FicheGDAPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.currentFicheGDABloc.loadGDA("youssef");
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.primaryblue,
