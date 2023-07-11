@@ -168,7 +168,7 @@ class _WeatherPageState extends State<WeatherPage> {
                               const Spacer(),
                               data != null
                                   ? Text('${data!.pressure}')
-                                  : SizedBox.shrink(),
+                                  : const SizedBox.shrink(),
                             ],
                           ),
                         ),

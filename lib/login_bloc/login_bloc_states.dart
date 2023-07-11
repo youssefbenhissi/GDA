@@ -20,15 +20,18 @@ class FailedLoginState extends LoginState {
 
 @immutable
 class GDALoginState extends LoginState {
-  const GDALoginState._() : super._();
+  final User model;
+  const GDALoginState._(this.model) : super._();
 }
 
 @immutable
 class DecideurGouvernoratLoginState extends LoginState {
-  const DecideurGouvernoratLoginState._() : super._();
+  final User model;
+  const DecideurGouvernoratLoginState._(this.model) : super._();
 }
 
 @immutable
 class DecideurCentralLoginState extends LoginState {
-  const DecideurCentralLoginState._() : super._();
+  final User model;
+  const DecideurCentralLoginState._(this.model) : super._();
 }
