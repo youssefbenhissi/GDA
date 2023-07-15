@@ -19,7 +19,7 @@ class FicheGDABloc extends Bloc<FicheGDAEvent, FicheGDAState> {
     Emitter<FicheGDAState> emitter,
   ) async {
     emitter(const LoadingFicheGDAState._());
-    String url = link + '/getdonneesidentification';
+    String url = '$link/getdonneesidentification';
     Map<String, String> headers = {"Content-type": "application/json"};
     String json = '{"login": "${event.login}"}';
     http.Response response = await http.post(url, headers: headers, body: json);

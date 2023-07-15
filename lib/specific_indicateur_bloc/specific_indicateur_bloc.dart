@@ -7,5 +7,5 @@ part 'specific_indicateur_states.dart';
 
 class SpecificIndicateurBloc
     extends Bloc<SpecificIndicateurEvent, SpecificIndicateurState> {
-  SpecificIndicateurBloc() : super(const InitialSpecificIndicateurState._()) {}
+  SpecificIndicateurBloc() : super(const InitialSpecificIndicateurState._());
 }
