@@ -138,3 +138,28 @@ app.post('/getdonneesidentification', function (req, res) {
       return res.status(200).send(results);
   });
 });
+
+
+app.post('/donneestechniques', function (req, res) {
+  let createdby = req.body.createdby;
+  let inputvaluevolumepompe = req.body.inputvaluevolumepompe;
+  let idindicateurvolumepompe = req.body.idindicateurvolumepompe;
+  let inputvaluevolumedistribue = req.body.inputvaluevolumedistribue;
+  let idindicateurvolumedistribue = req.body.idindicateurvolumedistribue;
+  let inputvaluevolumeeaudejavel = req.body.inputvaluevolumeeaudejavel;
+  let idindicateurvolumeeaudejavel = req.body.idindicateurvolumeeaudejavel;
+  let inputvaluetarifadopte = req.body.inputvaluetarifadopte;
+  let idindicateurtarifadopte = req.body.idindicateurtarifadopte;
+  let inputvaluecouteau = req.body.inputvaluecouteau;
+  let idindicateurcouteau = req.body.idindicateurcouteau;
+  let inputvaluenombredejoursarret = req.body.inputvaluenombredejoursarret;
+  let idindicateur = req.body.idindicateur;
+  let idsaisie = req.body.idsaisie;
+  let month = req.body.month;
+  let year = req.body.year;
+  con.query('INSERT INTO `indicateur_saisie_value`(`created_by` , `date_creation`, `input_value`, `id_indicateur`, `id_saisie`, `month`, `year`) ' +
+  'VALUES (?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?)',[createdby,inputvaluevolumepompe,idindicateurvolumepompe,idsaisie,month,year,createdby,inputvaluevolumedistribue,idindicateurvolumedistribue,idsaisie,month,year,createdby,inputvaluevolumeeaudejavel,idindicateurvolumeeaudejavel,idsaisie,month,year,createdby,inputvaluetarifadopte,idindicateurtarifadopte,idsaisie,month,year,createdby,inputvaluecouteau,idindicateurcouteau,idsaisie,month,year,createdby,inputvaluenombredejoursarret,idindicateur,idsaisie,month,year],function (err,result,fields) {
+  if (err) throw err;
+//	sendVerificationEmail(email,randomCode);
+  res.status(200).send()})
+});

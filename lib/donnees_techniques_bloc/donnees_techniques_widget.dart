@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
+import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
@@ -34,6 +35,7 @@ class _SaisirDonneesTechniquesPageState
     ];
     const List<String> years = ['2019', '2020', '2021', '2022', '2023', '2024'];
     String month = "janvier";
+    int monthNumber = 1;
     String year = "2019";
     final TextEditingController volumePompeTextEditingController =
         TextEditingController();
@@ -119,6 +121,44 @@ class _SaisirDonneesTechniquesPageState
                         onChanged: (String? newValue) {
                           setState(() {
                             month = newValue!;
+                            switch (month) {
+                              case 'janvier':
+                                monthNumber = 1;
+                                break;
+                              case 'février':
+                                monthNumber = 2;
+                                break;
+                              case 'mars':
+                                monthNumber = 3;
+                                break;
+                              case 'avril':
+                                monthNumber = 4;
+                                break;
+                              case 'mai':
+                                monthNumber = 5;
+                                break;
+                              case 'juin':
+                                monthNumber = 6;
+                                break;
+                              case 'juillet':
+                                monthNumber = 7;
+                                break;
+                              case 'août':
+                                monthNumber = 8;
+                                break;
+                              case 'septembre':
+                                monthNumber = 9;
+                                break;
+                              case 'octobre':
+                                monthNumber = 10;
+                                break;
+                              case 'novembre':
+                                monthNumber = 11;
+                                break;
+                              case 'décembre':
+                                monthNumber = 12;
+                                break;
+                            }
                           });
                         },
                       ),
@@ -200,6 +240,86 @@ class _SaisirDonneesTechniquesPageState
                                 MaterialStateProperty.all<Color>(Colors.white),
                           ),
                           onPressed: () {
+                            var state = context.currentLoginBloc.state;
+                            if (state is GDALoginState) {
+                              context.currentDonneesTechniquesBloc
+                                  .insertDonneesTechniques(
+                                createdBy: state.model.login,
+                                inputValueVolumePompe:
+                                    volumePompeTextEditingController.text,
+                                idIndicateurVolumePompe: 2,
+                                inputValueVolumeDistribue:
+                                    volumeDistribueTextEditingController.text,
+                                idIndicateurVolumeDistribue: 4,
+                                inputValueVolumeEauDeJavel:
+                                    volumeEauJavelTextEditingController.text,
+                                idIndicateurVolumeEauDeJavel: 10,
+                                inputValueTarifAdopte:
+                                    tarifAdapteTextEditingController.text,
+                                idIndicateurTarifAdopte: 41,
+                                inputValueCoutEau:
+                                    coutEauTextEditingController.text,
+                                idIndicateurCoutEau: 40,
+                                inputValueNombreDeJoursArret:
+                                    nombreJourTextEditingController.text,
+                                idIndicateur: 1,
+                                idSaisie: state.model.id,
+                                month: monthNumber,
+                                year: int.parse(year),
+                              );
+                            } else if (state is DecideurCentralLoginState) {
+                              context.currentDonneesTechniquesBloc
+                                  .insertDonneesTechniques(
+                                createdBy: state.model.login,
+                                inputValueVolumePompe:
+                                    volumePompeTextEditingController.text,
+                                idIndicateurVolumePompe: 2,
+                                inputValueVolumeDistribue:
+                                    volumeDistribueTextEditingController.text,
+                                idIndicateurVolumeDistribue: 4,
+                                inputValueVolumeEauDeJavel:
+                                    volumeEauJavelTextEditingController.text,
+                                idIndicateurVolumeEauDeJavel: 10,
+                                inputValueTarifAdopte:
+                                    tarifAdapteTextEditingController.text,
+                                idIndicateurTarifAdopte: 41,
+                                inputValueCoutEau:
+                                    coutEauTextEditingController.text,
+                                idIndicateurCoutEau: 40,
+                                inputValueNombreDeJoursArret:
+                                    nombreJourTextEditingController.text,
+                                idIndicateur: 1,
+                                idSaisie: state.model.id,
+                                month: monthNumber,
+                                year: int.parse(year),
+                              );
+                            } else if (state is DecideurGouvernoratLoginState) {
+                              context.currentDonneesTechniquesBloc
+                                  .insertDonneesTechniques(
+                                createdBy: state.model.login,
+                                inputValueVolumePompe:
+                                    volumePompeTextEditingController.text,
+                                idIndicateurVolumePompe: 2,
+                                inputValueVolumeDistribue:
+                                    volumeDistribueTextEditingController.text,
+                                idIndicateurVolumeDistribue: 4,
+                                inputValueVolumeEauDeJavel:
+                                    volumeEauJavelTextEditingController.text,
+                                idIndicateurVolumeEauDeJavel: 10,
+                                inputValueTarifAdopte:
+                                    tarifAdapteTextEditingController.text,
+                                idIndicateurTarifAdopte: 41,
+                                inputValueCoutEau:
+                                    coutEauTextEditingController.text,
+                                idIndicateurCoutEau: 40,
+                                inputValueNombreDeJoursArret:
+                                    nombreJourTextEditingController.text,
+                                idIndicateur: 1,
+                                idSaisie: state.model.id,
+                                month: monthNumber,
+                                year: int.parse(year),
+                              );
+                            }
                             context.gNavigationService
                                 .openRecettesRealiseesScreen(context);
                           },

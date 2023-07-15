@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:pfe_iheb/consultation_screen_bloc/consultation_screen_bloc.dart';
+import 'package:pfe_iheb/donnees_techniques_bloc/donnees_techniques_bloc.dart';
 import 'package:pfe_iheb/fiche_gda_bloc/fiche_gda_bloc.dart';
 import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/modify_password_bloc/modify_password_bloc.dart';
@@ -10,6 +11,8 @@ class ServiceLocator {
 
   ServiceLocator() : _registry = GetIt.asNewInstance();
   LoginBloc get loginBloc => _registry.get<LoginBloc>();
+  DonneesTechniquesBloc get donneesTechniquesBloc =>
+      _registry.get<DonneesTechniquesBloc>();
   ModifyPasswordBloc get modifyPasswordBloc =>
       _registry.get<ModifyPasswordBloc>();
   FicheGDABloc get ficheGDABloc => _registry.get<FicheGDABloc>();
@@ -31,6 +34,9 @@ class ServiceLocator {
     );
     _registry.registerLazySingleton(
       () => FicheGDABloc(),
+    );
+    _registry.registerLazySingleton(
+      () => DonneesTechniquesBloc(),
     );
   }
 }

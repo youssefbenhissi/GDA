@@ -7,10 +7,13 @@ import 'package:pfe_iheb/modify_password_bloc/modify_password_bloc.dart';
 import 'package:pfe_iheb/navigation/navigation.dart';
 import 'package:pfe_iheb/services/service_locator.dart';
 
+import 'donnees_techniques_bloc/donnees_techniques_bloc.dart';
+
 extension AppPageInjectable on BuildContext {
   NavigationService get gNavigationService =>
       read<ServiceLocator>().navigationService;
   LoginBloc get currentLoginBloc => read<ServiceLocator>().loginBloc;
+  DonneesTechniquesBloc get currentDonneesTechniquesBloc => read<ServiceLocator>().donneesTechniquesBloc;
   ConsultationScreenBloc get currentConsultationBloc =>
       read<ServiceLocator>().consultationScreenBloc;
   ModifyPasswordBloc get currentModifyPasswordBloc =>
