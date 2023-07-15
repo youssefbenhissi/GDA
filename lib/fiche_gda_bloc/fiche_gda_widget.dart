@@ -132,7 +132,7 @@ class FicheGDAPage extends StatelessWidget {
               message: "Y a pas de données depuis la base de données",
             );
           }
-          return const CupertinoActivityIndicator();
+          return const Center(child: CupertinoActivityIndicator());
         },
       ),
     );

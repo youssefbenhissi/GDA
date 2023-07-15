@@ -4,7 +4,7 @@ class FicheGDAModel {
   final int idGouv;
   final String libFr; // nom gouv
   final int idDelegation;
-  final int code; //gda_id
+  final String code; //gda_id
   String? dateCreation;
   String? nomPresident;
   String? telPresident;
@@ -48,12 +48,20 @@ class FicheGDAModel {
     this.nbBep,
   );
   static DateFormat formatter = DateFormat('yyyy-MM-dd');
+  static FicheGDAModel getFicheGDAModel(List<dynamic> json) {
+    List<FicheGDAModel> list = [];
+    for (var item in json) {
+      list.add(FicheGDAModel.fromJson(item));
+    }
+    return list.first;
+  }
+
   factory FicheGDAModel.fromJson(Map<String, dynamic> json) {
     return FicheGDAModel(
         json['id_gouv'] as int,
         json['lib_fr'] as String,
         json['id_delegation'] as int,
-        json['code'] as int,
+        json['code'] as String,
         json['date_creation'] != null
             ? formatter.format(
                 DateTime.parse(

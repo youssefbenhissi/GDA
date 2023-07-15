@@ -26,10 +26,9 @@ class FicheGDABloc extends Bloc<FicheGDAEvent, FicheGDAState> {
     if (response.statusCode == 400) {
       emitter(const FailedFicheGDAState._());
     } else if (response.statusCode == 200) {
-      FicheGDAModel model = FicheGDAModel.fromJson(jsonDecode(response.body));
+      FicheGDAModel model = FicheGDAModel.getFicheGDAModel(jsonDecode(response.body));
       emitter(LoadedFicheGDAState._(model));
     }
-    emitter(const FailedFicheGDAState._());
   }
 
   void loadGDA(String login) {
