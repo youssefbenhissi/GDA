@@ -2,16 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
 import 'package:pfe_iheb/fiche_gda_bloc/fiche_gda_bloc.dart';
+import 'package:pfe_iheb/fiche_gda_bloc/fiche_gda_model.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DetailsPage extends StatelessWidget {
-  const DetailsPage({super.key});
+  final FicheGDAModel modele;
+  const DetailsPage({super.key, required this.modele});
 
   @override
   Widget build(BuildContext context) {
-    var state = context.currentFicheGDABloc.state;
-
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.primaryblue,
@@ -50,9 +50,8 @@ class DetailsPage extends StatelessWidget {
         ),
         body: SingleChildScrollView(
             child: ColoredBox(
-          color: Colors.white,
-          child: (state is LoadedFicheGDAState)
-              ? Padding(
+                color: Colors.white,
+                child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -66,7 +65,7 @@ class DetailsPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          state.model.dateCreation ?? '',
+                          modele.dateCreation ?? '',
                         ),
                         const SizedBox(
                           height: 10,
@@ -83,7 +82,7 @@ class DetailsPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          state.model.nomPresident!,
+                          modele.nomPresident ?? '',
                         ),
                         const SizedBox(
                           height: 10,
@@ -100,7 +99,7 @@ class DetailsPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          state.model.telPresident!,
+                          modele.telPresident ?? '',
                         ),
                         const SizedBox(
                           height: 10,
@@ -117,7 +116,7 @@ class DetailsPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          state.model.nomDirTechnique!,
+                          modele.nomDirTechnique ?? '',
                         ),
                         const SizedBox(
                           height: 10,
@@ -134,7 +133,7 @@ class DetailsPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          state.model.telDirTechnique!,
+                          modele.telDirTechnique ?? '',
                         ),
                         const SizedBox(
                           height: 10,
@@ -151,7 +150,7 @@ class DetailsPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          state.model.nomSaep!,
+                          modele.nomSaep ?? '',
                         ),
                         const SizedBox(
                           height: 10,
@@ -168,7 +167,7 @@ class DetailsPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          state.model.dateMiseService!,
+                          modele.dateMiseService ?? '',
                         ),
                         const SizedBox(
                           height: 10,
@@ -189,7 +188,7 @@ class DetailsPage extends StatelessWidget {
                             const SizedBox(
                               width: 15,
                             ),
-                            state.model.srcEauForage == 0
+                            modele.srcEauForage == 0
                                 ? Container(
                                     width:
                                         12, // Adjust the width of the square as needed
@@ -240,7 +239,7 @@ class DetailsPage extends StatelessWidget {
                             const SizedBox(
                               width: 15,
                             ),
-                            state.model.srcEauPiquageGr == 0
+                            modele.srcEauPiquageGr == 0
                                 ? Container(
                                     width:
                                         12, // Adjust the width of the square as needed
@@ -291,7 +290,7 @@ class DetailsPage extends StatelessWidget {
                             const SizedBox(
                               width: 15,
                             ),
-                            state.model.srcEauPiquageSonede == 0
+                            modele.srcEauPiquageSonede == 0
                                 ? Container(
                                     width:
                                         12, // Adjust the width of the square as needed
@@ -342,7 +341,7 @@ class DetailsPage extends StatelessWidget {
                             const SizedBox(
                               width: 15,
                             ),
-                            state.model.srcEauPuit == 0
+                            modele.srcEauPuit == 0
                                 ? Container(
                                     width:
                                         12, // Adjust the width of the square as needed
@@ -393,7 +392,7 @@ class DetailsPage extends StatelessWidget {
                             const SizedBox(
                               width: 15,
                             ),
-                            state.model.srcEauSourceNaturelle == 0
+                            modele.srcEauSourceNaturelle == 0
                                 ? Container(
                                     width:
                                         12, // Adjust the width of the square as needed
@@ -447,7 +446,7 @@ class DetailsPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          state.model.nbBeneficiaires.toString(),
+                          modele.nbBeneficiaires.toString(),
                         ),
                         const SizedBox(
                           height: 10,
@@ -466,7 +465,7 @@ class DetailsPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          state.model.longueurReseau.toString(),
+                          modele.longueurReseau.toString(),
                         ),
                         const SizedBox(
                           height: 10,
@@ -483,7 +482,7 @@ class DetailsPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          state.model.nbStationsPompage.toString(),
+                          modele.nbStationsPompage.toString(),
                         ),
                         const SizedBox(
                           height: 10,
@@ -500,7 +499,7 @@ class DetailsPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          state.model.nbReservoirs.toString(),
+                          modele.nbReservoirs.toString(),
                         ),
                         const SizedBox(
                           height: 10,
@@ -517,7 +516,7 @@ class DetailsPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          state.model.nbBi.toString(),
+                          modele.nbBi.toString(),
                         ),
                         const SizedBox(
                           height: 10,
@@ -534,7 +533,7 @@ class DetailsPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          state.model.nbBep.toString(),
+                          modele.nbBep.toString(),
                         ),
                         const SizedBox(
                           height: 10,
@@ -567,8 +566,6 @@ class DetailsPage extends StatelessWidget {
                           ),
                         ),
                       ]),
-                )
-              : const Center(child: CupertinoActivityIndicator()),
-        )));
+                ))));
   }
 }

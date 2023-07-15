@@ -33,8 +33,11 @@ class NavigationService {
     return Navigator.of(context).pushNamed(_ficheGDARouteName);
   }
 
-  Future<void> openDetailsScreen(BuildContext context) {
-    return Navigator.of(context).pushNamed(_detailsRouteName);
+  Future<void> openDetailsScreen(BuildContext context, FicheGDAModel modele) {
+    return Navigator.of(context).pushNamed(
+      _detailsRouteName,
+      arguments: _DetailsArguments(modele),
+    );
   }
 
   Future<void> openDonneesTechniquesScreen(BuildContext context) {

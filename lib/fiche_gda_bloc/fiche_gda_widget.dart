@@ -113,7 +113,8 @@ class FicheGDAPage extends StatelessWidget {
                               MaterialStateProperty.all<Color>(Colors.white),
                         ),
                         onPressed: () {
-                          context.gNavigationService.openDetailsScreen(context);
+                          context.gNavigationService
+                              .openDetailsScreen(context, state.model);
                         },
                         child:
                             Text(AppLocalizations.of(context)!.detailsGDATitre),
