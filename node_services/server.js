@@ -148,6 +148,15 @@ app.post('/tauxdeperte', function (req, res) {
       return res.status(200).send(results);
   });
 });
+app.post('/tauxdepertestatistics', function (req, res) {
+  let login = req.body.login;
+  con.query('SELECT AVG(CAST(input_value AS float)) AS average_value , month ,year  FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 8) GROUP BY month , year',[login], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
 app.post('/tauxderecouvrement', function (req, res) {
   let login = req.body.login;
   con.query('SELECT AVG(CAST(input_value AS float)) AS average_value FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 9)',[login], function (error, results, fields) {
@@ -166,6 +175,15 @@ app.post('/consommationspecifique', function (req, res) {
       return res.status(200).send(results);
   });
 });
+app.post('/consommationspecifiquestatics', function (req, res) {
+  let login = req.body.login;
+  con.query('SELECT AVG(CAST(input_value AS float)) AS average_value , month ,year  FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 42) GROUP BY month , year',[login], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
 app.post('/consommationspecifiqueeaudejavel', function (req, res) {
   let login = req.body.login;
   con.query('SELECT AVG(CAST(input_value AS float)) AS average_value FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 43)',[login], function (error, results, fields) {
@@ -175,9 +193,27 @@ app.post('/consommationspecifiqueeaudejavel', function (req, res) {
       return res.status(200).send(results);
   });
 });
+app.post('/consommationspecifiqueeaudejavelstatics', function (req, res) {
+  let login = req.body.login;
+  con.query('SELECT AVG(CAST(input_value AS float)) AS average_value , month ,year  FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 43) GROUP BY month , year',[login], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
 app.post('/recettemoyenne', function (req, res) {
   let login = req.body.login;
   con.query('SELECT AVG(CAST(input_value AS float)) AS average_value FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 44)',[login], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
+app.post('/recettemoyennestatics', function (req, res) {
+  let login = req.body.login;
+  con.query('SELECT AVG(CAST(input_value AS float)) AS average_value , month ,year  FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 44) GROUP BY month , year',[login], function (error, results, fields) {
       if (error) {
         return res.status(400).send(error);  
       }

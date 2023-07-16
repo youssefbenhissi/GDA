@@ -6,6 +6,7 @@ import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/modify_password_bloc/modify_password_bloc.dart';
 import 'package:pfe_iheb/navigation/navigation.dart';
 import 'package:pfe_iheb/services/service_locator.dart';
+import 'package:pfe_iheb/statistics_bloc/statistics_bloc.dart';
 
 import 'donnees_techniques_bloc/donnees_techniques_bloc.dart';
 import 'indicateur_bloc/indicateur_bloc.dart';
@@ -23,4 +24,6 @@ extension AppPageInjectable on BuildContext {
   FicheGDABloc get currentFicheGDABloc => read<ServiceLocator>().ficheGDABloc;
   IndicateurBloc get currentIndicateurABloc =>
       read<ServiceLocator>().indicateurBloc;
+  StatisticsBloc get currentStatisticsBloc =>
+      read<ServiceLocator>().statisticsBloc;
 }
