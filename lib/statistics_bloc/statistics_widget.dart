@@ -24,13 +24,15 @@ class StatisticsPage extends StatelessWidget {
         buildWhen: (prev, next) => prev.runtimeType != next.runtimeType,
         builder: (context, state) {
           if (state is LoadedStatiticsState) {
+            
             return ListView.builder(
               itemCount: state.models.length,
               itemBuilder: (context, index) {
-                return const StatisticsCard(
-                  date: "date",
+                return StatisticsCard(
+                  date:
+                      "${state.models[index].month}/${state.models[index].year}",
                   tauxDePerteTitre: "tauxDePerteTitre",
-                  tauxDePerteValeur: 5.2,
+                  tauxDePerteValeur: state.models[index].inputValue,
                   consommationSpecifiqueTitre: "consommationSpecifiqueTitre",
                   consommationSpecifiqueValeur: 6.8,
                   consommationSpecifiqueEauDeJavelTitre:

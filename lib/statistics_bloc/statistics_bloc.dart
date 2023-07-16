@@ -24,25 +24,33 @@ class StatisticsBloc extends Bloc<StatisticsEvent, StatisticsState> {
     Map<String, String> headers = {"Content-type": "application/json"};
     String json = '{"login": "${event.login}"}';
     http.Response response = await http.post(url, headers: headers, body: json);
-    StaticsModel model =
+    List<StaticsModel> model =
         StaticsModel.getIndicateurModel(jsonDecode(response.body));
-    models.add(model);
+    for (StaticsModel m in model) {
+      models.add(m);
+    }
 
     url = '$link/consommationspecifiquestatics';
     response = await http.post(url, headers: headers, body: json);
     model = StaticsModel.getIndicateurModel(jsonDecode(response.body));
-    models.add(model);
+    for (StaticsModel m in model) {
+      models.add(m);
+    }
 
     url = '$link/consommationspecifiqueeaudejavelstatics';
     response = await http.post(url, headers: headers, body: json);
     model = StaticsModel.getIndicateurModel(jsonDecode(response.body));
-    models.add(model);
+    for (StaticsModel m in model) {
+      models.add(m);
+    }
 
     url = '$link/recettemoyennestatics';
     response = await http.post(url, headers: headers, body: json);
     model = StaticsModel.getIndicateurModel(jsonDecode(response.body));
-    models.add(model);
-
+    for (StaticsModel m in model) {
+      models.add(m);
+    }
+    
     emitter(LoadedStatiticsState._(models));
   }
 

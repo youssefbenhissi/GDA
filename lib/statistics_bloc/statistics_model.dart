@@ -5,12 +5,12 @@ class StaticsModel {
   final int month;
   final int year;
   StaticsModel(this.inputValue, this.month, this.year);
-  static StaticsModel getIndicateurModel(List<dynamic> json) {
+  static List<StaticsModel> getIndicateurModel(List<dynamic> json) {
     List<StaticsModel> list = [];
     for (var item in json) {
       list.add(StaticsModel.fromJson(item));
     }
-    return list.first;
+    return list;
   }
 
   factory StaticsModel.fromJson(Map<String, dynamic> json) {
