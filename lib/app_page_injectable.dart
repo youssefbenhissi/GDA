@@ -8,15 +8,19 @@ import 'package:pfe_iheb/navigation/navigation.dart';
 import 'package:pfe_iheb/services/service_locator.dart';
 
 import 'donnees_techniques_bloc/donnees_techniques_bloc.dart';
+import 'indicateur_bloc/indicateur_bloc.dart';
 
 extension AppPageInjectable on BuildContext {
   NavigationService get gNavigationService =>
       read<ServiceLocator>().navigationService;
   LoginBloc get currentLoginBloc => read<ServiceLocator>().loginBloc;
-  DonneesTechniquesBloc get currentDonneesTechniquesBloc => read<ServiceLocator>().donneesTechniquesBloc;
+  DonneesTechniquesBloc get currentDonneesTechniquesBloc =>
+      read<ServiceLocator>().donneesTechniquesBloc;
   ConsultationScreenBloc get currentConsultationBloc =>
       read<ServiceLocator>().consultationScreenBloc;
   ModifyPasswordBloc get currentModifyPasswordBloc =>
       read<ServiceLocator>().modifyPasswordBloc;
   FicheGDABloc get currentFicheGDABloc => read<ServiceLocator>().ficheGDABloc;
+  IndicateurBloc get currentIndicateurABloc =>
+      read<ServiceLocator>().indicateurBloc;
 }

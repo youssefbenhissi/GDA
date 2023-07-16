@@ -139,6 +139,61 @@ app.post('/getdonneesidentification', function (req, res) {
   });
 });
 
+app.post('/tauxdeperte', function (req, res) {
+  let login = req.body.login;
+  con.query('SELECT AVG(CAST(input_value AS float)) AS average_value FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 8)',[login], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
+app.post('/tauxderecouvrement', function (req, res) {
+  let login = req.body.login;
+  con.query('SELECT AVG(CAST(input_value AS float)) AS average_value FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 9)',[login], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
+app.post('/consommationspecifique', function (req, res) {
+  let login = req.body.login;
+  con.query('SELECT AVG(CAST(input_value AS float)) AS average_value FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 42)',[login], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
+app.post('/consommationspecifiqueeaudejavel', function (req, res) {
+  let login = req.body.login;
+  con.query('SELECT AVG(CAST(input_value AS float)) AS average_value FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 43)',[login], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
+app.post('/recettemoyenne', function (req, res) {
+  let login = req.body.login;
+  con.query('SELECT AVG(CAST(input_value AS float)) AS average_value FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 44)',[login], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
+app.post('/nombredejourarret', function (req, res) {
+  let login = req.body.login;
+  con.query('SELECT AVG(CAST(input_value AS float)) AS average_value FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 1)',[login], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
+
 
 app.post('/donneestechniques', function (req, res) {
   let createdby = req.body.createdby;

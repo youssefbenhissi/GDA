@@ -1,0 +1,19 @@
+import 'package:intl/intl.dart';
+
+class IndicateurModel {
+  final double inputValue;
+  IndicateurModel(this.inputValue);
+  static IndicateurModel getIndicateurModel(List<dynamic> json) {
+    List<IndicateurModel> list = [];
+    for (var item in json) {
+      list.add(IndicateurModel.fromJson(item));
+    }
+    return list.first;
+  }
+
+  factory IndicateurModel.fromJson(Map<String, dynamic> json) {
+    return IndicateurModel(
+      json['average_value'] ?? 0.0,
+    );
+  }
+}
