@@ -20,7 +20,7 @@ class LoadingStaticsState extends StatisticsState {
 
 @immutable
 class LoadedStatiticsState extends StatisticsState {
-  final List<StaticsModel> models;
+  final Map<String, List<double>> models;
   const LoadedStatiticsState._(this.models) : super._();
 
   @override

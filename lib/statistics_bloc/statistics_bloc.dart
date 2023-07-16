@@ -50,8 +50,18 @@ class StatisticsBloc extends Bloc<StatisticsEvent, StatisticsState> {
     for (StaticsModel m in model) {
       models.add(m);
     }
-    
-    emitter(LoadedStatiticsState._(models));
+    Map<String, List<double>> modelMap = models.fold(
+      {},
+      (Map<String, List<double>> map, StaticsModel model) {
+        if (map.containsKey(model.date)) {
+          map[model.date]!.add(model.inputValue);
+        } else {
+          map[model.date] = [model.inputValue];
+        }
+        return map;
+      },
+    );
+    emitter(LoadedStatiticsState._(modelMap));
   }
 
   void loadStatistics(String login) {
