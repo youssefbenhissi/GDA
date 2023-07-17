@@ -47,5 +47,11 @@
     "descriptionTitre":"description",
     "wrongCredentialsTitre" : "Informations d'identification erronées",
     "miseajourMotDePasseTitre" : "mise à jour de mot de passe",
-    "votreMotDePasseEstMisaJourAvecSuccesTitre" : "Votre mot de passe est mis à jour avec succès"
+    "votreMotDePasseEstMisaJourAvecSuccesTitre" : "Votre mot de passe est mis à jour avec succès",
+    "tauxDePerteTitre" : "Taux de Perte (%)",
+    "tauxDeRecouvrementTitre" : "Taux de Recouvrement (%)",
+    "consommationSpecifiqueTitre" : "Consommation Spécifique (l/habitant/jour)",
+    "consommationSpecifiqueEauDeJavelTitre" : "Consommation Spécifique Eau de Javel (l/m3)",
+    "recetteMoyenneTitre":"Recette Moyenne (DT)",
+    "nombreDeJourArretTitre" : "Nombre de jours d’arrêt"
 }

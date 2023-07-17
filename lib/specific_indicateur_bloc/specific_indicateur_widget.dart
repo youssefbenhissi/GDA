@@ -39,24 +39,29 @@ class SpecificIndicateurPage extends StatelessWidget {
                   ColoredBox(
                     color: Colors.white,
                     child: ConsultationStatisticsCard(
-                      tauxDePerteTitre: "tauxDePerteTitre",
-                      tauxDeRecouvrementTitre: "tauxDeRecouvrementTitre",
+                      tauxDePerteTitre:
+                          AppLocalizations.of(context)!.tauxDePerteTitre,
+                      tauxDeRecouvrementTitre:
+                          AppLocalizations.of(context)!.tauxDeRecouvrementTitre,
                       tauxDeRecouvrementValeur:
                           double.tryParse(state.models[1].inputValue) ?? 0,
                       tauxDePerteValeur:
                           double.tryParse(state.models[0].inputValue) ?? 0,
-                      consommationSpecifiqueTitre:
-                          "consommationSpecifiqueTitre",
+                      consommationSpecifiqueTitre: AppLocalizations.of(context)!
+                          .consommationSpecifiqueTitre,
                       consommationSpecifiqueValeur:
                           double.tryParse(state.models[2].inputValue) ?? 0,
                       consommationSpecifiqueEauDeJavelTitre:
-                          "consommationSpecifiqueEauDeJavelTitre",
+                          AppLocalizations.of(context)!
+                              .consommationSpecifiqueEauDeJavelTitre,
                       consommationSpecifiqueEauDeJavelValeur:
                           double.tryParse(state.models[3].inputValue) ?? 0,
-                      recetteMoyenneTitre: "recetteMoyenneTitre",
+                      recetteMoyenneTitre:
+                          AppLocalizations.of(context)!.recetteMoyenneTitre,
                       recetteMoyenneValeur:
                           double.tryParse(state.models[4].inputValue) ?? 0,
-                      nombreDeJourArretTitre: "nombreDeJourArretTitre",
+                      nombreDeJourArretTitre:
+                          AppLocalizations.of(context)!.nombreDeJourArretTitre,
                       nombreDeJourArretValeur:
                           double.tryParse(state.models[5].inputValue) ?? 0,
                     ),

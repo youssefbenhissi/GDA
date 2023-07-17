@@ -296,8 +296,8 @@ class _ConsultationPageState extends State<ConsultationPage> {
                             context.currentConsultationBloc
                                 .choseMonthAndYear(month, year);
                             context.gNavigationService
-                                .openIndicateursSpecifiqueScreen(
-                                    context, monthNumber, int.parse(year));
+                                .openIndicateursSpecifiqueScreen(context,
+                                    monthNumber, int.tryParse(year) ?? 2023);
                             // } else {
                             //   context.currentConsultationBloc
                             //       .choseAllfields(month, year, year);

@@ -37,26 +37,38 @@ class IndicateurPage extends StatelessWidget {
                       ColoredBox(
                         color: Colors.white,
                         child: ConsultationStatisticsCard(
-                          tauxDePerteTitre: "tauxDePerteTitre",
-                          tauxDeRecouvrementTitre: "tauxDeRecouvrementTitre",
+                          tauxDePerteTitre:
+                              AppLocalizations.of(context)!.tauxDePerteTitre,
+                          tauxDeRecouvrementTitre: AppLocalizations.of(context)!
+                              .tauxDeRecouvrementTitre,
                           tauxDeRecouvrementValeur:
-                              double.parse(state.models[1].inputValue),
+                              double.tryParse(state.models[1].inputValue) ??
+                                  0.0,
                           tauxDePerteValeur:
-                              double.parse(state.models[0].inputValue),
+                              double.tryParse(state.models[0].inputValue) ??
+                                  0.0,
                           consommationSpecifiqueTitre:
-                              "consommationSpecifiqueTitre",
+                              AppLocalizations.of(context)!
+                                  .consommationSpecifiqueTitre,
                           consommationSpecifiqueValeur:
-                              double.parse(state.models[2].inputValue),
+                              double.tryParse(state.models[2].inputValue) ??
+                                  0.0,
                           consommationSpecifiqueEauDeJavelTitre:
-                              "consommationSpecifiqueEauDeJavelTitre",
+                              AppLocalizations.of(context)!
+                                  .consommationSpecifiqueEauDeJavelTitre,
                           consommationSpecifiqueEauDeJavelValeur:
-                              double.parse(state.models[3].inputValue),
-                          recetteMoyenneTitre: "recetteMoyenneTitre",
+                              double.tryParse(state.models[3].inputValue) ??
+                                  0.0,
+                          recetteMoyenneTitre:
+                              AppLocalizations.of(context)!.recetteMoyenneTitre,
                           recetteMoyenneValeur:
-                              double.parse(state.models[4].inputValue),
-                          nombreDeJourArretTitre: "nombreDeJourArretTitre",
+                              double.tryParse(state.models[4].inputValue) ??
+                                  0.0,
+                          nombreDeJourArretTitre: AppLocalizations.of(context)!
+                              .nombreDeJourArretTitre,
                           nombreDeJourArretValeur:
-                              double.parse(state.models[5].inputValue),
+                              double.tryParse(state.models[5].inputValue) ??
+                                  0.0,
                         ),
                       ),
                       const SizedBox(

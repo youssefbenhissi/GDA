@@ -47,6 +47,12 @@
     "descriptionTitre":"وصف",
     "wrongCredentialsTitre" : "أوراق الإعتماد باطلة",
     "miseajourMotDePasseTitre" : "تحديث كلمة المرور",
-    "votreMotDePasseEstMisaJourAvecSuccesTitre" : "تم تحديث كلمة المرور الخاصة بك بنجاح"
+    "votreMotDePasseEstMisaJourAvecSuccesTitre" : "تم تحديث كلمة المرور الخاصة بك بنجاح",
+    "tauxDePerteTitre" : "نسبة الضياع (%)",
+    "tauxDeRecouvrementTitre" : "نسبة تسديد الديون (%)",
+    "consommationSpecifiqueTitre" : "الاستهلاك الخاص (ل/مشترك/يوم)",
+    "consommationSpecifiqueEauDeJavelTitre" : "الاستهلاك الخاص (ل/م3)",
+    "recetteMoyenneTitre":"معدل المداخيل",
+    "nombreDeJourArretTitre" : "عدد أيام العطب"
 
 }

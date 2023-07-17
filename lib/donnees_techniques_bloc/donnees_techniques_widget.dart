@@ -265,7 +265,7 @@ class _SaisirDonneesTechniquesPageState
                                 idIndicateur: 1,
                                 idSaisie: state.model.id,
                                 month: monthNumber,
-                                year: int.parse(year),
+                                year: int.tryParse(year) ?? 2023,
                               );
                             } else if (state is DecideurCentralLoginState) {
                               context.currentDonneesTechniquesBloc
@@ -291,7 +291,7 @@ class _SaisirDonneesTechniquesPageState
                                 idIndicateur: 1,
                                 idSaisie: state.model.id,
                                 month: monthNumber,
-                                year: int.parse(year),
+                                year: int.tryParse(year) ?? 2023,
                               );
                             } else if (state is DecideurGouvernoratLoginState) {
                               context.currentDonneesTechniquesBloc
@@ -317,7 +317,7 @@ class _SaisirDonneesTechniquesPageState
                                 idIndicateur: 1,
                                 idSaisie: state.model.id,
                                 month: monthNumber,
-                                year: int.parse(year),
+                                year: int.tryParse(year) ?? 2023,
                               );
                             }
                             context.gNavigationService
