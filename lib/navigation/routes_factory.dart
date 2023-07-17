@@ -6,7 +6,8 @@ abstract class RoutesFactory {
   Route<dynamic> createModifyPasswordScreenPageRoute();
   Route<dynamic> createStatisticsScreenPageRoute();
   Route<dynamic> createIndicateursScreenPageRoute();
-  Route<dynamic> createIndicateursSpecifiqueScreenPageRoute();
+  Route<dynamic> createIndicateursSpecifiqueScreenPageRoute(
+      int month, int year);
   Route<dynamic> createConsultationScreenPageRoute();
   Route<dynamic> createFicheGDAScreenPageRoute();
   Route<dynamic> createDetailsScreenPageRoute(FicheGDAModel modele);

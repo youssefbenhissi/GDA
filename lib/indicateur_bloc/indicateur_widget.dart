@@ -39,22 +39,24 @@ class IndicateurPage extends StatelessWidget {
                         child: ConsultationStatisticsCard(
                           tauxDePerteTitre: "tauxDePerteTitre",
                           tauxDeRecouvrementTitre: "tauxDeRecouvrementTitre",
-                          tauxDeRecouvrementValeur: double.parse(
-                              state.models[1].inputValue.toStringAsFixed(2)),
-                          tauxDePerteValeur: double.parse(
-                              state.models[0].inputValue.toStringAsFixed(2)),
+                          tauxDeRecouvrementValeur:
+                              double.parse(state.models[1].inputValue),
+                          tauxDePerteValeur:
+                              double.parse(state.models[0].inputValue),
                           consommationSpecifiqueTitre:
                               "consommationSpecifiqueTitre",
                           consommationSpecifiqueValeur:
-                              double.parse(state.models[2].inputValue.toStringAsFixed(2)),
+                              double.parse(state.models[2].inputValue),
                           consommationSpecifiqueEauDeJavelTitre:
                               "consommationSpecifiqueEauDeJavelTitre",
                           consommationSpecifiqueEauDeJavelValeur:
-                              double.parse(state.models[3].inputValue.toStringAsFixed(2)),
+                              double.parse(state.models[3].inputValue),
                           recetteMoyenneTitre: "recetteMoyenneTitre",
-                          recetteMoyenneValeur: double.parse(state.models[4].inputValue.toStringAsFixed(2)),
+                          recetteMoyenneValeur:
+                              double.parse(state.models[4].inputValue),
                           nombreDeJourArretTitre: "nombreDeJourArretTitre",
-                          nombreDeJourArretValeur: double.parse(state.models[5].inputValue.toStringAsFixed(2)),
+                          nombreDeJourArretValeur:
+                              double.parse(state.models[5].inputValue),
                         ),
                       ),
                       const SizedBox(

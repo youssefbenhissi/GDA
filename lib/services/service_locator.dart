@@ -6,6 +6,7 @@ import 'package:pfe_iheb/indicateur_bloc/indicateur_bloc.dart';
 import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/modify_password_bloc/modify_password_bloc.dart';
 import 'package:pfe_iheb/navigation/navigation.dart';
+import 'package:pfe_iheb/specific_indicateur_bloc/specific_indicateur_bloc.dart';
 import 'package:pfe_iheb/statistics_bloc/statistics_bloc.dart';
 import 'package:pfe_iheb/statistics_bloc/statistics_widget.dart';
 
@@ -14,6 +15,8 @@ class ServiceLocator {
 
   ServiceLocator() : _registry = GetIt.asNewInstance();
   LoginBloc get loginBloc => _registry.get<LoginBloc>();
+  SpecificIndicateurBloc get specificIndicateurBloc =>
+      _registry.get<SpecificIndicateurBloc>();
   DonneesTechniquesBloc get donneesTechniquesBloc =>
       _registry.get<DonneesTechniquesBloc>();
   ModifyPasswordBloc get modifyPasswordBloc =>
@@ -48,6 +51,9 @@ class ServiceLocator {
     );
     _registry.registerLazySingleton(
       () => StatisticsBloc(),
+    );
+    _registry.registerLazySingleton(
+      () => SpecificIndicateurBloc(),
     );
   }
 }

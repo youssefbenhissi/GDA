@@ -53,9 +53,10 @@ class AppRoutesFactory extends RoutesFactory {
   }
 
   @override
-  Route<dynamic> createIndicateursSpecifiqueScreenPageRoute() {
+  Route<dynamic> createIndicateursSpecifiqueScreenPageRoute(
+      int month, int year) {
     return MaterialPageRoute<String?>(
-      builder: IndicateurSpecifiqueScreenRouteBuilder(),
+      builder: IndicateurSpecifiqueScreenRouteBuilder(month, year),
     );
   }
 

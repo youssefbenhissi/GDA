@@ -21,8 +21,10 @@ class NavigationService {
     return Navigator.of(context).pushNamed(_indicateursRouteName);
   }
 
-  Future<void> openIndicateursSpecifiqueScreen(BuildContext context) {
-    return Navigator.of(context).pushNamed(_indicateursSpecifiqueRouteName);
+  Future<void> openIndicateursSpecifiqueScreen(
+      BuildContext context, int month, int year) {
+    return Navigator.of(context).pushNamed(_indicateursSpecifiqueRouteName,
+        arguments: _SpecificIndicateurArguments(month, year));
   }
 
   Future<void> openConsultationScreen(BuildContext context) {

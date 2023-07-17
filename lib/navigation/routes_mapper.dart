@@ -17,7 +17,10 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
       case _indicateursRouteName:
         return routesFactory.createIndicateursScreenPageRoute();
       case _indicateursSpecifiqueRouteName:
-        return routesFactory.createIndicateursSpecifiqueScreenPageRoute();
+        final args = settings.arguments as _SpecificIndicateurArguments;
+
+        return routesFactory.createIndicateursSpecifiqueScreenPageRoute(
+            args.month, args.year);
       case _consultationRouteName:
         return routesFactory.createConsultationScreenPageRoute();
       case _ficheGDARouteName:

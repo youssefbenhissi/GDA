@@ -32,6 +32,8 @@ class _ConsultationPageState extends State<ConsultationPage> {
       'novembre',
       'décembre',
     ];
+    int monthNumber = 1;
+
     const List<String> years = ['2019', '2020', '2021', '2022', '2023', '2024'];
     String gdaValue = "";
     String gouvernoratValue = "";
@@ -105,6 +107,44 @@ class _ConsultationPageState extends State<ConsultationPage> {
                         onChanged: (String? newValue) {
                           setState(() {
                             month = newValue!;
+                            switch (month) {
+                              case 'janvier':
+                                monthNumber = 1;
+                                break;
+                              case 'février':
+                                monthNumber = 2;
+                                break;
+                              case 'mars':
+                                monthNumber = 3;
+                                break;
+                              case 'avril':
+                                monthNumber = 4;
+                                break;
+                              case 'mai':
+                                monthNumber = 5;
+                                break;
+                              case 'juin':
+                                monthNumber = 6;
+                                break;
+                              case 'juillet':
+                                monthNumber = 7;
+                                break;
+                              case 'août':
+                                monthNumber = 8;
+                                break;
+                              case 'septembre':
+                                monthNumber = 9;
+                                break;
+                              case 'octobre':
+                                monthNumber = 10;
+                                break;
+                              case 'novembre':
+                                monthNumber = 11;
+                                break;
+                              case 'décembre':
+                                monthNumber = 12;
+                                break;
+                            }
                           });
                         },
                       ),
@@ -252,17 +292,18 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                 MaterialStateProperty.all<Color>(Colors.white),
                           ),
                           onPressed: () {
-                            if (gdaValue.isEmpty) {
-                              context.currentConsultationBloc
-                                  .choseMonthAndYear(month, year);
-                              context.gNavigationService
-                                  .openIndicateursSpecifiqueScreen(context);
-                            } else {
-                              context.currentConsultationBloc
-                                  .choseAllfields(month, year, year);
-                              context.gNavigationService
-                                  .openFicheGDAScreen(context);
-                            }
+                            // if (gdaValue.isEmpty) {
+                            context.currentConsultationBloc
+                                .choseMonthAndYear(month, year);
+                            context.gNavigationService
+                                .openIndicateursSpecifiqueScreen(
+                                    context, monthNumber, int.parse(year));
+                            // } else {
+                            //   context.currentConsultationBloc
+                            //       .choseAllfields(month, year, year);
+                            //   context.gNavigationService
+                            //       .openFicheGDAScreen(context);
+                            // }
                           },
                           child: Text(
                               AppLocalizations.of(context)!.consulterTitre),

@@ -71,6 +71,12 @@ app.post('/updateuser',(req,res,next)=>{
     }
   });
 });
+
+app.post('/specifiqueindicateur',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+
+});
   app.post('/login',(req,res,next)=>{
   var post_data = req.body;
   var user_password = post_data.password;
@@ -157,6 +163,20 @@ app.post('/tauxdepertestatistics', function (req, res) {
       return res.status(200).send(results);
   });
 });
+
+app.post('/specifiqueindicateurtauxdeperte',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT CAST(i.input_value AS float ) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 8  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
 app.post('/tauxderecouvrement', function (req, res) {
   let login = req.body.login;
   con.query('SELECT AVG(CAST(input_value AS float)) AS average_value FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 9)',[login], function (error, results, fields) {
@@ -166,6 +186,19 @@ app.post('/tauxderecouvrement', function (req, res) {
       return res.status(200).send(results);
   });
 });
+
+app.post('/specifiqueindicateurtauxderecouvrement',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
 app.post('/consommationspecifique', function (req, res) {
   let login = req.body.login;
   con.query('SELECT AVG(CAST(input_value AS float)) AS average_value FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 42)',[login], function (error, results, fields) {
@@ -173,6 +206,18 @@ app.post('/consommationspecifique', function (req, res) {
         return res.status(400).send(error);  
       }
       return res.status(200).send(results);
+  });
+});
+app.post('/specifiqueindicateurconsommationspecifique',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT CAST(i.input_value AS float ) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 42  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
   });
 });
 app.post('/consommationspecifiquestatics', function (req, res) {
@@ -193,6 +238,18 @@ app.post('/consommationspecifiqueeaudejavel', function (req, res) {
       return res.status(200).send(results);
   });
 });
+app.post('/specifiqueindicateurconsommationspecifiqueeaudejavel',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT CAST(i.input_value AS float ) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 43  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
 app.post('/consommationspecifiqueeaudejavelstatics', function (req, res) {
   let login = req.body.login;
   con.query('SELECT AVG(CAST(input_value AS float)) AS average_value , month ,year  FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 43) GROUP BY month , year',[login], function (error, results, fields) {
@@ -211,6 +268,18 @@ app.post('/recettemoyenne', function (req, res) {
       return res.status(200).send(results);
   });
 });
+app.post('/specifiqueindicateurrecettemoyenne',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT CAST(i.input_value AS float  ) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 44  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
 app.post('/recettemoyennestatics', function (req, res) {
   let login = req.body.login;
   con.query('SELECT AVG(CAST(input_value AS float)) AS average_value , month ,year  FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 44) GROUP BY month , year',[login], function (error, results, fields) {
@@ -227,6 +296,19 @@ app.post('/nombredejourarret', function (req, res) {
         return res.status(400).send(error);  
       }
       return res.status(200).send(results);
+  });
+});
+
+app.post('/specifiqueindicateurnombredejourarret',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT CAST(i.input_value AS float ) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 1  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
   });
 });
 
