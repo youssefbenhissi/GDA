@@ -27,6 +27,12 @@ class NavigationService {
         arguments: _SpecificIndicateurArguments(month, year));
   }
 
+  Future<void> openSpecificFicheGDAScreen(
+      BuildContext context, int month, int year, int gda) {
+    return Navigator.of(context).pushNamed(_specificFicheGDARouteName,
+        arguments: _SpecificFicheGDAArguments(month, year, gda));
+  }
+
   Future<void> openConsultationScreen(BuildContext context) {
     return Navigator.of(context).pushNamed(_consultationRouteName);
   }

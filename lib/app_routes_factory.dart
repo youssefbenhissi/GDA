@@ -10,6 +10,7 @@ import 'package:pfe_iheb/login_bloc/login_page_route_builder.dart';
 import 'package:pfe_iheb/modify_password_bloc/modify_password_page_route_builder.dart';
 import 'package:pfe_iheb/navigation/navigation.dart';
 import 'package:pfe_iheb/recettes_realisees_screen/recettes_realisees_page_route_builder.dart';
+import 'package:pfe_iheb/specific_fiche_gda_bloc/specific_fiche_gda_page_route_builder.dart';
 import 'package:pfe_iheb/specific_indicateur_bloc/specific_indicateur_page_route_builder.dart';
 import 'package:pfe_iheb/splash_screen_bloc/splash_screen_page_route_builder.dart';
 import 'package:pfe_iheb/statistics_bloc/statistics_page_route_builder.dart';
@@ -57,6 +58,14 @@ class AppRoutesFactory extends RoutesFactory {
       int month, int year) {
     return MaterialPageRoute<String?>(
       builder: IndicateurSpecifiqueScreenRouteBuilder(month, year),
+    );
+  }
+
+  @override
+  Route<dynamic> createSpecificFicheGDAScreenPageRoute(
+      int month, int year, int gda) {
+    return MaterialPageRoute<String?>(
+      builder: SpecificFicheGdaScreenRouteBuilder(month, year, gda),
     );
   }
 

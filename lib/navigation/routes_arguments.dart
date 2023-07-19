@@ -10,3 +10,10 @@ class _SpecificIndicateurArguments {
   final int year;
   _SpecificIndicateurArguments(this.month, this.year);
 }
+
+class _SpecificFicheGDAArguments {
+  final int month;
+  final int year;
+  final int gda;
+  _SpecificFicheGDAArguments(this.month, this.year, this.gda);
+}

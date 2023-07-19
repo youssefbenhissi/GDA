@@ -292,18 +292,22 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                 MaterialStateProperty.all<Color>(Colors.white),
                           ),
                           onPressed: () {
-                            // if (gdaValue.isEmpty) {
-                            context.currentConsultationBloc
-                                .choseMonthAndYear(month, year);
-                            context.gNavigationService
-                                .openIndicateursSpecifiqueScreen(context,
-                                    monthNumber, int.tryParse(year) ?? 2023);
-                            // } else {
-                            //   context.currentConsultationBloc
-                            //       .choseAllfields(month, year, year);
-                            //   context.gNavigationService
-                            //       .openFicheGDAScreen(context);
-                            // }
+                            if (gdaValue.isEmpty) {
+                              context.currentConsultationBloc
+                                  .choseMonthAndYear(month, year);
+                              context.gNavigationService
+                                  .openIndicateursSpecifiqueScreen(context,
+                                      monthNumber, int.tryParse(year) ?? 2023);
+                            } else {
+                              context.currentConsultationBloc
+                                  .choseAllfields(month, year, year);
+                              context.gNavigationService
+                                  .openSpecificFicheGDAScreen(
+                                      context,
+                                      monthNumber,
+                                      int.tryParse(year) ?? 2019,
+                                      155);
+                            }
                           },
                           child: Text(
                               AppLocalizations.of(context)!.consulterTitre),

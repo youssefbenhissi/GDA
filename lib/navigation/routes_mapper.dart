@@ -28,6 +28,10 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
       case _detailsRouteName:
         final args = settings.arguments as _DetailsArguments;
         return routesFactory.createDetailsScreenPageRoute(args.modele);
+      case _specificFicheGDARouteName:
+        final args = settings.arguments as _SpecificFicheGDAArguments;
+        return routesFactory.createSpecificFicheGDAScreenPageRoute(
+            args.month, args.year, args.gda);
       case _saisirDonneesTechniquesRouteName:
         return routesFactory.createDonneesTechniquesPageRoute();
       case _saisirRecettesRealiseesRouteName:
