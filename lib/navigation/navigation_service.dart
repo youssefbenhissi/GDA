@@ -52,7 +52,7 @@ class NavigationService {
       BuildContext context, SpecificFicheGDAModel modele) {
     return Navigator.of(context).pushNamed(
       _specificDonneesTechniquesRouteName,
-      arguments: _SpecificDonneesTechniques(modele),
+      arguments: _SpecificDonneesTechniquesArguments(modele),
     );
   }
 

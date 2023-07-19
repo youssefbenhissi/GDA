@@ -14,6 +14,7 @@ import 'package:pfe_iheb/specific_donnees_techniques/specific_donnees_techniques
 import 'package:pfe_iheb/specific_fiche_gda_bloc/specific_fiche_gda_model.dart';
 import 'package:pfe_iheb/specific_fiche_gda_bloc/specific_fiche_gda_page_route_builder.dart';
 import 'package:pfe_iheb/specific_indicateur_bloc/specific_indicateur_page_route_builder.dart';
+import 'package:pfe_iheb/specific_recettes_realisees_bloc/specific_recettes_realisees_page_route_builder.dart';
 import 'package:pfe_iheb/splash_screen_bloc/splash_screen_page_route_builder.dart';
 import 'package:pfe_iheb/statistics_bloc/statistics_page_route_builder.dart';
 import 'package:pfe_iheb/weather_bloc/weather_page_route_builder.dart';
@@ -125,6 +126,16 @@ class AppRoutesFactory extends RoutesFactory {
       SpecificFicheGDAModel modele) {
     return MaterialPageRoute<String?>(
       builder: SpecificDonneesTechniquesScreenRouteBuilder(
+        modele,
+      ),
+    );
+  }
+
+  @override
+  Route createSpecificRecettesRealiseesScreenPageRoute(
+      SpecificFicheGDAModel modele) {
+    return MaterialPageRoute<String?>(
+      builder: SpecificRecettesRealiseesScreenRouteBuilder(
         modele,
       ),
     );

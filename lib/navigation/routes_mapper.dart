@@ -18,7 +18,6 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
         return routesFactory.createIndicateursScreenPageRoute();
       case _indicateursSpecifiqueRouteName:
         final args = settings.arguments as _SpecificIndicateurArguments;
-
         return routesFactory.createIndicateursSpecifiqueScreenPageRoute(
             args.month, args.year);
       case _consultationRouteName:
@@ -38,6 +37,14 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
         return routesFactory.createRecettesRealiseesPageRoute();
       case _saisirDepensesRealiseesRouteName:
         return routesFactory.createDepensesRealiseesPageRoute();
+      case _specificDonneesTechniquesRouteName:
+        final args = settings.arguments as _SpecificDonneesTechniquesArguments;
+        return routesFactory.createSpecificDonneesTechniquesScreenPageRoute(
+            args.specificFicheGDAModel);
+      case _specificRecettesRealiseesRouteName:
+        final args = settings.arguments as _SpecificRecettesRealiseesArguments;
+        return routesFactory.createSpecificRecettesRealiseesScreenPageRoute(
+            args.specificFicheGDAModel);
       case _weatherRouteName:
         return routesFactory.createWeatherPageRoute();
       default:

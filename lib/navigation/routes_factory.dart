@@ -13,6 +13,8 @@ abstract class RoutesFactory {
   Route<dynamic> createDetailsScreenPageRoute(FicheGDAModel modele);
   Route<dynamic> createSpecificDonneesTechniquesScreenPageRoute(
       SpecificFicheGDAModel modele);
+  Route<dynamic> createSpecificRecettesRealiseesScreenPageRoute(
+      SpecificFicheGDAModel modele);
   Route<dynamic> createDonneesTechniquesPageRoute();
   Route<dynamic> createRecettesRealiseesPageRoute();
   Route<dynamic> createDepensesRealiseesPageRoute();

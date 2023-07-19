@@ -249,8 +249,8 @@ class _SpecificDonneesTechniquesPageState
                             context.gNavigationService
                                 .openRecettesRealiseesScreen(context);
                           },
-                          child: Text(AppLocalizations.of(context)!
-                              .saisirLesRecettesTitre),
+                          child: Text(
+                              AppLocalizations.of(context)!.lesRecettesTitre),
                         ),
                       ),
                     ),
