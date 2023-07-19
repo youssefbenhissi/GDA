@@ -48,6 +48,14 @@ class NavigationService {
     );
   }
 
+  Future<void> openSpecificDonneesTechniques(
+      BuildContext context, SpecificFicheGDAModel modele) {
+    return Navigator.of(context).pushNamed(
+      _specificDonneesTechniquesRouteName,
+      arguments: _SpecificDonneesTechniques(modele),
+    );
+  }
+
   Future<void> openDonneesTechniquesScreen(BuildContext context) {
     return Navigator.of(context).pushNamed(_saisirDonneesTechniquesRouteName);
   }

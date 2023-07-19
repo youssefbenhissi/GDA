@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
 import 'package:pfe_iheb/fiche_gda_bloc/fiche_gda_bloc.dart';
 import 'package:pfe_iheb/specific_fiche_gda_bloc/specific_fiche_gda_bloc.dart';
@@ -44,7 +43,7 @@ class SpecificFicheGDAPage extends StatelessWidget {
                           style: TextStyle(color: Colors.lightBlue),
                         ),
                         Text(state.model.idGouv.toString()),
-                        Text(state.model.libFr),
+                        Text(state.model.nomGouvernoratFrancais),
                       ],
                     ),
                   ),
@@ -99,7 +98,8 @@ class SpecificFicheGDAPage extends StatelessWidget {
                         ),
                         onPressed: () {
                           context.gNavigationService
-                              .openDetailsScreen(context, state.model);
+                              .openSpecificDonneesTechniques(
+                                  context, state.model);
                         },
                         child:
                             Text(AppLocalizations.of(context)!.detailsGDATitre),

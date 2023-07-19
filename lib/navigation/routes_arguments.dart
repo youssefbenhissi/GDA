@@ -17,3 +17,8 @@ class _SpecificFicheGDAArguments {
   final int gda;
   _SpecificFicheGDAArguments(this.month, this.year, this.gda);
 }
+
+class _SpecificDonneesTechniques {
+  final SpecificFicheGDAModel specificFicheGDAModel;
+  _SpecificDonneesTechniques(this.specificFicheGDAModel);
+}

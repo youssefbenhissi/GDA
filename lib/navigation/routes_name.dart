@@ -14,3 +14,4 @@ const _saisirRecettesRealiseesRouteName = "/saisirRecettesRealisees";
 const _saisirDepensesRealiseesRouteName = "/saisirDepensesRealisees";
 const _weatherRouteName = "/weather";
 const _specificFicheGDARouteName = "/specificFicheGDA";
+const _specificDonneesTechniquesRouteName = "/specificDonneesTechniques";

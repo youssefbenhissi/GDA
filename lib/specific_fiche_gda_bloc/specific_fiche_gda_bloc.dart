@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pfe_iheb/fiche_gda_bloc/fiche_gda_model.dart';
 import 'package:http/http.dart' as http;
+import 'package:pfe_iheb/specific_fiche_gda_bloc/specific_fiche_gda_model.dart';
 import 'package:pfe_iheb/utils/constants.dart';
 
 part 'specific_fiche_gda_states.dart';
@@ -28,8 +28,20 @@ class SpecificFicheGDABloc
     if (response.statusCode == 400) {
       emitter(const FailedSpecificFicheGDAState._());
     } else if (response.statusCode == 200) {
-      FicheGDAModel model =
-          FicheGDAModel.getFicheGDAModel(jsonDecode(response.body));
+      SpecificFicheGDAModel model = SpecificFicheGDAModel(
+          0,
+          "nomGouvernoratFrancais",
+          "nomGouvernoratArabe",
+          55,
+          "654",
+          12,
+          31,
+          "volumePompe",
+          "volumeDistribue",
+          "volumeEauJavel",
+          "tarifAdapte",
+          "coutEauText",
+          "nombreJour");
       emitter(LoadedSpecificFicheGDAState._(model));
     }
   }
