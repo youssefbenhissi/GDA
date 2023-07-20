@@ -17,8 +17,6 @@ class ModifyPasswordScreen extends StatelessWidget {
     final TextEditingController newPasswordController = TextEditingController();
     final TextEditingController confirmNewPasswordController =
         TextEditingController();
-    Locale currentLocale = Localizations.localeOf(context);
-    String currentLanguage = currentLocale.languageCode;
     return Scaffold(
       appBar: AppBar(
           title: Text(

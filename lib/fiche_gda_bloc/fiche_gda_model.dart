@@ -2,7 +2,8 @@ import 'package:intl/intl.dart';
 
 class FicheGDAModel {
   final int idGouv;
-  final String libFr; // nom gouv
+  final String nomGouvFr; // nom gouv
+  final String nomGouvAr; // nom gouv
   final int idDelegation;
   final String code; //gda_id
   String? dateCreation;
@@ -25,7 +26,8 @@ class FicheGDAModel {
   int? nbBep;
   FicheGDAModel(
     this.idGouv,
-    this.libFr,
+    this.nomGouvFr,
+    this.nomGouvAr,
     this.idDelegation,
     this.code,
     this.dateCreation,
@@ -60,6 +62,7 @@ class FicheGDAModel {
     return FicheGDAModel(
         json['id_gouv'] as int,
         json['lib_fr'] as String,
+        json['lib_ar'] as String,
         json['id_delegation'] as int,
         json['code'] as String,
         json['date_creation'] != null

@@ -75,6 +75,17 @@
     "depensesRenouvellementDesEquipementsTitre":"مصاريف تجديد المعدات",
     "depensesGestionGDATitre":"مصاريف التصرف الخاص بالمجمع",
     "depensesdInvestissementTitre":"مصاريف الاستثمار والتجهيز",
-    "autresDepensesTitre" : "مصاريف أخرى"
-
+    "autresDepensesTitre" : "مصاريف أخرى",
+    "janvierTitre":"جانفي",
+    "fevrierTitre":"فيفري",
+    "marsTitre":"مارس",
+    "avrilTitre":"افريل",
+    "maiTitre":"ماي",
+    "juinTitre":"جوان ",
+    "juilletTitre":"جويلية",
+    "aoutTitre":"اوت",
+    "septembreTitre":"سبتمبر",
+    "octobreTitre":"أكتوبر",
+    "novembreTitre":"نوفمبر",
+    "decembreTitre":"ديسمبر"
 }

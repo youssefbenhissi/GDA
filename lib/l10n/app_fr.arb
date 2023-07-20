@@ -75,7 +75,17 @@
     "depensesRenouvellementDesEquipementsTitre":"Dépenses Renouvellement des Equipements (DT)",
     "depensesGestionGDATitre":"Dépenses Gestion GDA (DT)",
     "depensesdInvestissementTitre":"Dépenses d’Investissement  (DT)",
-    "autresDepensesTitre" : "Autres Dépenses (DT)"
-
-
+    "autresDepensesTitre" : "Autres Dépenses (DT)",
+    "janvierTitre":"janvier",
+    "fevrierTitre":"février",
+    "marsTitre":"mars",
+    "avrilTitre":"avril",
+    "maiTitre":"mai",
+    "juinTitre":"juin",
+    "juilletTitre":"juillet",
+    "aoutTitre":"août",
+    "septembreTitre":"septembre",
+    "octobreTitre":"octobre",
+    "novembreTitre":"novembre",
+    "decembreTitre":"décembre"
 }

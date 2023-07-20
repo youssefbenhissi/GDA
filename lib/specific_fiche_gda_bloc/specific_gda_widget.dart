@@ -14,6 +14,8 @@ class SpecificFicheGDAPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Locale currentLocale = Localizations.localeOf(context);
+    String currentLanguage = currentLocale.languageCode;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.primaryblue,
@@ -43,7 +45,9 @@ class SpecificFicheGDAPage extends StatelessWidget {
                           style: TextStyle(color: Colors.lightBlue),
                         ),
                         Text(state.model.idGouv.toString()),
-                        Text(state.model.nomGouvernoratFrancais),
+                        Text(currentLanguage == "fr"
+                            ? state.model.nomGouvernoratFrancais
+                            : state.model.nomGouvernoratArabe),
                       ],
                     ),
                   ),

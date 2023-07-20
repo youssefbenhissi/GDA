@@ -19,22 +19,22 @@ class _SaisirDonneesTechniquesPageState
     extends State<SaisirDonneesTechniquesPage> {
   @override
   Widget build(BuildContext context) {
-    const List<String> months = [
-      'janvier',
-      'février',
-      'mars',
-      'avril',
-      'mai',
-      'juin',
-      'juillet',
-      'août',
-      'septembre',
-      'octobre',
-      'novembre',
-      'décembre',
+    List<String> months = [
+      AppLocalizations.of(context)!.janvierTitre,
+      AppLocalizations.of(context)!.fevrierTitre,
+      AppLocalizations.of(context)!.marsTitre,
+      AppLocalizations.of(context)!.avrilTitre,
+      AppLocalizations.of(context)!.maiTitre,
+      AppLocalizations.of(context)!.juinTitre,
+      AppLocalizations.of(context)!.juilletTitre,
+      AppLocalizations.of(context)!.aoutTitre,
+      AppLocalizations.of(context)!.septembreTitre,
+      AppLocalizations.of(context)!.octobreTitre,
+      AppLocalizations.of(context)!.novembreTitre,
+      AppLocalizations.of(context)!.decembreTitre,
     ];
     const List<String> years = ['2019', '2020', '2021', '2022', '2023', '2024'];
-    String month = "janvier";
+    String month = AppLocalizations.of(context)!.janvierTitre;
     int monthNumber = 1;
     String year = "2019";
     final TextEditingController volumePompeTextEditingController =
@@ -121,43 +121,42 @@ class _SaisirDonneesTechniquesPageState
                         onChanged: (String? newValue) {
                           setState(() {
                             month = newValue!;
-                            switch (month) {
-                              case 'janvier':
-                                monthNumber = 1;
-                                break;
-                              case 'février':
-                                monthNumber = 2;
-                                break;
-                              case 'mars':
-                                monthNumber = 3;
-                                break;
-                              case 'avril':
-                                monthNumber = 4;
-                                break;
-                              case 'mai':
-                                monthNumber = 5;
-                                break;
-                              case 'juin':
-                                monthNumber = 6;
-                                break;
-                              case 'juillet':
-                                monthNumber = 7;
-                                break;
-                              case 'août':
-                                monthNumber = 8;
-                                break;
-                              case 'septembre':
-                                monthNumber = 9;
-                                break;
-                              case 'octobre':
-                                monthNumber = 10;
-                                break;
-                              case 'novembre':
-                                monthNumber = 11;
-                                break;
-                              case 'décembre':
-                                monthNumber = 12;
-                                break;
+                            if (month ==
+                                AppLocalizations.of(context)!.janvierTitre) {
+                              monthNumber = 1;
+                            } else if (month ==
+                                AppLocalizations.of(context)!.fevrierTitre) {
+                              monthNumber = 1;
+                            } else if (month ==
+                                AppLocalizations.of(context)!.marsTitre) {
+                              monthNumber = 3;
+                            } else if (month ==
+                                AppLocalizations.of(context)!.avrilTitre) {
+                              monthNumber = 4;
+                            } else if (month ==
+                                AppLocalizations.of(context)!.maiTitre) {
+                              monthNumber = 5;
+                            } else if (month ==
+                                AppLocalizations.of(context)!.juinTitre) {
+                              monthNumber = 6;
+                            } else if (month ==
+                                AppLocalizations.of(context)!.juilletTitre) {
+                              monthNumber = 7;
+                            } else if (month ==
+                                AppLocalizations.of(context)!.aoutTitre) {
+                              monthNumber = 8;
+                            } else if (month ==
+                                AppLocalizations.of(context)!.septembreTitre) {
+                              monthNumber = 9;
+                            } else if (month ==
+                                AppLocalizations.of(context)!.octobreTitre) {
+                              monthNumber = 10;
+                            } else if (month ==
+                                AppLocalizations.of(context)!.novembreTitre) {
+                              monthNumber = 11;
+                            } else if (month ==
+                                AppLocalizations.of(context)!.decembreTitre) {
+                              monthNumber = 12;
                             }
                           });
                         },
