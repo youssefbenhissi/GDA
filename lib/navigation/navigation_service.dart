@@ -55,6 +55,14 @@ class NavigationService {
       arguments: _SpecificDonneesTechniquesArguments(modele),
     );
   }
+  
+  Future<void> openSpecificDepenses(
+      BuildContext context, SpecificFicheGDAModel modele) {
+    return Navigator.of(context).pushNamed(
+      _specificDepensesRouteName,
+      arguments: _SpecificDepensesArguments(modele),
+    );
+  }
 
   Future<void> openDonneesTechniquesScreen(BuildContext context) {
     return Navigator.of(context).pushNamed(_saisirDonneesTechniquesRouteName);

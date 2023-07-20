@@ -6,22 +6,67 @@ import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pfe_iheb/utils/field_widget.dart';
 
-class SpecificRecettesRealiseePage extends StatelessWidget {
+class SpecificRecettesRealiseePage extends StatefulWidget {
   final SpecificFicheGDAModel modele;
   const SpecificRecettesRealiseePage({super.key, required this.modele});
 
   @override
+  State<SpecificRecettesRealiseePage> createState() =>
+      _SpecificRecettesRealiseePageState();
+}
+
+class _SpecificRecettesRealiseePageState
+    extends State<SpecificRecettesRealiseePage> {
+  final TextEditingController recetteVenteTextEditingController =
+      TextEditingController();
+
+  final TextEditingController recetteAdhesionTextEditingController =
+      TextEditingController();
+
+  final TextEditingController recetteAbonnementTextEditingController =
+      TextEditingController();
+
+  final TextEditingController recetteCotisationTextEditingController =
+      TextEditingController();
+
+  final TextEditingController autresRecettesTextEditingController =
+      TextEditingController();
+  final TextEditingController totalRecettesTextEditingContorller =
+      TextEditingController();
+  @override
+  void dispose() {
+    recetteVenteTextEditingController.dispose();
+    recetteAdhesionTextEditingController.dispose();
+    recetteAbonnementTextEditingController.dispose();
+    recetteCotisationTextEditingController.dispose();
+    autresRecettesTextEditingController.dispose();
+    totalRecettesTextEditingContorller.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    recetteVenteTextEditingController.text = widget.modele.recetteVente;
+    recetteAdhesionTextEditingController.text = widget.modele.recetteAdhesion;
+    recetteCotisationTextEditingController.text =
+        widget.modele.recetteCotisation;
+    autresRecettesTextEditingController.text = widget.modele.autresRecettes;
+    final double recetteVente =
+        double.tryParse(recetteVenteTextEditingController.text) ?? 0.0;
+    final double recetteAdhesion =
+        double.tryParse(recetteAdhesionTextEditingController.text) ?? 0.0;
+    final double recetteCotisation =
+        double.tryParse(recetteAdhesionTextEditingController.text) ?? 0.0;
+    final double autresRecettes =
+        double.tryParse(autresRecettesTextEditingController.text) ?? 0.0;
+    final double total =
+        recetteVente + recetteAdhesion + recetteCotisation + autresRecettes;
+    autresRecettesTextEditingController.text = total.toString();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    final TextEditingController recetteVenteTextEditingController =
-        TextEditingController();
-    final TextEditingController recetteAdhesionTextEditingController =
-        TextEditingController();
-    final TextEditingController recetteAbonnementTextEditingController =
-        TextEditingController();
-    final TextEditingController recetteCotisationTextEditingController =
-        TextEditingController();
-    final TextEditingController autresRecettesTextEditingController =
-        TextEditingController();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.primaryblue,
@@ -71,38 +116,38 @@ class SpecificRecettesRealiseePage extends StatelessWidget {
                   WidgetField(
                     obscure: false,
                     enabled: true,
-                    titre: "Recettes Vente Eau (DT)",
+                    titre: AppLocalizations.of(context)!.recettesVenteEauTitre,
                     textEditingController: recetteVenteTextEditingController,
                   ),
                   WidgetField(
                     obscure: false,
-                    enabled: true,
-                    titre: "Recettes Adhésion (DT)",
+                    enabled: false,
+                    titre: AppLocalizations.of(context)!.recettesAdhesionTitre,
                     textEditingController: recetteAdhesionTextEditingController,
                   ),
                   WidgetField(
                     obscure: false,
-                    enabled: true,
-                    titre: "Recettes Abonnement (DT)",
+                    enabled: false,
+                    titre: AppLocalizations.of(context)!.recettesAbonnementTitre,
                     textEditingController:
                         recetteAbonnementTextEditingController,
                   ),
                   WidgetField(
                     obscure: false,
-                    enabled: true,
-                    titre: "Recettes Cotisations (DT)",
+                    enabled: false,
+                    titre: AppLocalizations.of(context)!.recettesCotisationsTitre,
                     textEditingController:
                         recetteCotisationTextEditingController,
                   ),
                   WidgetField(
                     obscure: false,
-                    enabled: true,
-                    titre: "Autres Recettes (DT)",
+                    enabled: false,
+                    titre: AppLocalizations.of(context)!.autresRecettesTitre,
                     textEditingController: autresRecettesTextEditingController,
                   ),
                   WidgetField(
                     obscure: false,
-                    enabled: true,
+                    enabled: false,
                     titre: AppLocalizations.of(context)!.totalTitre,
                     textEditingController: recetteAdhesionTextEditingController,
                   ),

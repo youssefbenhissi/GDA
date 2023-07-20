@@ -69,40 +69,36 @@ class RecettesRealiseePage extends StatelessWidget {
                   WidgetField(
                     obscure: false,
                     enabled: true,
-                    titre: "Recettes Vente Eau (DT)",
+                    titre: AppLocalizations.of(context)!.recettesVenteEauTitre,
                     textEditingController: recetteVenteTextEditingController,
                   ),
                   WidgetField(
                     obscure: false,
                     enabled: true,
-                    titre: "Recettes Adhésion (DT)",
+                    titre: AppLocalizations.of(context)!.recettesAdhesionTitre,
                     textEditingController: recetteAdhesionTextEditingController,
                   ),
                   WidgetField(
                     obscure: false,
                     enabled: true,
-                    titre: "Recettes Abonnement (DT)",
+                    titre:
+                        AppLocalizations.of(context)!.recettesAbonnementTitre,
                     textEditingController:
                         recetteAbonnementTextEditingController,
                   ),
                   WidgetField(
                     obscure: false,
                     enabled: true,
-                    titre: "Recettes Cotisations (DT)",
+                    titre:
+                        AppLocalizations.of(context)!.recettesCotisationsTitre,
                     textEditingController:
                         recetteCotisationTextEditingController,
                   ),
                   WidgetField(
                     obscure: false,
                     enabled: true,
-                    titre: "Autres Recettes (DT)",
+                    titre: AppLocalizations.of(context)!.autresRecettesTitre,
                     textEditingController: autresRecettesTextEditingController,
-                  ),
-                  WidgetField(
-                    obscure: false,
-                    enabled: true,
-                    titre: AppLocalizations.of(context)!.totalTitre,
-                    textEditingController: recetteAdhesionTextEditingController,
                   ),
                   Align(
                     alignment: Alignment.centerRight,

@@ -1,37 +1,118 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
+import 'package:pfe_iheb/specific_fiche_gda_bloc/specific_fiche_gda_model.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pfe_iheb/utils/field_widget.dart';
 
-class DepensesPage extends StatelessWidget {
-  const DepensesPage({super.key});
+class SpecificDepensesPage extends StatefulWidget {
+  final SpecificFicheGDAModel modele;
+  const SpecificDepensesPage({super.key, required this.modele});
+
+  @override
+  State<SpecificDepensesPage> createState() => _SpecificDepensesPageState();
+}
+
+class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
+  final TextEditingController depensesAchatEauTextEditingController =
+      TextEditingController();
+
+  final TextEditingController depensesEnergieTextEditingController =
+      TextEditingController();
+
+  final TextEditingController depensesSalairesEtPrimesTextEditingController =
+      TextEditingController();
+
+  final TextEditingController
+      depensesMaintenaceEtEntretienTextEditingController =
+      TextEditingController();
+
+  final TextEditingController depensesLocationTextEditingController =
+      TextEditingController();
+
+  final TextEditingController
+      depensesRenouvellementDesEquipementTextEditingController =
+      TextEditingController();
+
+  final TextEditingController depensesGestionDGATextEditingController =
+      TextEditingController();
+
+  final TextEditingController depensesDInvestissementTextEditingController =
+      TextEditingController();
+
+  final TextEditingController depensesAutresDepensesTextEditingController =
+      TextEditingController();
+
+  final TextEditingController depensesTotalTextEditingController =
+      TextEditingController();
+  @override
+  void dispose() {
+    depensesAchatEauTextEditingController.dispose();
+    depensesEnergieTextEditingController.dispose();
+    depensesSalairesEtPrimesTextEditingController.dispose();
+    depensesMaintenaceEtEntretienTextEditingController.dispose();
+    depensesLocationTextEditingController.dispose();
+    depensesRenouvellementDesEquipementTextEditingController.dispose();
+    depensesGestionDGATextEditingController.dispose();
+    depensesDInvestissementTextEditingController.dispose();
+    depensesAutresDepensesTextEditingController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void initState() {
+    depensesAchatEauTextEditingController.text = widget.modele.depensesAchatEau;
+    depensesEnergieTextEditingController.text = widget.modele.depensesEnergie;
+    depensesSalairesEtPrimesTextEditingController.text =
+        widget.modele.depensesSalairesEtPrimes;
+    depensesMaintenaceEtEntretienTextEditingController.text =
+        widget.modele.depensesMaintenaceEtEntretien;
+    depensesLocationTextEditingController.text = widget.modele.depensesLocation;
+    depensesRenouvellementDesEquipementTextEditingController.text =
+        widget.modele.depensesRenouvellementDesEquipement;
+    depensesGestionDGATextEditingController.text =
+        widget.modele.depensesGestionDGA;
+    depensesDInvestissementTextEditingController.text =
+        widget.modele.depensesDInvestissement;
+    final double depensesAchatEau =
+        double.tryParse(depensesAchatEauTextEditingController.text) ?? 0.0;
+    final double depensesEnergie =
+        double.tryParse(depensesEnergieTextEditingController.text) ?? 0.0;
+    final double depensesSalairesEtPrimes =
+        double.tryParse(depensesSalairesEtPrimesTextEditingController.text) ??
+            0.0;
+    final double depensesMaintenaceEtEntretien = double.tryParse(
+            depensesMaintenaceEtEntretienTextEditingController.text) ??
+        0.0;
+    final double depensesLocation =
+        double.tryParse(depensesLocationTextEditingController.text) ?? 0.0;
+    final double depensesRenouvellementDesEquipement = double.tryParse(
+            depensesRenouvellementDesEquipementTextEditingController.text) ??
+        0.0;
+    final double depensesGestionDGA =
+        double.tryParse(depensesGestionDGATextEditingController.text) ?? 0.0;
+    final double depensesDInvestissement =
+        double.tryParse(depensesDInvestissementTextEditingController.text) ??
+            0.0;
+    final double depensesAutresDepenses =
+        double.tryParse(depensesAutresDepensesTextEditingController.text) ??
+            0.0;
+    final double total = depensesAchatEau +
+        depensesEnergie +
+        depensesSalairesEtPrimes +
+        depensesMaintenaceEtEntretien +
+        depensesLocation +
+        depensesRenouvellementDesEquipement +
+        depensesGestionDGA +
+        depensesDInvestissement +
+        depensesAutresDepenses;
+    depensesTotalTextEditingController.text = total.toString();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController depensesAchatEauTextEditingController =
-        TextEditingController();
-    final TextEditingController depensesEnergieTextEditingController =
-        TextEditingController();
-    final TextEditingController depensesSalairesEtPrimesTextEditingController =
-        TextEditingController();
-    final TextEditingController
-        depensesMaintenaceEtEntretienTextEditingController =
-        TextEditingController();
-    final TextEditingController depensesLocationTextEditingController =
-        TextEditingController();
-    final TextEditingController
-        depensesRenouvellementDesEquipementTextEditingController =
-        TextEditingController();
-    final TextEditingController depensesGestionDGATextEditingController =
-        TextEditingController();
-    final TextEditingController depensesDInvestissementTextEditingController =
-        TextEditingController();
-    final TextEditingController depensesAutresDepensesTextEditingController =
-        TextEditingController();
-    final TextEditingController depensesTotalTextEditingController =
-        TextEditingController();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.primaryblue,
@@ -131,6 +212,12 @@ class DepensesPage extends StatelessWidget {
                   titre: AppLocalizations.of(context)!.autresDepensesTitre,
                   textEditingController:
                       depensesAutresDepensesTextEditingController,
+                ),
+                WidgetField(
+                  obscure: false,
+                  enabled: false,
+                  titre: AppLocalizations.of(context)!.totalTitre,
+                  textEditingController: depensesTotalTextEditingController,
                 ),
                 ColoredBox(
                   color: Colors.white,

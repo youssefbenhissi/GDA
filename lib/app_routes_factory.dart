@@ -10,6 +10,7 @@ import 'package:pfe_iheb/login_bloc/login_page_route_builder.dart';
 import 'package:pfe_iheb/modify_password_bloc/modify_password_page_route_builder.dart';
 import 'package:pfe_iheb/navigation/navigation.dart';
 import 'package:pfe_iheb/recettes_realisees_screen/recettes_realisees_page_route_builder.dart';
+import 'package:pfe_iheb/specific_depenses_bloc/specific_depenses_route_builder.dart';
 import 'package:pfe_iheb/specific_donnees_techniques/specific_donnees_techniques_route_builder.dart';
 import 'package:pfe_iheb/specific_fiche_gda_bloc/specific_fiche_gda_model.dart';
 import 'package:pfe_iheb/specific_fiche_gda_bloc/specific_fiche_gda_page_route_builder.dart';
@@ -136,6 +137,15 @@ class AppRoutesFactory extends RoutesFactory {
       SpecificFicheGDAModel modele) {
     return MaterialPageRoute<String?>(
       builder: SpecificRecettesRealiseesScreenRouteBuilder(
+        modele,
+      ),
+    );
+  }
+
+  @override
+  Route createSpecificDepensesScreenPageRoute(SpecificFicheGDAModel modele) {
+    return MaterialPageRoute<String?>(
+      builder: SpecificDepensesScreenRouteBuilder(
         modele,
       ),
     );

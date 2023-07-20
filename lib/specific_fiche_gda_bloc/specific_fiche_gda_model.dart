@@ -14,6 +14,20 @@ class SpecificFicheGDAModel {
   final String tarifAdapte;
   final String coutEauText;
   final String nombreJour;
+  final String recetteVente;
+  final String recetteAdhesion;
+  final String recetteAbonnement;
+  final String recetteCotisation;
+  final String autresRecettes;
+  final String depensesAchatEau;
+  final String depensesEnergie;
+  final String depensesSalairesEtPrimes;
+  final String depensesMaintenaceEtEntretien;
+  final String depensesLocation;
+  final String depensesRenouvellementDesEquipement;
+  final String depensesGestionDGA;
+  final String depensesDInvestissement;
+  final String depensesAutresDepenses;
   SpecificFicheGDAModel(
     this.idGouv,
     this.nomGouvernoratFrancais,
@@ -28,5 +42,19 @@ class SpecificFicheGDAModel {
     this.tarifAdapte,
     this.coutEauText,
     this.nombreJour,
+    this.recetteVente,
+    this.recetteAdhesion,
+    this.recetteAbonnement,
+    this.recetteCotisation,
+    this.autresRecettes,
+    this.depensesAchatEau,
+    this.depensesEnergie,
+    this.depensesSalairesEtPrimes,
+    this.depensesMaintenaceEtEntretien,
+    this.depensesLocation,
+    this.depensesRenouvellementDesEquipement,
+    this.depensesGestionDGA,
+    this.depensesDInvestissement,
+    this.depensesAutresDepenses,
   );
 }

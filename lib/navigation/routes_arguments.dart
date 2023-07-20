@@ -27,3 +27,8 @@ class _SpecificRecettesRealiseesArguments {
   final SpecificFicheGDAModel specificFicheGDAModel;
   _SpecificRecettesRealiseesArguments(this.specificFicheGDAModel);
 }
+
+class _SpecificDepensesArguments {
+  final SpecificFicheGDAModel specificFicheGDAModel;
+  _SpecificDepensesArguments(this.specificFicheGDAModel);
+}

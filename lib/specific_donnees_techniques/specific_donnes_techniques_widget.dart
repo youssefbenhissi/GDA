@@ -199,20 +199,23 @@ class _SpecificDonneesTechniquesPageState
                     WidgetField(
                       obscure: false,
                       enabled: false,
-                      titre: "Volume pompé/acheté (m3)",
+                      titre:
+                          AppLocalizations.of(context)!.volumePompeAcheteTitre,
                       textEditingController: volumePompeTextEditingController,
                     ),
                     WidgetField(
                       obscure: false,
                       enabled: false,
-                      titre: "Volume distribué/facturé (m3)",
+                      titre: AppLocalizations.of(context)!
+                          .volumeDistribueFactureTitre,
                       textEditingController:
                           volumeDistribueTextEditingController,
                     ),
                     WidgetField(
                       obscure: false,
                       enabled: false,
-                      titre: "Volume Eau de Javal utilisé (l)",
+                      titre: AppLocalizations.of(context)!
+                          .volumeEauDeJavalUtiliseTitre,
                       textEditingController:
                           volumeEauJavelTextEditingController,
                     ),
@@ -220,19 +223,20 @@ class _SpecificDonneesTechniquesPageState
                       obscure: false,
                       enabled: false,
                       textEditingController: tarifAdapteTextEditingController,
-                      titre: "Tarif adopté (m3 eau)",
+                      titre: AppLocalizations.of(context)!.tarifAdopteTitre,
                     ),
                     WidgetField(
                       obscure: false,
                       enabled: false,
                       textEditingController: coutEauTextEditingController,
-                      titre: "Coût m3 Eau",
+                      titre: AppLocalizations.of(context)!.coutEauTitre,
                     ),
                     WidgetField(
                       obscure: false,
                       enabled: false,
                       textEditingController: nombreJourTextEditingController,
-                      titre: "Nombre de jours d’arrêt",
+                      titre: AppLocalizations.of(context)!
+                          .nombreDeJoursdarretTitre,
                     ),
                     Align(
                       alignment: Alignment.centerRight,

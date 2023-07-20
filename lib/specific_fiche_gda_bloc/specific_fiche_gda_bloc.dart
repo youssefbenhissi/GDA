@@ -29,19 +29,34 @@ class SpecificFicheGDABloc
       emitter(const FailedSpecificFicheGDAState._());
     } else if (response.statusCode == 200) {
       SpecificFicheGDAModel model = SpecificFicheGDAModel(
-          0,
-          "nomGouvernoratFrancais",
-          "nomGouvernoratArabe",
-          55,
-          "654",
-          12,
-          31,
-          "volumePompe",
-          "volumeDistribue",
-          "volumeEauJavel",
-          "tarifAdapte",
-          "coutEauText",
-          "nombreJour");
+        0,
+        "nomGouvernoratFrancais",
+        "nomGouvernoratArabe",
+        55,
+        "654",
+        12,
+        31,
+        "volumePompe",
+        "volumeDistribue",
+        "volumeEauJavel",
+        "tarifAdapte",
+        "coutEauText",
+        "nombreJour",
+        '4444',
+        '7777',
+        '777',
+        '57454',
+        '68',
+        '60',
+        '67',
+        '65',
+        '64',
+        '63',
+        '62',
+        '66',
+        '60',
+        '68',
+      );
       emitter(LoadedSpecificFicheGDAState._(model));
     }
   }

@@ -45,6 +45,10 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
         final args = settings.arguments as _SpecificRecettesRealiseesArguments;
         return routesFactory.createSpecificRecettesRealiseesScreenPageRoute(
             args.specificFicheGDAModel);
+      case _specificDepensesRouteName:
+        final args = settings.arguments as _SpecificDepensesArguments;
+        return routesFactory
+            .createSpecificDepensesScreenPageRoute(args.specificFicheGDAModel);
       case _weatherRouteName:
         return routesFactory.createWeatherPageRoute();
       default:

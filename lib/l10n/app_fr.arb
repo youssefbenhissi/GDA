@@ -55,5 +55,27 @@
     "consommationSpecifiqueTitre" : "Consommation Spécifique (l/habitant/jour)",
     "consommationSpecifiqueEauDeJavelTitre" : "Consommation Spécifique Eau de Javel (l/m3)",
     "recetteMoyenneTitre":"Recette Moyenne (DT)",
-    "nombreDeJourArretTitre" : "Nombre de jours d’arrêt"
+    "nombreDeJourArretTitre" : "Nombre de jours d’arrêt",
+    "recettesVenteEauTitre" : "Recettes Vente Eau (DT)",
+    "recettesAdhesionTitre" : "Recettes Adhésion (DT)",
+    "recettesAbonnementTitre" : "Recettes Abonnement  (DT)",
+    "recettesCotisationsTitre" : "Recettes Cotisations (DT)",
+    "autresRecettesTitre" : "Autres Recettes (DT)",
+    "volumePompeAcheteTitre" :"Volume pompé/acheté (m3)",
+    "volumeDistribueFactureTitre":"Volume distribué/facturé (m3)",
+    "volumeEauDeJavalUtiliseTitre":"Volume Eau de Javal utilisé (l)",
+    "tarifAdopteTitre":"Tarif adopté (m3 eau)",
+    "coutEauTitre":"Tarif adopté (m3 eau)",
+    "nombreDeJoursdarretTitre":"Nombre de jours d’arrêt",
+    "depensesAchatEauTitre":"Dépenses Achat Eau (DT)",
+    "depensesEnergieTitre" : "Dépenses Energie (DT)",
+    "depensesSalairesEtPrimesTitre":"Dépenses Salaires et Primes (DT)",
+    "depensesMaintenanceEtEntretienTitre":"Dépenses Maintenance et Entretien (DT)",
+    "depensesLocationEtAutresChargesdExploitationTitre": "Dépenses Location et Autres Charges d’Exploitation",
+    "depensesRenouvellementDesEquipementsTitre":"Dépenses Renouvellement des Equipements (DT)",
+    "depensesGestionGDATitre":"Dépenses Gestion GDA (DT)",
+    "depensesdInvestissementTitre":"Dépenses d’Investissement  (DT)",
+    "autresDepensesTitre" : "Autres Dépenses (DT)"
+
+
 }

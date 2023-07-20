@@ -55,6 +55,26 @@
     "consommationSpecifiqueTitre" : "الاستهلاك الخاص (ل/مشترك/يوم)",
     "consommationSpecifiqueEauDeJavelTitre" : "الاستهلاك الخاص (ل/م3)",
     "recetteMoyenneTitre":"معدل المداخيل",
-    "nombreDeJourArretTitre" : "عدد أيام العطب"
+    "nombreDeJourArretTitre" : "عدد أيام العطب",
+    "recettesVenteEauTitre" : "مداخيل بيع الماء",
+    "recettesAdhesionTitre" : "مداخيل انجاز الربط الخاص",
+    "recettesAbonnementTitre" : "مداخيل الاشتراكات",
+    "recettesCotisationsTitre" : "مداخيل الإنخراطات",
+    "autresRecettesTitre" : "مداخيل الأخرى",
+    "volumePompeAcheteTitre" :"الكمية المضخوخة/المشتراة (م3)",
+    "volumeDistribueFactureTitre":"الكمية الموزعة/ المفوترة (م3)",
+    "volumeEauDeJavalUtiliseTitre":"استهلاك الجفال (ل)",
+    "tarifAdopteTitre":"سعر م3 من الماء",
+    "coutEauTitre":"سعر م3 من الماء",
+    "nombreDeJoursdarretTitre":"عدد أيام العطب",
+    "depensesAchatEauTitre":"مصاريف شراء الماء",
+    "depensesEnergieTitre" : "مصاريف الطاقة ",
+    "depensesSalairesEtPrimesTitre":"مصاريف اليد العاملة",
+    "depensesMaintenanceEtEntretienTitre":"مصاريف الصيانة والإصلاح",
+    "depensesLocationEtAutresChargesdExploitationTitre": "مصاريف كراء المقر والاستغلال الأخرى",
+    "depensesRenouvellementDesEquipementsTitre":"مصاريف تجديد المعدات",
+    "depensesGestionGDATitre":"مصاريف التصرف الخاص بالمجمع",
+    "depensesdInvestissementTitre":"مصاريف الاستثمار والتجهيز",
+    "autresDepensesTitre" : "مصاريف أخرى"
 
 }
