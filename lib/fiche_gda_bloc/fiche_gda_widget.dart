@@ -31,12 +31,19 @@ class FicheGDAPage extends StatelessWidget {
               onTap: () {
                 context.gNavigationService.openDonneesTechniquesScreen(context);
               },
-              child: SvgPicture.asset(
-                "assets/images/arrow-right-solid.svg",
-                fit: BoxFit.contain,
-                width: 25,
-                color: Colors.white,
-              ),
+              child: Directionality.of(context) == TextDirection.rtl
+                  ? SvgPicture.asset(
+                      "assets/images/arrow-left-solid.svg",
+                      fit: BoxFit.contain,
+                      width: 25,
+                      color: Colors.white,
+                    )
+                  : SvgPicture.asset(
+                      "assets/images/arrow-right-solid.svg",
+                      fit: BoxFit.contain,
+                      width: 25,
+                      color: Colors.white,
+                    ),
             ),
           ),
         ],
@@ -56,9 +63,9 @@ class FicheGDAPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          "Gouvernorat",
-                          style: TextStyle(color: Colors.lightBlue),
+                        Text(
+                          AppLocalizations.of(context)!.gouvernoratTitre,
+                          style: const TextStyle(color: Colors.lightBlue),
                         ),
                         Text(state.model.idGouv.toString()),
                         Text(currentLanguage == "fr"
@@ -73,12 +80,14 @@ class FicheGDAPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          "Délégation",
-                          style: TextStyle(color: Colors.lightBlue),
+                        Text(
+                          AppLocalizations.of(context)!.delegationTitre,
+                          style: const TextStyle(color: Colors.lightBlue),
                         ),
                         Text(state.model.idDelegation.toString()),
-                        const Text("Sbikha"),
+                        Text(currentLanguage == "fr"
+                            ? state.model.refdelegationfrancais
+                            : state.model.refdelegationarabe),
                       ],
                     ),
                   ),
@@ -93,7 +102,9 @@ class FicheGDAPage extends StatelessWidget {
                           style: TextStyle(color: Colors.lightBlue),
                         ),
                         Text(state.model.code.toString()),
-                        const Text("KAIROUAN"),
+                        Text(currentLanguage == "fr"
+                            ? state.model.rgdfrancais
+                            : state.model.rgdarabe),
                       ],
                     ),
                   ),

@@ -16,11 +16,10 @@ class DetailsPage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            GestureDetector(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: GestureDetector(
               onTap: () {
                 Navigator.pop(context);
               },
@@ -31,19 +30,10 @@ class DetailsPage extends StatelessWidget {
                 "assets/images/cross.png",
               ),
             ),
-            Text(
-              AppLocalizations.of(context)!.detailsTitre,
-            ),
-            GestureDetector(
-              onTap: () {},
-              child: Image.asset(
-                fit: BoxFit.contain,
-                width: 25,
-                color: Colors.white,
-                "assets/images/tick.png",
-              ),
-            ),
-          ],
+          ),
+        ],
+        title: Text(
+          AppLocalizations.of(context)!.detailsTitre,
         ),
       ),
       body: SingleChildScrollView(
@@ -55,9 +45,9 @@ class DetailsPage extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  const Text(
-                    'Date De Création',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.dateDeCreationTitre,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,
@@ -72,9 +62,9 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'Nom du Président',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.nomDuPresidentTitre,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,
@@ -89,9 +79,9 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'N° Tél',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.numeroDuTelephone,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,
@@ -106,9 +96,9 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'Nom Directeur Technique',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.nomDirecteurTechniqueTitre,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,
@@ -123,9 +113,9 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'N° Tél',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.numeroDuTelephone,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,
@@ -140,9 +130,9 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'Nom SAEP',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.nomSAEPTitre,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,
@@ -157,9 +147,9 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'Date de mise en service',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.dateDeMiseEnServiceTitre,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,
@@ -174,9 +164,9 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'Source d\'eau',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.sourceDEauTitre,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,
@@ -220,7 +210,7 @@ class DetailsPage extends StatelessWidget {
                       const SizedBox(
                         width: 15,
                       ),
-                      const Text("Forage")
+                      Text(AppLocalizations.of(context)!.forageTitre)
                     ],
                   ),
                   const SizedBox(
@@ -269,7 +259,7 @@ class DetailsPage extends StatelessWidget {
                       const SizedBox(
                         width: 15,
                       ),
-                      const Text("Piquage GR")
+                      Text(AppLocalizations.of(context)!.piquageGRTitre)
                     ],
                   ),
                   const SizedBox(
@@ -318,7 +308,7 @@ class DetailsPage extends StatelessWidget {
                       const SizedBox(
                         width: 15,
                       ),
-                      const Text("Piquage SONEDE")
+                      Text(AppLocalizations.of(context)!.piquageSONEDETitre)
                     ],
                   ),
                   const SizedBox(
@@ -367,7 +357,7 @@ class DetailsPage extends StatelessWidget {
                       const SizedBox(
                         width: 15,
                       ),
-                      const Text("Puits de surface")
+                      Text(AppLocalizations.of(context)!.puitsDeSurfaceTitre)
                     ],
                   ),
                   const SizedBox(
@@ -416,7 +406,7 @@ class DetailsPage extends StatelessWidget {
                       const SizedBox(
                         width: 15,
                       ),
-                      const Text("S. Naturelle")
+                      Text(AppLocalizations.of(context)!.sourceNaturelleTitre)
                     ],
                   ),
                   const SizedBox(
@@ -426,9 +416,9 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'Nombre de bénéficiaires',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.nombreDeBeneficiairesTitre,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,
@@ -445,9 +435,9 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'ur de réseau',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.longueurDeReseauTitre,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,
@@ -462,9 +452,9 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'Nombre stations de pompage',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.nombreStationsDePompageTitre,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,
@@ -479,9 +469,9 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'Nombre réservoire',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.nombreReservoireTitre,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,
@@ -496,9 +486,9 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'Nombre BI',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.nombreBITitre,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,
@@ -513,9 +503,9 @@ class DetailsPage extends StatelessWidget {
                   const SizedBox(
                     height: 10,
                   ),
-                  const Text(
-                    'Nombre BEP',
-                    style: TextStyle(color: Colors.lightBlue),
+                  Text(
+                    AppLocalizations.of(context)!.nombreBEPTitre,
+                    style: const TextStyle(color: Colors.lightBlue),
                   ),
                   const SizedBox(
                     height: 10,

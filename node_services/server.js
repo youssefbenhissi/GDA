@@ -137,7 +137,7 @@ app.post('/register',(req,res,next)=>{
 
 app.post('/getdonneesidentification', function (req, res) {
   let login = req.body.login;
-  con.query('SELECT * FROM jhi_user u , ref_gda rgd , ref_gouvernorat rgo  where  u.login=? AND u.id_gouv = rgo.id AND u.id_gda = rgd.id',[login], function (error, results, fields) {
+  con.query('SELECT u.id_gouv , rgo.lib_ar , rgo.lib_fr ,rgd.lib_ar as rgdarabe , rgd.lib_fr as rgdfrancais, rgd.id_delegation , rgd.code ,rgd.date_creation,rgd.nom_president,rgd.tel_president, rgd.nom_dir_technique , rgd.tel_dir_technique , rgd.nom_saep , rgd.date_mise_service , rgd.src_eau_forage , rgd.src_eau_piquage_sonede, rgd.src_eau_piquage_gr ,rgd.src_eau_puit ,rgd.src_eau_source_naturelle ,rgd.nb_beneficiaires ,rgd.longueur_reseau,rgd.nb_stations_pompage,rgd.nb_reservoirs,rgd.nb_bi ,rgd.nb_bep , refdelegation.lib_ar as refdelegationarabe, refdelegation.lib_fr as refdelegationfrancais   FROM jhi_user u , ref_gda rgd , ref_gouvernorat rgo , ref_delegation refdelegation  where rgd.id_delegation = refdelegation.id AND u.login=? AND u.id_gouv = rgo.id AND u.id_gda = rgd.id ',[login], function (error, results, fields) {
       if (error) {
         return res.status(400).send();  
       }
