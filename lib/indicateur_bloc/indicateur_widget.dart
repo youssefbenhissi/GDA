@@ -42,33 +42,33 @@ class IndicateurPage extends StatelessWidget {
                           tauxDeRecouvrementTitre: AppLocalizations.of(context)!
                               .tauxDeRecouvrementTitre,
                           tauxDeRecouvrementValeur:
-                              double.tryParse(state.models[1].inputValue) ??
-                                  0.0,
+                              double.tryParse(state.models[1].inputValue)!
+                                  .toStringAsFixed(2),
                           tauxDePerteValeur:
-                              double.tryParse(state.models[0].inputValue) ??
-                                  0.0,
+                              double.tryParse(state.models[0].inputValue)!
+                                  .toStringAsFixed(2),
                           consommationSpecifiqueTitre:
                               AppLocalizations.of(context)!
                                   .consommationSpecifiqueTitre,
                           consommationSpecifiqueValeur:
-                              double.tryParse(state.models[2].inputValue) ??
-                                  0.0,
+                              double.tryParse(state.models[2].inputValue)!
+                                  .toStringAsFixed(2),
                           consommationSpecifiqueEauDeJavelTitre:
                               AppLocalizations.of(context)!
                                   .consommationSpecifiqueEauDeJavelTitre,
                           consommationSpecifiqueEauDeJavelValeur:
-                              double.tryParse(state.models[3].inputValue) ??
-                                  0.0,
+                              double.tryParse(state.models[3].inputValue)!
+                                  .toStringAsFixed(2),
                           recetteMoyenneTitre:
                               AppLocalizations.of(context)!.recetteMoyenneTitre,
                           recetteMoyenneValeur:
-                              double.tryParse(state.models[4].inputValue) ??
-                                  0.0,
+                              double.tryParse(state.models[4].inputValue)!
+                                  .toStringAsFixed(2),
                           nombreDeJourArretTitre: AppLocalizations.of(context)!
                               .nombreDeJourArretTitre,
                           nombreDeJourArretValeur:
-                              double.tryParse(state.models[5].inputValue) ??
-                                  0.0,
+                              double.tryParse(state.models[5].inputValue)!
+                                  .toStringAsFixed(2),
                         ),
                       ),
                       const SizedBox(

@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 class ConsultationStatisticsCard extends StatelessWidget {
   final String tauxDePerteTitre;
-  final double tauxDePerteValeur;
+  final String tauxDePerteValeur;
   final String tauxDeRecouvrementTitre;
-  final double tauxDeRecouvrementValeur;
+  final String tauxDeRecouvrementValeur;
   final String consommationSpecifiqueTitre;
-  final double consommationSpecifiqueValeur;
+  final String consommationSpecifiqueValeur;
   final String consommationSpecifiqueEauDeJavelTitre;
-  final double consommationSpecifiqueEauDeJavelValeur;
+  final String consommationSpecifiqueEauDeJavelValeur;
   final String recetteMoyenneTitre;
-  final double recetteMoyenneValeur;
+  final String recetteMoyenneValeur;
   final String nombreDeJourArretTitre;
-  final double nombreDeJourArretValeur;
+  final String nombreDeJourArretValeur;
   const ConsultationStatisticsCard({
     super.key,
     required this.tauxDePerteTitre,
@@ -46,9 +46,9 @@ class ConsultationStatisticsCard extends StatelessWidget {
                 Container(
                   alignment: Alignment.centerRight,
                   width: 50,
-                  color: tauxDePerteValeur > 25
+                  color: double.tryParse(tauxDePerteValeur)! > 25
                       ? Colors.red
-                      : consommationSpecifiqueValeur > 15
+                      : double.tryParse(consommationSpecifiqueValeur)! > 15
                           ? Colors.orange
                           : Colors.green,
                   child: Text(
@@ -65,9 +65,9 @@ class ConsultationStatisticsCard extends StatelessWidget {
                 Container(
                   alignment: Alignment.centerRight,
                   width: 50,
-                  color: tauxDeRecouvrementValeur > 75
+                  color: double.tryParse(tauxDeRecouvrementValeur)! > 75
                       ? Colors.green
-                      : consommationSpecifiqueValeur > 60
+                      : double.tryParse(consommationSpecifiqueValeur)! > 60
                           ? Colors.orange
                           : Colors.red,
                   child: Text(
@@ -84,11 +84,11 @@ class ConsultationStatisticsCard extends StatelessWidget {
                 Container(
                   alignment: Alignment.centerRight,
                   width: 50,
-                  color: consommationSpecifiqueValeur > 100
+                  color: double.tryParse(consommationSpecifiqueValeur)! > 100
                       ? Colors.red
-                      : consommationSpecifiqueValeur > 75
+                      : double.tryParse(consommationSpecifiqueValeur)! > 75
                           ? Colors.green
-                          : consommationSpecifiqueValeur > 50
+                          : double.tryParse(consommationSpecifiqueValeur)! > 50
                               ? Colors.orange
                               : const Color.fromARGB(255, 245, 125, 125),
                   child: Text(
@@ -105,7 +105,9 @@ class ConsultationStatisticsCard extends StatelessWidget {
                 Container(
                   alignment: Alignment.centerRight,
                   width: 50,
-                  color: consommationSpecifiqueEauDeJavelValeur >= 0.025
+                  color: double.tryParse(
+                              consommationSpecifiqueEauDeJavelValeur)! >=
+                          0.025
                       ? Colors.green
                       : Colors.red,
                   child: Text(

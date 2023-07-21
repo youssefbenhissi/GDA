@@ -29,15 +29,23 @@ class StatisticsPage extends StatelessWidget {
               itemBuilder: (context, index) {
                 return StatisticsCard(
                   date: state.models.keys.elementAt(index),
-                  tauxDePerteTitre: "tauxDePerteTitre",
-                  tauxDePerteValeur: state.models[state.models.keys.elementAt(index)]![0],
-                  consommationSpecifiqueTitre: "consommationSpecifiqueTitre",
-                  consommationSpecifiqueValeur: state.models[state.models.keys.elementAt(index)]![1],
+                  tauxDePerteTitre:
+                      AppLocalizations.of(context)!.tauxDePerteTitre,
+                  tauxDePerteValeur:
+                      state.models[state.models.keys.elementAt(index)]![0],
+                  consommationSpecifiqueTitre:
+                      AppLocalizations.of(context)!.consommationSpecifiqueTitre,
+                  consommationSpecifiqueValeur:
+                      state.models[state.models.keys.elementAt(index)]![1],
                   consommationSpecifiqueEauDeJavelTitre:
-                      "consommationSpecifiqueEauDeJavelTitre",
-                  consommationSpecifiqueEauDeJavelValeur: state.models[state.models.keys.elementAt(index)]![2],
-                  recetteMoyenneTitre: "recetteMoyenneTitre",
-                  recetteMoyenneValeur: state.models[state.models.keys.elementAt(index)]![3],
+                      AppLocalizations.of(context)!
+                          .consommationSpecifiqueEauDeJavelTitre,
+                  consommationSpecifiqueEauDeJavelValeur:
+                      state.models[state.models.keys.elementAt(index)]![2],
+                  recetteMoyenneTitre:
+                      AppLocalizations.of(context)!.recetteMoyenneTitre,
+                  recetteMoyenneValeur:
+                      state.models[state.models.keys.elementAt(index)]![3],
                 );
               },
             );
