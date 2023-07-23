@@ -83,9 +83,6 @@ class ModifyPasswordScreen extends StatelessWidget {
                       String? oldPassword =
                           await SharedPreferencesHelper.getValue(
                               SharedPreferencesHelper.PASSWORD_STRING);
-                      print("*" * 80);
-                      print(newPassword);
-                      print(oldPassword);
                       if (oldPassword != passwordController.text) {
                         ErrorPopUpNotification.create(
                           context: context,

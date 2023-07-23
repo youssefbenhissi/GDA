@@ -1,5 +1,3 @@
-import 'package:intl/intl.dart';
-
 class IndicateurModel {
   final String inputValue;
   IndicateurModel(this.inputValue);

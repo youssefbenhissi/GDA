@@ -30,8 +30,6 @@ class DepensesPage extends StatelessWidget {
         TextEditingController();
     final TextEditingController depensesAutresDepensesTextEditingController =
         TextEditingController();
-    final TextEditingController depensesTotalTextEditingController =
-        TextEditingController();
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColors.primaryblue,

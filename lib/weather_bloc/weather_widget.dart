@@ -6,7 +6,6 @@ import 'package:pfe_iheb/app_page_injectable.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:pfe_iheb/utils/drawer.dart';
 import 'package:pfe_iheb/weather_bloc/weather_bloc.dart';
-import 'package:pfe_iheb/weather_bloc/weather_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WeatherPage extends StatefulWidget {

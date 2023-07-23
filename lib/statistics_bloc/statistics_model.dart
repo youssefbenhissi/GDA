@@ -1,5 +1,3 @@
-import 'package:intl/intl.dart';
-
 class StaticsModel {
   final double inputValue;
   final String date;

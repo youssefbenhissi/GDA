@@ -14,7 +14,7 @@ class LoginScreenRouteBuilder {
           create: (_) => LoginBloc(),
         ),
       ],
-      child:  LoginScreen(),
+      child: const LoginScreen(),
     );
   }
 }

@@ -13,7 +13,7 @@ import 'package:provider/provider.dart';
 import 'package:local_auth/local_auth.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({super.key});
+  const LoginScreen({super.key});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();

@@ -1,8 +1,7 @@
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:http/http.dart' as http;
 import 'package:pfe_iheb/specific_fiche_gda_bloc/specific_fiche_gda_model.dart';
 import 'package:pfe_iheb/utils/constants.dart';

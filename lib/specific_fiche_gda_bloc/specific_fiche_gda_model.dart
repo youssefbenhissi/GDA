@@ -1,5 +1,3 @@
-import 'package:intl/intl.dart';
-
 class SpecificFicheGDAModel {
   final int idGouv;
   final String nomGouvernoratFrancais;
