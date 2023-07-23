@@ -23,12 +23,16 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     String json =
         '{"login": "${event.username}","password": "${event.password}"}';
     http.Response response = await http.post(url, headers: headers, body: json);
-    User u = User.fromJson(jsonDecode(response.body));
     if (response.statusCode == 200) {
+      User u = User.fromJson(jsonDecode(response.body));
       emitter(GDALoginState._(u));
     } else if (response.statusCode == 201) {
+      User u = User.fromJson(jsonDecode(response.body));
+
       emitter(DecideurCentralLoginState._(u));
     } else if (response.statusCode == 202) {
+      User u = User.fromJson(jsonDecode(response.body));
+
       emitter(DecideurGouvernoratLoginState._(u));
     } else {
       emitter(const FailedLoginState._());
