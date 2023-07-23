@@ -42,6 +42,8 @@ class _ConsultationPageState extends State<ConsultationPage> {
     String month = "janvier";
     String year = "2019";
     String _selectedOption = "Option 1";
+    String code;
+    int idDelegation;
     List<String> _gouvernorats = [
       'TUNIS',
       'ARIANA',
@@ -299,6 +301,21 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                   .openIndicateursSpecifiqueScreen(context,
                                       monthNumber, int.tryParse(year) ?? 2023);
                             } else {
+                              switch (gdaController.text) {
+                                case 'سيدي مسعود':
+                                  idDelegation = 4154;
+                                  code = "4154001";
+                                  break;
+                                case 'هندي الزيتونة':
+                                  idDelegation = 4154;
+                                  code = "4154002";
+                                  break;
+                                case 'عين بومرّة':
+                                  idDelegation = 4154;
+                                  code = "4154003";
+                                  break;
+                              }
+
                               context.currentConsultationBloc
                                   .choseAllfields(month, year, year);
                               context.gNavigationService
