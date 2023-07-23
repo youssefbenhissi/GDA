@@ -55,7 +55,7 @@ class NavigationService {
       arguments: _SpecificDonneesTechniquesArguments(modele),
     );
   }
-  
+
   Future<void> openSpecificDepenses(
       BuildContext context, SpecificFicheGDAModel modele) {
     return Navigator.of(context).pushNamed(
@@ -76,7 +76,8 @@ class NavigationService {
     return Navigator.of(context).pushNamed(_saisirDepensesRealiseesRouteName);
   }
 
-  Future<void> openWeatherScreen(BuildContext context) {
-    return Navigator.of(context).pushNamed(_weatherRouteName);
+  Future<void> openWeatherScreen(BuildContext context, String location) {
+    return Navigator.of(context)
+        .pushNamed(_weatherRouteName, arguments: _WeatherArguments(location));
   }
 }

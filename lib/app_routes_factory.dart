@@ -116,9 +116,9 @@ class AppRoutesFactory extends RoutesFactory {
   }
 
   @override
-  Route<dynamic> createWeatherPageRoute() {
+  Route<dynamic> createWeatherPageRoute(String location) {
     return MaterialPageRoute<String?>(
-      builder: WeatherScreenRouteBuilder(),
+      builder: WeatherScreenRouteBuilder(location: location),
     );
   }
 

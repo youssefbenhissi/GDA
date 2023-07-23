@@ -20,7 +20,7 @@ abstract class RoutesFactory {
   Route<dynamic> createDonneesTechniquesPageRoute();
   Route<dynamic> createRecettesRealiseesPageRoute();
   Route<dynamic> createDepensesRealiseesPageRoute();
-  Route<dynamic> createWeatherPageRoute();
+  Route<dynamic> createWeatherPageRoute(String location);
   Route<dynamic> createSpecificFicheGDAScreenPageRoute(
       int month, int year, int gda);
 }

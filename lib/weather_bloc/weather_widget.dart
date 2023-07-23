@@ -10,7 +10,8 @@ import 'package:pfe_iheb/weather_bloc/weather_model.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class WeatherPage extends StatefulWidget {
-  const WeatherPage({Key? key}) : super(key: key);
+  final String location;
+  const WeatherPage({Key? key, required this.location}) : super(key: key);
 
   @override
   State<WeatherPage> createState() => _WeatherPageState();
@@ -25,8 +26,6 @@ class _WeatherPageState extends State<WeatherPage> {
     'BEN AROUS',
     'MANOUBA',
     'NABEUL',
-    'ZAGHOUANE',
-    'BIZERTE',
     'BEJA',
     'JENDOUBA',
     'KEF',
@@ -203,7 +202,7 @@ class _WeatherPageState extends State<WeatherPage> {
                   child: StatefulBuilder(
                     builder: (context, setState) => DropdownButton<String>(
                       isExpanded: true,
-                      value: gouvernoratValue,
+                      value: widget.location,
                       items: gouvernorats
                           .map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
@@ -216,7 +215,8 @@ class _WeatherPageState extends State<WeatherPage> {
                       onChanged: (String? newValue) {
                         setState(() {
                           gouvernoratValue = newValue!;
-                          context.currentWeatherBloc.loadWeather(newValue);
+                          context.gNavigationService
+                              .openWeatherScreen(context, newValue);
                         });
                       },
                     ),

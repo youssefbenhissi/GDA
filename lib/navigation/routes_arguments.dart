@@ -32,3 +32,8 @@ class _SpecificDepensesArguments {
   final SpecificFicheGDAModel specificFicheGDAModel;
   _SpecificDepensesArguments(this.specificFicheGDAModel);
 }
+
+class _WeatherArguments {
+  final String location;
+  _WeatherArguments(this.location);
+}

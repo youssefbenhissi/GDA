@@ -73,7 +73,7 @@ class ApplicationDrawer extends StatelessWidget {
             title: Text(AppLocalizations.of(context)!.meteoTitre,
                 style: const TextStyle(color: Colors.white)),
             onTap: () {
-              context.gNavigationService.openWeatherScreen(context);
+              context.gNavigationService.openWeatherScreen(context, 'TUNIS');
             },
           ),
           const Divider(

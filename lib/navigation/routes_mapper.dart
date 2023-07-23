@@ -50,7 +50,9 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
         return routesFactory
             .createSpecificDepensesScreenPageRoute(args.specificFicheGDAModel);
       case _weatherRouteName:
-        return routesFactory.createWeatherPageRoute();
+        final args = settings.arguments as _WeatherArguments;
+
+        return routesFactory.createWeatherPageRoute(args.location);
       default:
         return routesFactory.createLoginScreenPageRoute();
     }

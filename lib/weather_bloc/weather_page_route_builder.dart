@@ -5,16 +5,17 @@ import 'package:pfe_iheb/weather_bloc/weather_bloc.dart';
 import 'package:pfe_iheb/weather_bloc/weather_widget.dart';
 
 class WeatherScreenRouteBuilder {
-  WeatherScreenRouteBuilder();
+  String location;
+  WeatherScreenRouteBuilder({required this.location});
 
   Widget call(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (_) => WeatherBloc()..loadWeather('Tunis'),
+          create: (_) => WeatherBloc()..loadWeather(location),
         ),
       ],
-      child: const WeatherPage(),
+      child: WeatherPage(location: location),
     );
   }
 }
