@@ -301,21 +301,626 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                   .openIndicateursSpecifiqueScreen(context,
                                       monthNumber, int.tryParse(year) ?? 2023);
                             } else {
-                              switch (gdaController.text) {
-                                case 'سيدي مسعود':
-                                  idDelegation = 4154;
-                                  code = "4154001";
-                                  break;
-                                case 'هندي الزيتونة':
-                                  idDelegation = 4154;
-                                  code = "4154002";
-                                  break;
-                                case 'عين بومرّة':
-                                  idDelegation = 4154;
-                                  code = "4154003";
-                                  break;
-                              }
-
+                              setState(() {
+                                switch (gdaController.text) {
+                                  case 'سيدي مسعود':
+                                    idDelegation = 4154;
+                                    code = "4154001";
+                                    break;
+                                  case 'هندي الزيتونة':
+                                    idDelegation = 4154;
+                                    code = "4154002";
+                                    break;
+                                  case 'عين بومرّة':
+                                    idDelegation = 4154;
+                                    code = "4154003";
+                                    break;
+                                  case 'أولاد خلف الله':
+                                    idDelegation = 4154;
+                                    code = "4154004";
+                                    break;
+                                  case 'وشتاتية':
+                                    idDelegation = 4154;
+                                    code = "4154005";
+                                    break;
+                                  case 'الفريوات':
+                                    idDelegation = 4154;
+                                    code = "4154006";
+                                    break;
+                                  case 'الدخيلة':
+                                    idDelegation = 4154;
+                                    code = "4154007";
+                                    break;
+                                  case 'القفي':
+                                    idDelegation = 4154;
+                                    code = "4154008";
+                                    break;
+                                  case 'همّاد فرنيز':
+                                    idDelegation = 4154;
+                                    code = "4154009";
+                                    break;
+                                  case 'همّاد الدخايلية':
+                                    idDelegation = 4154;
+                                    code = "4154010";
+                                    break;
+                                  case 'غويرقة':
+                                    idDelegation = 4154;
+                                    code = "4154011";
+                                    break;
+                                  case 'الخضر':
+                                    idDelegation = 4154;
+                                    code = "4154012";
+                                    break;
+                                  case 'سرديانة 1':
+                                    idDelegation = 4154;
+                                    code = "4154013";
+                                    break;
+                                  case 'العفاسة':
+                                    idDelegation = 4154;
+                                    code = "4154014";
+                                    break;
+                                  case 'سرديانة 2':
+                                    idDelegation = 4154;
+                                    code = "4154015";
+                                    break;
+                                  case 'الزّهّار':
+                                    idDelegation = 4154;
+                                    code = "4154016";
+                                    break;
+                                  case 'الوديّات':
+                                    idDelegation = 4154;
+                                    code = "4154017";
+                                    break;
+                                  case 'الجواودة':
+                                    idDelegation = 4154;
+                                    code = "4154018";
+                                    break;
+                                  case 'أولاد بن حيمد':
+                                    idDelegation = 4154;
+                                    code = "4154019";
+                                    break;
+                                  case 'المعراجي':
+                                    idDelegation = 4154;
+                                    code = "4154020";
+                                    break;
+                                  case 'بير شهيدة':
+                                    idDelegation = 4154;
+                                    code = "4154021";
+                                    break;
+                                  case 'المشنوقة':
+                                    idDelegation = 4154;
+                                    code = "4154022";
+                                    break;
+                                  case 'أولاد الحاج':
+                                    idDelegation = 4154;
+                                    code = "4154023";
+                                    break;
+                                  case 'سعايدية':
+                                    idDelegation = 4154;
+                                    code = "4154024";
+                                    break;
+                                  case 'الدرابلية':
+                                    idDelegation = 4154;
+                                    code = "4154025";
+                                    break;
+                                  case 'قليب السّبط':
+                                    idDelegation = 4154;
+                                    code = "4154026";
+                                    break;
+                                  case 'العوايد':
+                                    idDelegation = 4154;
+                                    code = "4154027";
+                                    break;
+                                  case 'هندي الرقّاص':
+                                    idDelegation = 4154;
+                                    code = "4154028";
+                                    break;
+                                  case 'رواونة-طرابلسية':
+                                    idDelegation = 4154;
+                                    code = "4154029";
+                                    break;
+                                  case 'العرفات':
+                                    idDelegation = 4154;
+                                    code = "4154030";
+                                    break;
+                                  case 'أولاد شهيب':
+                                    idDelegation = 4154;
+                                    code = "4154031";
+                                    break;
+                                  case 'بودبوس':
+                                    idDelegation = 4154;
+                                    code = "4154032";
+                                    break;
+                                  case 'أولاد أحمد الصغير':
+                                    idDelegation = 4154;
+                                    code = "4154033";
+                                    break;
+                                  case 'الهواينية':
+                                    idDelegation = 4154;
+                                    code = "4154034";
+                                    break;
+                                  case 'العبابسة':
+                                    idDelegation = 4154;
+                                    code = "4154035";
+                                    break;
+                                  case 'الخريوع':
+                                    idDelegation = 4154;
+                                    code = "4154036";
+                                    break;
+                                  case 'العرايسية':
+                                    idDelegation = 4154;
+                                    code = "4154037";
+                                    break;
+                                  case 'هماد- فريوات':
+                                    idDelegation = 4154;
+                                    code = "4154038";
+                                    break;
+                                  case 'فطناسة':
+                                    idDelegation = 4154;
+                                    code = "4154039";
+                                    break;
+                                  case 'الدرع':
+                                    idDelegation = 4156;
+                                    code = "4154040";
+                                    break;
+                                  case 'الخشم':
+                                    idDelegation = 4156;
+                                    code = "4154041";
+                                    break;
+                                  case 'أولاد العيساوي':
+                                    idDelegation = 4156;
+                                    code = "4154042";
+                                    break;
+                                  case 'العواديد':
+                                    idDelegation = 4156;
+                                    code = "4154043";
+                                    break;
+                                  case 'الفجارنية':
+                                    idDelegation = 4156;
+                                    code = "4154044";
+                                    break;
+                                  case 'العجيلات':
+                                    idDelegation = 4156;
+                                    code = "4154045";
+                                    break;
+                                  case 'أولاد الحاج عمار':
+                                    idDelegation = 4156;
+                                    code = "4154046";
+                                    break;
+                                  case 'عين زانة':
+                                    idDelegation = 4156;
+                                    code = "4154047";
+                                    break;
+                                  case 'الزبارة للشراب':
+                                    idDelegation = 4156;
+                                    code = "4154048";
+                                    break;
+                                  case 'عين الكدية':
+                                    idDelegation = 4156;
+                                    code = "4154049";
+                                    break;
+                                  case 'المسلسل الشريشيرة':
+                                    idDelegation = 4156;
+                                    code = "4154050";
+                                    break;
+                                  case 'أولاد خليف':
+                                    idDelegation = 4156;
+                                    code = "4154051";
+                                    break;
+                                  case 'إدمان الحاسي':
+                                    idDelegation = 4156;
+                                    code = "4154052";
+                                    break;
+                                  case 'جليل عين البيضاء':
+                                    idDelegation = 4156;
+                                    code = "4154054";
+                                    break;
+                                  case 'العالية':
+                                    idDelegation = 4156;
+                                    code = "4154055";
+                                    break;
+                                  case 'الرميل':
+                                    idDelegation = 4156;
+                                    code = "4154056";
+                                    break;
+                                  case 'المرمر ( ميزاي)':
+                                    idDelegation = 4156;
+                                    code = "4154057";
+                                    break;
+                                  case 'فم النقاش (العبادلية)':
+                                    idDelegation = 4156;
+                                    code = "4154058";
+                                    break;
+                                  case 'المحافيظ':
+                                    idDelegation = 4156;
+                                    code = "4154059";
+                                    break;
+                                  case 'الرحمة':
+                                    idDelegation = 4156;
+                                    code = "4154060";
+                                    break;
+                                  case 'الزملة':
+                                    idDelegation = 4156;
+                                    code = "4154061";
+                                    break;
+                                  case 'العنق':
+                                    idDelegation = 4156;
+                                    code = "4154062";
+                                    break;
+                                  case 'أولاد فرحات':
+                                    idDelegation = 4156;
+                                    code = "4154063";
+                                    break;
+                                  case 'المرايحية':
+                                    idDelegation = 4156;
+                                    code = "4154064";
+                                    break;
+                                  case 'الجباس':
+                                    idDelegation = 4156;
+                                    code = "4154065";
+                                    break;
+                                  case 'أولاد ضيف الله':
+                                    idDelegation = 4156;
+                                    code = "4154066";
+                                    break;
+                                  case 'المنزل العالية':
+                                    idDelegation = 4155;
+                                    code = "4154067";
+                                    break;
+                                  case 'عين مستور':
+                                    idDelegation = 4155;
+                                    code = "4154068";
+                                    break;
+                                  case 'أولاد تليل':
+                                    idDelegation = 4155;
+                                    code = "4154069";
+                                    break;
+                                  case 'جبل الريحان':
+                                    idDelegation = 4155;
+                                    code = "4154070";
+                                    break;
+                                  case 'قصر اللمسة':
+                                    idDelegation = 4155;
+                                    code = "4154071";
+                                    break;
+                                  case 'لبيرة - زغدود':
+                                    idDelegation = 4155;
+                                    code = "4154072";
+                                    break;
+                                  case 'هندي العمري':
+                                    idDelegation = 4155;
+                                    code = "4154073";
+                                    break;
+                                  case 'أولاد بامر':
+                                    idDelegation = 4155;
+                                    code = "4154074";
+                                    break;
+                                  case 'السطوح':
+                                    idDelegation = 4155;
+                                    code = "4154075";
+                                    break;
+                                  case 'الـحريــة':
+                                    idDelegation = 4155;
+                                    code = "4154076";
+                                    break;
+                                  case 'القواعد':
+                                    idDelegation = 4155;
+                                    code = "4154077";
+                                    break;
+                                  case 'العباريش':
+                                    idDelegation = 4155;
+                                    code = "4154078";
+                                    break;
+                                  case 'جبل السرج':
+                                    idDelegation = 4155;
+                                    code = "4154079";
+                                    break;
+                                  case 'عريبة':
+                                    idDelegation = 4157;
+                                    code = "4154080";
+                                    break;
+                                  case 'الدبابشة':
+                                    idDelegation = 4157;
+                                    code = "4154081";
+                                    break;
+                                  case 'مسيوتة القطار':
+                                    idDelegation = 4157;
+                                    code = "4154082";
+                                    break;
+                                  case 'القطار أولاد عمر':
+                                    idDelegation = 4157;
+                                    code = "4154083";
+                                    break;
+                                  case 'صيادة ':
+                                    idDelegation = 4157;
+                                    code = "4154084";
+                                    break;
+                                  case 'أولاد بن جـدو':
+                                    idDelegation = 4157;
+                                    code = "4154085";
+                                    break;
+                                  case 'البصيلات':
+                                    idDelegation = 4157;
+                                    code = "4154086";
+                                    break;
+                                  case 'الشواشي 2':
+                                    idDelegation = 4158;
+                                    code = "4154087";
+                                    break;
+                                  case 'قصرسويسين':
+                                    idDelegation = 4158;
+                                    code = "4154088";
+                                    break;
+                                  case 'أولاد عامر':
+                                    idDelegation = 4158;
+                                    code = "4154089";
+                                    break;
+                                  case 'السرجة 2':
+                                    idDelegation = 4158;
+                                    code = "4154090";
+                                    break;
+                                  case 'السرجة 1':
+                                    idDelegation = 4158;
+                                    code = "4154091";
+                                    break;
+                                  case 'للة سالمة 2':
+                                    idDelegation = 4158;
+                                    code = "4154092";
+                                    break;
+                                  case 'القنطرة - هنشير الشط':
+                                    idDelegation = 4158;
+                                    code = "4154093";
+                                    break;
+                                  case 'واد الفول':
+                                    idDelegation = 4158;
+                                    code = "4154094";
+                                    break;
+                                  case 'الشواشي 1':
+                                    idDelegation = 4158;
+                                    code = "4154095";
+                                    break;
+                                  case 'المناسة':
+                                    idDelegation = 4158;
+                                    code = "4154096";
+                                    break;
+                                  case 'اللواتة':
+                                    idDelegation = 4158;
+                                    code = "4154097";
+                                    break;
+                                  case 'الدغيمة':
+                                    idDelegation = 4158;
+                                    code = "4154098";
+                                    break;
+                                  case 'الخوالدية':
+                                    idDelegation = 4158;
+                                    code = "4154099";
+                                    break;
+                                  case ' الكبارة 2':
+                                    idDelegation = 4159;
+                                    code = "4159101";
+                                    break;
+                                  case 'صالح مختارة':
+                                    idDelegation = 4159;
+                                    code = "4159102";
+                                    break;
+                                  case 'عين سلطان':
+                                    idDelegation = 4159;
+                                    code = "4159103";
+                                    break;
+                                  case 'الكبارة':
+                                    idDelegation = 4159;
+                                    code = "4159104";
+                                    break;
+                                  case 'الفساقي':
+                                    idDelegation = 4159;
+                                    code = "4159105";
+                                    break;
+                                  case 'القصور':
+                                    idDelegation = 4159;
+                                    code = "4159106";
+                                    break;
+                                  case 'خميس العلويني':
+                                    idDelegation = 4159;
+                                    code = "4159107";
+                                    break;
+                                  case 'كاف الزاهي':
+                                    idDelegation = 4159;
+                                    code = "4159108";
+                                    break;
+                                  case 'قرعة البليدات 2':
+                                    idDelegation = 4159;
+                                    code = "4159109";
+                                    break;
+                                  case 'أولاد سويس':
+                                    idDelegation = 4159;
+                                    code = "4159110";
+                                    break;
+                                  case 'العجابنة':
+                                    idDelegation = 4159;
+                                    code = "4159111";
+                                    break;
+                                  case 'ثامر':
+                                    idDelegation = 4159;
+                                    code = "4159112";
+                                    break;
+                                  case 'العيايدة':
+                                    idDelegation = 4159;
+                                    code = "4159113";
+                                    break;
+                                  case 'الخبنة':
+                                    idDelegation = 4159;
+                                    code = "4159114";
+                                    break;
+                                  case 'المشرطات':
+                                    idDelegation = 4161;
+                                    code = "4161115";
+                                    break;
+                                  case 'بئر مسيكين':
+                                    idDelegation = 4161;
+                                    code = "4161116";
+                                    break;
+                                  case 'بئر الجديد المدرسة':
+                                    idDelegation = 4161;
+                                    code = "4161117";
+                                    break;
+                                  case 'بوساري':
+                                    idDelegation = 4161;
+                                    code = "4161118";
+                                    break;
+                                  case 'بئر الدولة الصعادلية':
+                                    idDelegation = 4161;
+                                    code = "4161119";
+                                    break;
+                                  case 'بئر المعيصرة':
+                                    idDelegation = 4161;
+                                    code = "4161120";
+                                    break;
+                                  case 'الزقب':
+                                    idDelegation = 4161;
+                                    code = "4161122";
+                                    break;
+                                  case 'النصرزعفرانة':
+                                    idDelegation = 4161;
+                                    code = "4161123";
+                                    break;
+                                  case 'أولاد عباس':
+                                    idDelegation = 4161;
+                                    code = "4161124";
+                                    break;
+                                  case 'أولاد جمعة':
+                                    idDelegation = 4161;
+                                    code = "4161125";
+                                    break;
+                                  case 'بوجدارية':
+                                    idDelegation = 4161;
+                                    code = "4161126";
+                                    break;
+                                  case 'الفتح':
+                                    idDelegation = 4161;
+                                    code = "4161127";
+                                    break;
+                                  case 'الفريجات 2':
+                                    idDelegation = 4161;
+                                    code = "4161128";
+                                    break;
+                                  case 'القطيطير-اولا عاشور':
+                                    idDelegation = 4161;
+                                    code = "4161129";
+                                    break;
+                                  case 'مرزوق الفرخ':
+                                    idDelegation = 4160;
+                                    code = "4161130";
+                                    break;
+                                  case 'بئر هويدي':
+                                    idDelegation = 4160;
+                                    code = "4161131";
+                                    break;
+                                  case 'الرماضنية':
+                                    idDelegation = 4153;
+                                    code = "4161132";
+                                    break;
+                                  case 'الرويسات':
+                                    idDelegation = 4153;
+                                    code = "4161133";
+                                    break;
+                                  case 'مطايرية':
+                                    idDelegation = 4153;
+                                    code = "4161134";
+                                    break;
+                                  case 'هماد الجلولي':
+                                    idDelegation = 4153;
+                                    code = "4161135";
+                                    break;
+                                  case 'البريكات المدينة':
+                                    idDelegation = 4153;
+                                    code = "4161136";
+                                    break;
+                                  case 'بئر الضواهر':
+                                    idDelegation = 4152;
+                                    code = "4161137";
+                                    break;
+                                  case 'بريكات العرقوب':
+                                    idDelegation = 4152;
+                                    code = "4161138";
+                                    break;
+                                  case 'المخصومة':
+                                    idDelegation = 4152;
+                                    code = "4161139";
+                                    break;
+                                  case 'العرقوب 2':
+                                    idDelegation = 4152;
+                                    code = "4161140";
+                                    break;
+                                  case 'الحمباز':
+                                    idDelegation = 4152;
+                                    code = "4152141";
+                                    break;
+                                  case 'الشوامخ':
+                                    idDelegation = 4152;
+                                    code = "4152142";
+                                    break;
+                                  case 'الحسيان':
+                                    idDelegation = 4152;
+                                    code = "4152143";
+                                    break;
+                                  case 'غنزور':
+                                    idDelegation = 4152;
+                                    code = "4152144";
+                                    break;
+                                  case 'شاكر':
+                                    idDelegation = 4152;
+                                    code = "4152145";
+                                    break;
+                                  case 'جبل وسلات':
+                                    idDelegation = 4152;
+                                    code = "4152146";
+                                    break;
+                                  case 'مقرة':
+                                    idDelegation = 4152;
+                                    code = "4152147";
+                                    break;
+                                  case 'ذراع التمار':
+                                    idDelegation = 4151;
+                                    code = "4151148";
+                                    break;
+                                  case 'الذويبات':
+                                    idDelegation = 4151;
+                                    code = "4151149";
+                                    break;
+                                  case 'العزاعزة':
+                                    idDelegation = 4151;
+                                    code = "4151150";
+                                    break;
+                                  case 'الفجيج':
+                                    idDelegation = 4151;
+                                    code = "4151151";
+                                    break;
+                                  case 'الحميدات':
+                                    idDelegation = 4151;
+                                    code = "4151152";
+                                    break;
+                                  case 'بئر الحاج صادق':
+                                    idDelegation = 4151;
+                                    code = "4151153";
+                                    break;
+                                  case 'بوقبرين':
+                                    idDelegation = 4151;
+                                    code = "4151154";
+                                    break;
+                                  case 'المريقب':
+                                    idDelegation = 4151;
+                                    code = "4157087";
+                                    break;
+                                  case 'اولاد نهار':
+                                    idDelegation = 4151;
+                                    code = "4152149";
+                                    break;
+                                  case 'كبارة 3':
+                                    idDelegation = 4151;
+                                    code = "4159115";
+                                    break;
+                                }
+                              });
                               context.currentConsultationBloc
                                   .choseAllfields(month, year, year);
                               context.gNavigationService
