@@ -52,7 +52,7 @@ class NavigationService {
       BuildContext context, String gda, int month, int year) {
     return Navigator.of(context).pushNamed(
       _specificDonneesTechniquesRouteName,
-      arguments: _SpecificDonneesTechniquesArguments(modele),
+      arguments: _SpecificDonneesTechniquesArguments(gda, month, year),
     );
   }
 

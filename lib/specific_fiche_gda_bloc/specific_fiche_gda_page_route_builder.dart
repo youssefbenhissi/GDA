@@ -30,7 +30,11 @@ class SpecificFicheGdaScreenRouteBuilder {
             ..loadSpecificGDA("userg", month, year, gda),
         ),
       ],
-      child: const SpecificFicheGDAPage(),
+      child: SpecificFicheGDAPage(
+        gda: gda,
+        month: month,
+        year: year,
+      ),
     );
   }
 }

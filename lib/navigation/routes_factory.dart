@@ -12,7 +12,7 @@ abstract class RoutesFactory {
   Route<dynamic> createFicheGDAScreenPageRoute();
   Route<dynamic> createDetailsScreenPageRoute(FicheGDAModel modele);
   Route<dynamic> createSpecificDonneesTechniquesScreenPageRoute(
-      SpecificFicheGDAModel modele);
+      String gda, int month, int year);
   Route<dynamic> createSpecificRecettesRealiseesScreenPageRoute(
       SpecificFicheGDAModel modele);
   Route<dynamic> createSpecificDepensesScreenPageRoute(

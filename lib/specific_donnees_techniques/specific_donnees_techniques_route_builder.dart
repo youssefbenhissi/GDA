@@ -2,21 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pfe_iheb/specific_donnees_techniques/specific_donnees_techniques_bloc.dart';
 import 'package:pfe_iheb/specific_donnees_techniques/specific_donnes_techniques_widget.dart';
-import 'package:pfe_iheb/specific_fiche_gda_bloc/specific_fiche_gda_model.dart';
 
 class SpecificDonneesTechniquesScreenRouteBuilder {
-  final SpecificFicheGDAModel _modele;
-  SpecificDonneesTechniquesScreenRouteBuilder(this._modele);
+  final String gda;
+  final int month;
+  final int year;
+  SpecificDonneesTechniquesScreenRouteBuilder(this.gda, this.month, this.year);
 
   Widget call(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
           create: (_) => SpecificDonneesTechniquesBloc()
-            ..loadSpecificDonneesTechniques("4160130", 12, 2018),
+            ..loadSpecificDonneesTechniques(gda, month, year),
         ),
       ],
-      child: SpecificDonneesTechniquesPage(modele: _modele),
+      child: SpecificDonneesTechniquesPage(
+        gda: gda,
+        month: month,
+        year: year,
+      ),
     );
   }
 }

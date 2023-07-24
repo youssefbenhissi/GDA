@@ -10,7 +10,11 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pfe_iheb/utils/popup_notification.dart';
 
 class SpecificFicheGDAPage extends StatelessWidget {
-  const SpecificFicheGDAPage({super.key});
+  final String gda;
+  final int month;
+  final int year;
+  const SpecificFicheGDAPage(
+      {super.key, required this.gda, required this.month, required this.year});
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +111,7 @@ class SpecificFicheGDAPage extends StatelessWidget {
                         onPressed: () {
                           context.gNavigationService
                               .openSpecificDonneesTechniques(
-                                  context, month);
+                                  context, gda, month, year);
                         },
                         child:
                             Text(AppLocalizations.of(context)!.detailsGDATitre),
@@ -120,7 +124,7 @@ class SpecificFicheGDAPage extends StatelessWidget {
           } else if (state is LoadingFicheGDAState) {
             return const CupertinoActivityIndicator();
           } else if (state is FailedFicheGDAState) {
-            ErrorPopUpNotification.create(
+            return ErrorPopUpNotification.create(
               context: context,
               title: "Quelque chose qui cloche",
               message: "Y a pas de données depuis la base de données",

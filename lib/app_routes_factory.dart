@@ -124,11 +124,9 @@ class AppRoutesFactory extends RoutesFactory {
 
   @override
   Route createSpecificDonneesTechniquesScreenPageRoute(
-      SpecificFicheGDAModel modele) {
+      String gda, int month, int year) {
     return MaterialPageRoute<String?>(
-      builder: SpecificDonneesTechniquesScreenRouteBuilder(
-        modele,
-      ),
+      builder: SpecificDonneesTechniquesScreenRouteBuilder(gda, month, year),
     );
   }
 

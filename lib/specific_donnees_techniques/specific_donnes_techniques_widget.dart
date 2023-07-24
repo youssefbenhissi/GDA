@@ -11,8 +11,15 @@ import 'package:pfe_iheb/utils/drawer.dart';
 import 'package:pfe_iheb/utils/field_widget.dart';
 
 class SpecificDonneesTechniquesPage extends StatefulWidget {
-  final SpecificFicheGDAModel modele;
-  const SpecificDonneesTechniquesPage({super.key, required this.modele});
+  final String gda;
+  final int month;
+  final int year;
+  const SpecificDonneesTechniquesPage({
+    super.key,
+    required this.gda,
+    required this.month,
+    required this.year,
+  });
 
   @override
   State<SpecificDonneesTechniquesPage> createState() =>
@@ -35,7 +42,16 @@ class _SpecificDonneesTechniquesPageState
     'novembre',
     'décembre',
   ];
-  List<String> years = ['2019', '2020', '2021', '2022', '2023', '2024'];
+  List<String> years = [
+    '2017',
+    '2018',
+    '2019',
+    '2020',
+    '2021',
+    '2022',
+    '2023',
+    '2024'
+  ];
   String month = "janvier";
   int monthNumber = 1;
   String year = "2019";
@@ -54,8 +70,8 @@ class _SpecificDonneesTechniquesPageState
   @override
   void initState() {
     setState(() {
-      year = widget.modele.year.toString();
-      switch (widget.modele.month) {
+      year = widget.year.toString();
+      switch (widget.month) {
         case 1:
           month = 'janvier';
           break;
