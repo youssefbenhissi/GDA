@@ -14,7 +14,7 @@ class _SpecificIndicateurArguments {
 class _SpecificFicheGDAArguments {
   final int month;
   final int year;
-  final int gda;
+  final String gda;
   _SpecificFicheGDAArguments(this.month, this.year, this.gda);
 }
 

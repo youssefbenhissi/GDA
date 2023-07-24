@@ -67,7 +67,7 @@ class AppRoutesFactory extends RoutesFactory {
 
   @override
   Route<dynamic> createSpecificFicheGDAScreenPageRoute(
-      int month, int year, int gda) {
+      int month, int year, String gda) {
     return MaterialPageRoute<String?>(
       builder: SpecificFicheGdaScreenRouteBuilder(month, year, gda),
     );

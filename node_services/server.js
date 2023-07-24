@@ -145,6 +145,16 @@ app.post('/getdonneesidentification', function (req, res) {
   });
 });
 
+app.post('/getspecificdonneesidentification', function (req, res) {
+  let gda = req.body.gda;
+  con.query('SELECT rgd.lib_ar as rgdarabe , rgd.lib_fr as rgdfrancais  ,rgd.code as rgdcode ,  rgd.id_delegation as iddelegation , refdelegation.lib_ar as refdelegationarabe, refdelegation.lib_fr as refdelegationfrancais , rgo.id as rgoid ,rgo.lib_ar , rgo.lib_fr  FROM ref_gda rgd , ref_delegation refdelegation , ref_gouvernorat rgo where rgd.code = ? AND rgd.id_delegation = refdelegation.id AND refdelegation.id_gov = rgo.id',[gda], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send();  
+    }
+    return res.status(200).send(results);
+  });
+});
+
 app.post('/tauxdeperte', function (req, res) {
   let login = req.body.login;
   con.query('SELECT AVG(CAST(input_value AS float)) AS average_value FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 8)',[login], function (error, results, fields) {

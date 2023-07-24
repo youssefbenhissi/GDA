@@ -20,7 +20,7 @@ class LoadingSpecificFicheGDAState extends SpecificFicheGDAState {
 
 @immutable
 class LoadedSpecificFicheGDAState extends SpecificFicheGDAState {
-  final SpecificFicheGDAModel model;
+  final NewSpecificFicheGdaModel model;
   const LoadedSpecificFicheGDAState._(this.model) : super._();
 
   @override

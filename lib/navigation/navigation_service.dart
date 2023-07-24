@@ -28,7 +28,7 @@ class NavigationService {
   }
 
   Future<void> openSpecificFicheGDAScreen(
-      BuildContext context, int month, int year, int gda) {
+      BuildContext context, int month, int year, String gda) {
     return Navigator.of(context).pushNamed(_specificFicheGDARouteName,
         arguments: _SpecificFicheGDAArguments(month, year, gda));
   }

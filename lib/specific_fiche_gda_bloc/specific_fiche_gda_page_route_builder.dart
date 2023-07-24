@@ -9,7 +9,7 @@ import 'package:provider/provider.dart';
 class SpecificFicheGdaScreenRouteBuilder {
   final int month;
   final int year;
-  final int gda;
+  final String gda;
   SpecificFicheGdaScreenRouteBuilder(this.month, this.year, this.gda);
 
   Widget call(BuildContext context) {
@@ -26,8 +26,8 @@ class SpecificFicheGdaScreenRouteBuilder {
     return MultiProvider(
       providers: [
         BlocProvider(
-          create: (_) =>
-              SpecificFicheGDABloc()..loadSpecificGDA("userg", month, year, gda),
+          create: (_) => SpecificFicheGDABloc()
+            ..loadSpecificGDA("userg", month, year, gda),
         ),
       ],
       child: const SpecificFicheGDAPage(),

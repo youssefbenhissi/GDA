@@ -12,7 +12,7 @@ class LoadSpecificGDAFuncEvent extends SpecificFicheGDAEvent {
   final String login;
   final int month;
   final int year;
-  final int gda;
+  final String gda;
   const LoadSpecificGDAFuncEvent._(this.login, this.month, this.year, this.gda)
       : super._();
   @override

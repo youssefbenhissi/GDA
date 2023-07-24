@@ -42,7 +42,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
     String month = "janvier";
     String year = "2019";
     String _selectedOption = "Option 1";
-    String code;
+    String code = "4154001";
     int idDelegation;
     List<String> _gouvernorats = [
       'TUNIS',
@@ -928,7 +928,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                       context,
                                       monthNumber,
                                       int.tryParse(year) ?? 2019,
-                                      155);
+                                      code);
                             }
                           },
                           child: Text(

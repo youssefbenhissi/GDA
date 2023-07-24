@@ -40,14 +40,14 @@ class SpecificFicheGDAPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          "Gouvernorat",
-                          style: TextStyle(color: Colors.lightBlue),
+                        Text(
+                          AppLocalizations.of(context)!.gouvernoratTitre,
+                          style: const TextStyle(color: Colors.lightBlue),
                         ),
-                        Text(state.model.idGouv.toString()),
+                        Text(state.model.rgoid.toString()),
                         Text(currentLanguage == "fr"
-                            ? state.model.nomGouvernoratFrancais
-                            : state.model.nomGouvernoratArabe),
+                            ? state.model.libFr
+                            : state.model.libAr),
                       ],
                     ),
                   ),
@@ -57,12 +57,14 @@ class SpecificFicheGDAPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          "Délégation",
-                          style: TextStyle(color: Colors.lightBlue),
+                        Text(
+                          AppLocalizations.of(context)!.delegationTitre,
+                          style: const TextStyle(color: Colors.lightBlue),
                         ),
                         Text(state.model.idDelegation.toString()),
-                        const Text("Sbikha"),
+                        Text(currentLanguage == "fr"
+                            ? state.model.refDelegationFrancais
+                            : state.model.refDelegationArabe),
                       ],
                     ),
                   ),
@@ -77,7 +79,9 @@ class SpecificFicheGDAPage extends StatelessWidget {
                           style: TextStyle(color: Colors.lightBlue),
                         ),
                         Text(state.model.code.toString()),
-                        const Text("KAIROUAN"),
+                        Text(currentLanguage == "fr"
+                            ? state.model.rgdFrancais
+                            : state.model.rgdArabe),
                       ],
                     ),
                   ),
@@ -101,9 +105,9 @@ class SpecificFicheGDAPage extends StatelessWidget {
                               MaterialStateProperty.all<Color>(Colors.white),
                         ),
                         onPressed: () {
-                          context.gNavigationService
-                              .openSpecificDonneesTechniques(
-                                  context, state.model);
+                          // context.gNavigationService
+                          //     .openSpecificDonneesTechniques(
+                          //         context, state.model);
                         },
                         child:
                             Text(AppLocalizations.of(context)!.detailsGDATitre),

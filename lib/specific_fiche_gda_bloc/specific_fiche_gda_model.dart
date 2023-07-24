@@ -56,3 +56,47 @@ class SpecificFicheGDAModel {
     this.depensesAutresDepenses,
   );
 }
+
+class NewSpecificFicheGdaModel {
+  final String rgdArabe;
+  final String rgdFrancais;
+  final String code;
+  final int idDelegation;
+  final String refDelegationArabe;
+  final String refDelegationFrancais;
+  final int rgoid;
+  final String libAr;
+  final String libFr;
+  NewSpecificFicheGdaModel(
+    this.rgdArabe,
+    this.rgdFrancais,
+    this.code,
+    this.idDelegation,
+    this.refDelegationArabe,
+    this.refDelegationFrancais,
+    this.rgoid,
+    this.libAr,
+    this.libFr,
+  );
+  static NewSpecificFicheGdaModel getSpecificFicheGDAModel(List<dynamic> json) {
+    List<NewSpecificFicheGdaModel> list = [];
+    for (var item in json) {
+      list.add(NewSpecificFicheGdaModel.fromJson(item));
+    }
+    return list.first;
+  }
+
+  factory NewSpecificFicheGdaModel.fromJson(Map<String, dynamic> json) {
+    return NewSpecificFicheGdaModel(
+      json['rgdarabe'] as String,
+      json['rgdfrancais'] as String,
+      json['rgdcode'] as String,
+      json['iddelegation'] as int,
+      json['refdelegationarabe'] as String,
+      json['refdelegationfrancais'] as String,
+      json['rgoid'] as int,
+      json['lib_ar'] as String,
+      json['lib_fr'] as String,
+    );
+  }
+}
