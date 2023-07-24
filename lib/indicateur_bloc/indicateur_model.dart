@@ -15,7 +15,7 @@ class IndicateurModel {
 
   factory IndicateurModel.fromJson(Map<String, dynamic> json) {
     return IndicateurModel(
-      json['average_value'].toString(),
+      json['average_value'] != null ? json['average_value'].toString() : "0",
     );
   }
 }
