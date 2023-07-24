@@ -105,9 +105,9 @@ class SpecificFicheGDAPage extends StatelessWidget {
                               MaterialStateProperty.all<Color>(Colors.white),
                         ),
                         onPressed: () {
-                          // context.gNavigationService
-                          //     .openSpecificDonneesTechniques(
-                          //         context, state.model);
+                          context.gNavigationService
+                              .openSpecificDonneesTechniques(
+                                  context, month);
                         },
                         child:
                             Text(AppLocalizations.of(context)!.detailsGDATitre),

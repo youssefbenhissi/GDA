@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
+import 'package:pfe_iheb/specific_donnees_techniques/specific_donnees_techniques_bloc.dart';
 import 'package:pfe_iheb/specific_fiche_gda_bloc/specific_fiche_gda_model.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -90,12 +93,6 @@ class _SpecificDonneesTechniquesPageState
           month = 'décembre';
           break;
       }
-      volumePompeTextEditingController.text = widget.modele.volumePompe;
-      volumeDistribueTextEditingController.text = widget.modele.volumeDistribue;
-      volumeEauJavelTextEditingController.text = widget.modele.volumeEauJavel;
-      tarifAdapteTextEditingController.text = widget.modele.tarifAdapte;
-      coutEauTextEditingController.text = widget.modele.coutEauText;
-      nombreJourTextEditingController.text = widget.modele.nombreJour;
     });
     super.initState();
   }
@@ -142,127 +139,159 @@ class _SpecificDonneesTechniquesPageState
             ],
           ),
         ),
-        body: Column(
-          children: [
-            ColoredBox(
-              color: Colors.white,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 8.0, right: 8.0, left: 8.0),
-                child: Column(
+        body: BlocBuilder<SpecificDonneesTechniquesBloc,
+                SpecificDonneesTechniquesState>(
+            buildWhen: (prev, next) => prev.runtimeType != next.runtimeType,
+            builder: (context, state) {
+              if (state is LoadedSpecificDonneesTechniquesState) {
+                volumePompeTextEditingController.text =
+                    state.models[0].inputValue;
+                volumeDistribueTextEditingController.text =
+                    state.models[1].inputValue;
+                volumeEauJavelTextEditingController.text =
+                    state.models[2].inputValue;
+                tarifAdapteTextEditingController.text =
+                    state.models[3].inputValue;
+                coutEauTextEditingController.text = state.models[4].inputValue;
+                nombreJourTextEditingController.text =
+                    state.models[5].inputValue;
+                return Column(
                   children: [
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        AppLocalizations.of(context)!.moisTitre,
-                        style: const TextStyle(color: Colors.lightBlue),
-                      ),
-                    ),
-                    StatefulBuilder(
-                      builder: (context, setState) => DropdownButton<String>(
-                        isExpanded: true,
-                        value: month,
-                        items: months
-                            .map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(
-                              value,
-                            ),
-                          );
-                        }).toList(),
-                        onChanged: null,
-                      ),
-                    ),
-                    Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        AppLocalizations.of(context)!.anneeTitre,
-                        style: const TextStyle(color: Colors.lightBlue),
-                      ),
-                    ),
-                    StatefulBuilder(
-                      builder: (context, setState) => DropdownButton<String>(
-                        isExpanded: true,
-                        value: year,
-                        items:
-                            years.map<DropdownMenuItem<String>>((String value) {
-                          return DropdownMenuItem<String>(
-                            value: value,
-                            child: Text(
-                              value,
-                            ),
-                          );
-                        }).toList(),
-                        onChanged: null,
-                      ),
-                    ),
-                    WidgetField(
-                      obscure: false,
-                      enabled: false,
-                      titre:
-                          AppLocalizations.of(context)!.volumePompeAcheteTitre,
-                      textEditingController: volumePompeTextEditingController,
-                    ),
-                    WidgetField(
-                      obscure: false,
-                      enabled: false,
-                      titre: AppLocalizations.of(context)!
-                          .volumeDistribueFactureTitre,
-                      textEditingController:
-                          volumeDistribueTextEditingController,
-                    ),
-                    WidgetField(
-                      obscure: false,
-                      enabled: false,
-                      titre: AppLocalizations.of(context)!
-                          .volumeEauDeJavalUtiliseTitre,
-                      textEditingController:
-                          volumeEauJavelTextEditingController,
-                    ),
-                    WidgetField(
-                      obscure: false,
-                      enabled: false,
-                      textEditingController: tarifAdapteTextEditingController,
-                      titre: AppLocalizations.of(context)!.tarifAdopteTitre,
-                    ),
-                    WidgetField(
-                      obscure: false,
-                      enabled: false,
-                      textEditingController: coutEauTextEditingController,
-                      titre: AppLocalizations.of(context)!.coutEauTitre,
-                    ),
-                    WidgetField(
-                      obscure: false,
-                      enabled: false,
-                      textEditingController: nombreJourTextEditingController,
-                      titre: AppLocalizations.of(context)!
-                          .nombreDeJoursdarretTitre,
-                    ),
-                    Align(
-                      alignment: Alignment.centerRight,
+                    ColoredBox(
+                      color: Colors.white,
                       child: Padding(
-                        padding: const EdgeInsets.only(right: 8.0, left: 8.0),
-                        child: TextButton(
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all<Color>(Colors.green),
-                            foregroundColor:
-                                MaterialStateProperty.all<Color>(Colors.white),
-                          ),
-                          onPressed: () {
-                            context.gNavigationService
-                                .openRecettesRealiseesScreen(context);
-                          },
-                          child: Text(
-                              AppLocalizations.of(context)!.lesRecettesTitre),
+                        padding: const EdgeInsets.only(
+                            top: 8.0, right: 8.0, left: 8.0),
+                        child: Column(
+                          children: [
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                AppLocalizations.of(context)!.moisTitre,
+                                style: const TextStyle(color: Colors.lightBlue),
+                              ),
+                            ),
+                            StatefulBuilder(
+                              builder: (context, setState) =>
+                                  DropdownButton<String>(
+                                isExpanded: true,
+                                value: month,
+                                items: months.map<DropdownMenuItem<String>>(
+                                    (String value) {
+                                  return DropdownMenuItem<String>(
+                                    value: value,
+                                    child: Text(
+                                      value,
+                                    ),
+                                  );
+                                }).toList(),
+                                onChanged: null,
+                              ),
+                            ),
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                AppLocalizations.of(context)!.anneeTitre,
+                                style: const TextStyle(color: Colors.lightBlue),
+                              ),
+                            ),
+                            StatefulBuilder(
+                              builder: (context, setState) =>
+                                  DropdownButton<String>(
+                                isExpanded: true,
+                                value: year,
+                                items: years.map<DropdownMenuItem<String>>(
+                                    (String value) {
+                                  return DropdownMenuItem<String>(
+                                    value: value,
+                                    child: Text(
+                                      value,
+                                    ),
+                                  );
+                                }).toList(),
+                                onChanged: null,
+                              ),
+                            ),
+                            WidgetField(
+                              obscure: false,
+                              enabled: false,
+                              titre: AppLocalizations.of(context)!
+                                  .volumePompeAcheteTitre,
+                              textEditingController:
+                                  volumePompeTextEditingController,
+                            ),
+                            WidgetField(
+                              obscure: false,
+                              enabled: false,
+                              titre: AppLocalizations.of(context)!
+                                  .volumeDistribueFactureTitre,
+                              textEditingController:
+                                  volumeDistribueTextEditingController,
+                            ),
+                            WidgetField(
+                              obscure: false,
+                              enabled: false,
+                              titre: AppLocalizations.of(context)!
+                                  .volumeEauDeJavalUtiliseTitre,
+                              textEditingController:
+                                  volumeEauJavelTextEditingController,
+                            ),
+                            WidgetField(
+                              obscure: false,
+                              enabled: false,
+                              textEditingController:
+                                  tarifAdapteTextEditingController,
+                              titre: AppLocalizations.of(context)!
+                                  .tarifAdopteTitre,
+                            ),
+                            WidgetField(
+                              obscure: false,
+                              enabled: false,
+                              textEditingController:
+                                  coutEauTextEditingController,
+                              titre: AppLocalizations.of(context)!.coutEauTitre,
+                            ),
+                            WidgetField(
+                              obscure: false,
+                              enabled: false,
+                              textEditingController:
+                                  nombreJourTextEditingController,
+                              titre: AppLocalizations.of(context)!
+                                  .nombreDeJoursdarretTitre,
+                            ),
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    right: 8.0, left: 8.0),
+                                child: TextButton(
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Colors.green),
+                                    foregroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Colors.white),
+                                  ),
+                                  onPressed: () {
+                                    context.gNavigationService
+                                        .openRecettesRealiseesScreen(context);
+                                  },
+                                  child: Text(AppLocalizations.of(context)!
+                                      .lesRecettesTitre),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
                   ],
-                ),
-              ),
-            ),
-          ],
-        ));
+                );
+              }
+              return const Center(
+                child: CupertinoActivityIndicator(),
+              );
+            }));
   }
 }

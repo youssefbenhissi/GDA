@@ -49,7 +49,7 @@ class NavigationService {
   }
 
   Future<void> openSpecificDonneesTechniques(
-      BuildContext context, SpecificFicheGDAModel modele) {
+      BuildContext context, String gda, int month, int year) {
     return Navigator.of(context).pushNamed(
       _specificDonneesTechniquesRouteName,
       arguments: _SpecificDonneesTechniquesArguments(modele),

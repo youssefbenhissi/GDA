@@ -155,6 +155,77 @@ app.post('/getspecificdonneesidentification', function (req, res) {
   });
 });
 
+app.post('/volumepompe', function (req, res) {
+  let gda = req.body.gda;
+  let month = req.body.month;
+  let year = req.body.year;
+  con.query('SELECT input_value AS average_value FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 2)',[gda,month , year], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
+
+app.post('/volumedistribue', function (req, res) {
+  let gda = req.body.gda;
+  let month = req.body.month;
+  let year = req.body.year;
+  con.query('SELECT input_value AS average_value FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 4)',[gda,month , year], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
+
+app.post('/volumeeaujavel', function (req, res) {
+  let gda = req.body.gda;
+  let month = req.body.month;
+  let year = req.body.year;
+  con.query('SELECT input_value AS average_value FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 10)',[gda,month , year], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
+
+app.post('/tarifadapte', function (req, res) {
+  let gda = req.body.gda;
+  let month = req.body.month;
+  let year = req.body.year;
+  con.query('SELECT input_value AS average_value FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 41)',[gda,month , year], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
+
+app.post('/couteau', function (req, res) {
+  let gda = req.body.gda;
+  let month = req.body.month;
+  let year = req.body.year;
+  con.query('SELECT input_value AS average_value FROM indicateur_saisie_value WHERE (code_gda = ?  AND month = ? AND year = ? AND id_indicateur = 40)',[gda,month , year], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
+
+app.post('/nombredejourarret', function (req, res) {
+  let gda = req.body.gda;
+  let month = req.body.month;
+  let year = req.body.year;
+  con.query('SELECT input_value AS average_value FROM indicateur_saisie_value WHERE (code_gda = ?  AND month = ? AND year = ? AND id_indicateur = 1)',[gda,month , year], function (error, results, fields) {
+      if (error) {
+        return res.status(400).send(error);  
+      }
+      return res.status(200).send(results);
+  });
+});
 app.post('/tauxdeperte', function (req, res) {
   let login = req.body.login;
   con.query('SELECT AVG(CAST(input_value AS float)) AS average_value FROM indicateur_saisie_value WHERE (created_by = ? AND id_indicateur = 8)',[login], function (error, results, fields) {

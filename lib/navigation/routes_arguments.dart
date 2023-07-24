@@ -19,8 +19,10 @@ class _SpecificFicheGDAArguments {
 }
 
 class _SpecificDonneesTechniquesArguments {
-  final SpecificFicheGDAModel specificFicheGDAModel;
-  _SpecificDonneesTechniquesArguments(this.specificFicheGDAModel);
+  final String gda;
+  final int month;
+  final int year;
+  _SpecificDonneesTechniquesArguments(this.gda, this.month, this.year);
 }
 
 class _SpecificRecettesRealiseesArguments {
