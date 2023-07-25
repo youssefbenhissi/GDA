@@ -291,7 +291,11 @@ class _SpecificDonneesTechniquesPageState
                                   ),
                                   onPressed: () {
                                     context.gNavigationService
-                                        .openRecettesRealiseesScreen(context);
+                                        .openSpecificRecettesRealisees(
+                                            context,
+                                            widget.gda,
+                                            widget.month,
+                                            widget.year);
                                   },
                                   child: Text(AppLocalizations.of(context)!
                                       .lesRecettesTitre),

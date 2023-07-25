@@ -132,10 +132,12 @@ class AppRoutesFactory extends RoutesFactory {
 
   @override
   Route createSpecificRecettesRealiseesScreenPageRoute(
-      SpecificFicheGDAModel modele) {
+      String gda, int month, int year) {
     return MaterialPageRoute<String?>(
       builder: SpecificRecettesRealiseesScreenRouteBuilder(
-        modele,
+        gda: gda,
+        month: month,
+        year: year,
       ),
     );
   }

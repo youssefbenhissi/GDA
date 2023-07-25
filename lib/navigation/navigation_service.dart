@@ -56,6 +56,14 @@ class NavigationService {
     );
   }
 
+  Future<void> openSpecificRecettesRealisees(
+      BuildContext context, String gda, int month, int year) {
+    return Navigator.of(context).pushNamed(
+      _specificRecettesRealiseesRouteName,
+      arguments: _SpecificDonneesTechniquesArguments(gda, month, year),
+    );
+  }
+
   Future<void> openSpecificDepenses(
       BuildContext context, SpecificFicheGDAModel modele) {
     return Navigator.of(context).pushNamed(

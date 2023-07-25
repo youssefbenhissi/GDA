@@ -8,6 +8,7 @@ import 'package:pfe_iheb/navigation/navigation.dart';
 import 'package:pfe_iheb/services/service_locator.dart';
 import 'package:pfe_iheb/specific_donnees_techniques/specific_donnees_techniques_bloc.dart';
 import 'package:pfe_iheb/specific_indicateur_bloc/specific_indicateur_bloc.dart';
+import 'package:pfe_iheb/specific_recettes_realisees_bloc/specific_recettes_realisees_bloc.dart';
 import 'package:pfe_iheb/statistics_bloc/statistics_bloc.dart';
 import 'package:pfe_iheb/weather_bloc/weather_bloc.dart';
 
@@ -18,6 +19,8 @@ extension AppPageInjectable on BuildContext {
   NavigationService get gNavigationService =>
       read<ServiceLocator>().navigationService;
   LoginBloc get currentLoginBloc => read<ServiceLocator>().loginBloc;
+  SpecificRecettesRealiseesBloc get currentSpecificRecettesRealiseesBloc =>
+      read<ServiceLocator>().specificRecettesRealiseesBloc;
   SpecificDonneesTechniquesBloc get currentSpecificDonneesTechniquesBloc =>
       read<ServiceLocator>().specificDonneesTechniquesBloc;
   WeatherBloc get currentWeatherBloc => read<ServiceLocator>().weatherBloc;

@@ -44,7 +44,7 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
       case _specificRecettesRealiseesRouteName:
         final args = settings.arguments as _SpecificRecettesRealiseesArguments;
         return routesFactory.createSpecificRecettesRealiseesScreenPageRoute(
-            args.specificFicheGDAModel);
+            args.gda, args.month, args.year);
       case _specificDepensesRouteName:
         final args = settings.arguments as _SpecificDepensesArguments;
         return routesFactory
