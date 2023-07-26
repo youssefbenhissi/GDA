@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
                 if (state is InitialSplashScreenState) {
                   return const SplashScreen();
                 } else {
-                  return LoginScreen();
+                  return const LoginScreen();
                 }
               },
             ),
