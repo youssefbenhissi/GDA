@@ -21,7 +21,7 @@ class SpecificDepensesBloc
   ) async {
     emitter(const LoadingSpecificDepensesState._());
     List<IndicateurModel> models = [];
-    String url = '$link/volumepompe';
+    String url = '$link/specificdepensesachateau';
     Map<String, String> headers = {"Content-type": "application/json"};
     String json =
         '{"gda": "${event.gda}","month":"${event.month}","year":"${event.year}"}';
@@ -30,26 +30,34 @@ class SpecificDepensesBloc
         IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
 
-    url = '$link/volumedistribue';
+    url = '$link/specificdepensesenergie';
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
 
-    url = '$link/volumeeaujavel';
+    url = '$link/specificdepensessalairesetprimes';
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
 
-    url = '$link/tarifadapte';
+    url = '$link/specificdepensesmaintenaceetentretien';
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
 
-    url = '$link/couteau';
+    url = '$link/specificdepenseslocation';
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-    url = '$link/nombredejourarret';
+    url = '$link/specificdepensesrenouvellementdesequipement';
+    response = await http.post(url, headers: headers, body: json);
+    model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
+    models.add(model);
+    url = '$link/specificdepensesgestiondga';
+    response = await http.post(url, headers: headers, body: json);
+    model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
+    models.add(model);
+    url = '$link/specificdepensesdinvestissement';
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);

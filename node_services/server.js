@@ -268,6 +268,161 @@ app.post('/tauxderecouvrement', function (req, res) {
   });
 });
 
+app.post('/specificrecettevente',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
+app.post('/specificrecetteadhesion',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
+app.post('/specificrecettecotisation',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
+app.post('/specificautresrecettes',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
+app.post('/specificdepensesachateau',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
+app.post('/specificdepensesenergie',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
+app.post('/specificdepensessalairesetprimes',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
+app.post('/specificdepensesmaintenaceetentretien',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
+app.post('/specificdepenseslocation',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
+app.post('/specificdepensesrenouvellementdesequipement',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
+app.post('/specificdepensesgestiondga',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
+app.post('/specificdepensesdinvestissement',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.login;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
 app.post('/specifiqueindicateurtauxderecouvrement',(req,res,next)=>{
   var post_data = req.body;
   var login = post_data.login;
