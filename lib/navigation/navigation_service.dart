@@ -65,10 +65,10 @@ class NavigationService {
   }
 
   Future<void> openSpecificDepenses(
-      BuildContext context, SpecificFicheGDAModel modele) {
+      BuildContext context, String gda, int month, int year) {
     return Navigator.of(context).pushNamed(
       _specificDepensesRouteName,
-      arguments: _SpecificDepensesArguments(modele),
+      arguments: _SpecificDepensesArguments(gda, month, year),
     );
   }
 

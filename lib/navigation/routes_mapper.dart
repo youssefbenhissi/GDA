@@ -47,8 +47,8 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
             args.gda, args.month, args.year);
       case _specificDepensesRouteName:
         final args = settings.arguments as _SpecificDepensesArguments;
-        return routesFactory
-            .createSpecificDepensesScreenPageRoute(args.specificFicheGDAModel);
+        return routesFactory.createSpecificDepensesScreenPageRoute(
+            args.gda, args.month, args.year);
       case _weatherRouteName:
         final args = settings.arguments as _WeatherArguments;
 

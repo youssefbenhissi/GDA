@@ -33,8 +33,10 @@ class _SpecificRecettesRealiseesArguments {
 }
 
 class _SpecificDepensesArguments {
-  final SpecificFicheGDAModel specificFicheGDAModel;
-  _SpecificDepensesArguments(this.specificFicheGDAModel);
+  final String gda;
+  final int month;
+  final int year;
+  _SpecificDepensesArguments(this.gda, this.month, this.year);
 }
 
 class _WeatherArguments {

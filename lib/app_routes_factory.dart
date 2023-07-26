@@ -143,10 +143,12 @@ class AppRoutesFactory extends RoutesFactory {
   }
 
   @override
-  Route createSpecificDepensesScreenPageRoute(SpecificFicheGDAModel modele) {
+  Route createSpecificDepensesScreenPageRoute(String gda, int month, int year) {
     return MaterialPageRoute<String?>(
       builder: SpecificDepensesScreenRouteBuilder(
-        modele,
+        gda,
+        month,
+        year,
       ),
     );
   }

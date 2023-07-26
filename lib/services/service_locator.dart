@@ -7,6 +7,7 @@ import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/modify_password_bloc/modify_password_bloc.dart';
 import 'package:pfe_iheb/navigation/navigation.dart';
 import 'package:pfe_iheb/recettes_realisees_screen/recettes_realisees_widget.dart';
+import 'package:pfe_iheb/specific_depenses_bloc/specific_depenses_bloc.dart';
 import 'package:pfe_iheb/specific_donnees_techniques/specific_donnees_techniques_bloc.dart';
 import 'package:pfe_iheb/specific_indicateur_bloc/specific_indicateur_bloc.dart';
 import 'package:pfe_iheb/specific_recettes_realisees_bloc/specific_recettes_realisees_bloc.dart';
@@ -19,6 +20,8 @@ class ServiceLocator {
   ServiceLocator() : _registry = GetIt.asNewInstance();
   WeatherBloc get weatherBloc => _registry.get<WeatherBloc>();
   LoginBloc get loginBloc => _registry.get<LoginBloc>();
+  SpecificDepensesBloc get specificDepensesBloc =>
+      _registry.get<SpecificDepensesBloc>();
   SpecificRecettesRealiseesBloc get specificRecettesRealiseesBloc =>
       _registry.get<SpecificRecettesRealiseesBloc>();
   SpecificDonneesTechniquesBloc get specificDonneesTechniquesBloc =>
@@ -71,6 +74,9 @@ class ServiceLocator {
     );
     _registry.registerLazySingleton(
       () => SpecificRecettesRealiseesBloc(),
+    );
+    _registry.registerLazySingleton(
+      () => SpecificDepensesBloc(),
     );
   }
 }
