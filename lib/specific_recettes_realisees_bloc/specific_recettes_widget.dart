@@ -193,8 +193,12 @@ class _SpecificRecettesRealiseePageState
                                         Colors.white),
                               ),
                               onPressed: () {
-                                context.gNavigationService
-                                    .openDepensesRealiseesScreen(context);
+                                context.gNavigationService.openSpecificDepenses(
+                                  context,
+                                  widget.gda,
+                                  widget.month,
+                                  widget.year,
+                                );
                               },
                               child: Text(
                                   AppLocalizations.of(context)!.depenseTitre),
