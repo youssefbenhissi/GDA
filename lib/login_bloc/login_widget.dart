@@ -104,6 +104,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: emailController,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 8.0, horizontal: 12.0),
                         hintText:
                             AppLocalizations.of(context)!.identifiantTitre,
                         hintStyle: const TextStyle(
@@ -126,6 +128,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     obscureText: true,
                     controller: passwordController,
                     decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 8.0, horizontal: 12.0),
                         hintText: AppLocalizations.of(context)!.motDePasseTitre,
                         hintStyle: const TextStyle(
                             color: Colors.black,
