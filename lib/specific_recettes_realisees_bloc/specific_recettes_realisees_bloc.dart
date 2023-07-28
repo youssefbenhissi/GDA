@@ -35,6 +35,10 @@ class SpecificRecettesRealiseesBloc extends Bloc<SpecificRecettesRealiseesEvent,
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
+    url = '$link/specificrecetteabonnement';
+    response = await http.post(url, headers: headers, body: json);
+    model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
+    models.add(model);
 
     url = '$link/specificrecettecotisation';
     response = await http.post(url, headers: headers, body: json);

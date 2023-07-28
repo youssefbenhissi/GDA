@@ -68,7 +68,7 @@ class _SpecificRecettesRealiseePageState
           children: [
             GestureDetector(
               onTap: () {
-                context.gNavigationService.openDonneesTechniquesScreen(context);
+                Navigator.pop(context);
               },
               child: SvgPicture.asset(
                 fit: BoxFit.contain,
@@ -102,14 +102,19 @@ class _SpecificRecettesRealiseePageState
             recetteVenteTextEditingController.text = state.models[0].inputValue;
             recetteAdhesionTextEditingController.text =
                 state.models[1].inputValue;
-            recetteCotisationTextEditingController.text =
+            recetteAbonnementTextEditingController.text =
                 state.models[2].inputValue;
-            autresRecettesTextEditingController.text =
+            recetteCotisationTextEditingController.text =
                 state.models[3].inputValue;
+            autresRecettesTextEditingController.text =
+                state.models[4].inputValue;
             final double recetteVente =
                 double.tryParse(recetteVenteTextEditingController.text) ?? 0.0;
             final double recetteAdhesion =
                 double.tryParse(recetteAdhesionTextEditingController.text) ??
+                    0.0;
+            final double recetteAbonnement =
+                double.tryParse(recetteAbonnementTextEditingController.text) ??
                     0.0;
             final double recetteCotisation =
                 double.tryParse(recetteAdhesionTextEditingController.text) ??
@@ -119,9 +124,10 @@ class _SpecificRecettesRealiseePageState
                     0.0;
             final double total = recetteVente +
                 recetteAdhesion +
+                recetteAbonnement +
                 recetteCotisation +
                 autresRecettes;
-            autresRecettesTextEditingController.text = total.toString();
+            totalRecettesTextEditingContorller.text = total.toString();
             return Column(
               children: [
                 ColoredBox(
@@ -133,7 +139,7 @@ class _SpecificRecettesRealiseePageState
                       children: [
                         WidgetField(
                           obscure: false,
-                          enabled: true,
+                          enabled: false,
                           titre: AppLocalizations.of(context)!
                               .recettesVenteEauTitre,
                           textEditingController:
@@ -176,7 +182,7 @@ class _SpecificRecettesRealiseePageState
                           enabled: false,
                           titre: AppLocalizations.of(context)!.totalTitre,
                           textEditingController:
-                              recetteAdhesionTextEditingController,
+                              totalRecettesTextEditingContorller,
                         ),
                         Align(
                           alignment: Alignment.centerRight,

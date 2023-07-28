@@ -61,6 +61,10 @@ class SpecificDepensesBloc
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
+    url = '$link/specificautredepenses';
+    response = await http.post(url, headers: headers, body: json);
+    model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
+    models.add(model);
     emitter(LoadedSpecificDepensesState._(models));
   }
 

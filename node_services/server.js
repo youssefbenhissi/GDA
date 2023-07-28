@@ -270,10 +270,23 @@ app.post('/tauxderecouvrement', function (req, res) {
 
 app.post('/specificrecettevente',(req,res,next)=>{
   var post_data = req.body;
-  var login = post_data.login;
+  var login = post_data.gda;
   var month = post_data.month;
   var year = post_data.year;
-  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value  FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 21) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
+app.post('/specificrecetteabonnement',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.gda;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value  FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 23) ',[login,month,year], function (error, results, fields) {
     if (error) {
       return res.status(400).send(error);  
     }
@@ -283,10 +296,10 @@ app.post('/specificrecettevente',(req,res,next)=>{
 
 app.post('/specificrecetteadhesion',(req,res,next)=>{
   var post_data = req.body;
-  var login = post_data.login;
+  var login = post_data.gda;
   var month = post_data.month;
   var year = post_data.year;
-  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value  FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 24)',[login,month,year], function (error, results, fields) {
     if (error) {
       return res.status(400).send(error);  
     }
@@ -296,10 +309,10 @@ app.post('/specificrecetteadhesion',(req,res,next)=>{
 
 app.post('/specificrecettecotisation',(req,res,next)=>{
   var post_data = req.body;
-  var login = post_data.login;
+  var login = post_data.gda;
   var month = post_data.month;
   var year = post_data.year;
-  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value  FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 22) ',[login,month,year], function (error, results, fields) {
     if (error) {
       return res.status(400).send(error);  
     }
@@ -309,10 +322,10 @@ app.post('/specificrecettecotisation',(req,res,next)=>{
 
 app.post('/specificautresrecettes',(req,res,next)=>{
   var post_data = req.body;
-  var login = post_data.login;
+  var login = post_data.gda;
   var month = post_data.month;
   var year = post_data.year;
-  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value  FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 25) ',[login,month,year], function (error, results, fields) {
     if (error) {
       return res.status(400).send(error);  
     }
@@ -322,10 +335,10 @@ app.post('/specificautresrecettes',(req,res,next)=>{
 
 app.post('/specificdepensesachateau',(req,res,next)=>{
   var post_data = req.body;
-  var login = post_data.login;
+  var login = post_data.gda;
   var month = post_data.month;
   var year = post_data.year;
-  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 26 )',[login,month,year], function (error, results, fields) {
     if (error) {
       return res.status(400).send(error);  
     }
@@ -335,10 +348,10 @@ app.post('/specificdepensesachateau',(req,res,next)=>{
 
 app.post('/specificdepensesenergie',(req,res,next)=>{
   var post_data = req.body;
-  var login = post_data.login;
+  var login = post_data.gda;
   var month = post_data.month;
   var year = post_data.year;
-  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 27)',[login,month,year], function (error, results, fields) {
     if (error) {
       return res.status(400).send(error);  
     }
@@ -348,10 +361,10 @@ app.post('/specificdepensesenergie',(req,res,next)=>{
 
 app.post('/specificdepensessalairesetprimes',(req,res,next)=>{
   var post_data = req.body;
-  var login = post_data.login;
+  var login = post_data.gda;
   var month = post_data.month;
   var year = post_data.year;
-  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 28) ',[login,month,year], function (error, results, fields) {
     if (error) {
       return res.status(400).send(error);  
     }
@@ -361,10 +374,10 @@ app.post('/specificdepensessalairesetprimes',(req,res,next)=>{
 
 app.post('/specificdepensesmaintenaceetentretien',(req,res,next)=>{
   var post_data = req.body;
-  var login = post_data.login;
+  var login = post_data.gda;
   var month = post_data.month;
   var year = post_data.year;
-  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 29)',[login,month,year], function (error, results, fields) {
     if (error) {
       return res.status(400).send(error);  
     }
@@ -374,10 +387,10 @@ app.post('/specificdepensesmaintenaceetentretien',(req,res,next)=>{
 
 app.post('/specificdepenseslocation',(req,res,next)=>{
   var post_data = req.body;
-  var login = post_data.login;
+  var login = post_data.gda;
   var month = post_data.month;
   var year = post_data.year;
-  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 30) ',[login,month,year], function (error, results, fields) {
     if (error) {
       return res.status(400).send(error);  
     }
@@ -387,10 +400,10 @@ app.post('/specificdepenseslocation',(req,res,next)=>{
 
 app.post('/specificdepensesrenouvellementdesequipement',(req,res,next)=>{
   var post_data = req.body;
-  var login = post_data.login;
+  var login = post_data.gda;
   var month = post_data.month;
   var year = post_data.year;
-  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 32) ',[login,month,year], function (error, results, fields) {
     if (error) {
       return res.status(400).send(error);  
     }
@@ -400,10 +413,10 @@ app.post('/specificdepensesrenouvellementdesequipement',(req,res,next)=>{
 
 app.post('/specificdepensesgestiondga',(req,res,next)=>{
   var post_data = req.body;
-  var login = post_data.login;
+  var login = post_data.gda;
   var month = post_data.month;
   var year = post_data.year;
-  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 33) ',[login,month,year], function (error, results, fields) {
     if (error) {
       return res.status(400).send(error);  
     }
@@ -413,10 +426,23 @@ app.post('/specificdepensesgestiondga',(req,res,next)=>{
 
 app.post('/specificdepensesdinvestissement',(req,res,next)=>{
   var post_data = req.body;
-  var login = post_data.login;
+  var login = post_data.gda;
   var month = post_data.month;
   var year = post_data.year;
-  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value i , ref_gda rg , ref_delegation rd , ref_gouvernorat rgo WHERE (created_by = ? AND i.id_indicateur = 9  AND i.month = ? AND i.year = ? AND i.code_gda =  rg.code AND rg.id_delegation = rd.id AND rd.id_gov = rgo.id   ) ',[login,month,year], function (error, results, fields) {
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 34) ',[login,month,year], function (error, results, fields) {
+    if (error) {
+      return res.status(400).send(error);  
+    }
+    return res.status(200).send(results);
+  });
+});
+
+app.post('/specificautredepenses',(req,res,next)=>{
+  var post_data = req.body;
+  var login = post_data.gda;
+  var month = post_data.month;
+  var year = post_data.year;
+  con.query('SELECT AVG(CAST(input_value AS float )) AS average_value FROM indicateur_saisie_value WHERE (code_gda = ? AND  month = ? AND year = ? AND id_indicateur = 35) ',[login,month,year], function (error, results, fields) {
     if (error) {
       return res.status(400).send(error);  
     }

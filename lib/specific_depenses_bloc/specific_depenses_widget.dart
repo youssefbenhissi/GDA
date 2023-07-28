@@ -62,6 +62,7 @@ class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
     depensesGestionDGATextEditingController.dispose();
     depensesDInvestissementTextEditingController.dispose();
     depensesAutresDepensesTextEditingController.dispose();
+    depensesTotalTextEditingController.dispose();
     super.dispose();
   }
 
@@ -84,7 +85,7 @@ class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
           children: [
             GestureDetector(
               onTap: () {
-                context.gNavigationService.openRecettesRealiseesScreen(context);
+                Navigator.pop(context);
               },
               child: SvgPicture.asset(
                 fit: BoxFit.contain,
@@ -125,6 +126,8 @@ class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
                         state.models[6].inputValue;
                     depensesDInvestissementTextEditingController.text =
                         state.models[7].inputValue;
+                    depensesAutresDepensesTextEditingController.text =
+                        state.models[8].inputValue;
                     final double depensesAchatEau = double.tryParse(
                             depensesAchatEauTextEditingController.text) ??
                         0.0;
@@ -171,7 +174,7 @@ class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
                       children: [
                         WidgetField(
                           obscure: false,
-                          enabled: true,
+                          enabled: false,
                           titre: AppLocalizations.of(context)!
                               .depensesAchatEauTitre,
                           textEditingController:
@@ -179,7 +182,7 @@ class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
                         ),
                         WidgetField(
                           obscure: false,
-                          enabled: true,
+                          enabled: false,
                           titre: AppLocalizations.of(context)!
                               .depensesEnergieTitre,
                           textEditingController:
@@ -187,7 +190,7 @@ class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
                         ),
                         WidgetField(
                           obscure: false,
-                          enabled: true,
+                          enabled: false,
                           titre: AppLocalizations.of(context)!
                               .depensesSalairesEtPrimesTitre,
                           textEditingController:
@@ -195,7 +198,7 @@ class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
                         ),
                         WidgetField(
                           obscure: false,
-                          enabled: true,
+                          enabled: false,
                           titre: AppLocalizations.of(context)!
                               .depensesMaintenanceEtEntretienTitre,
                           textEditingController:
@@ -203,7 +206,7 @@ class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
                         ),
                         WidgetField(
                           obscure: false,
-                          enabled: true,
+                          enabled: false,
                           titre: AppLocalizations.of(context)!
                               .depensesLocationEtAutresChargesdExploitationTitre,
                           textEditingController:
@@ -211,7 +214,7 @@ class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
                         ),
                         WidgetField(
                           obscure: false,
-                          enabled: true,
+                          enabled: false,
                           titre: AppLocalizations.of(context)!
                               .depensesRenouvellementDesEquipementsTitre,
                           textEditingController:
@@ -219,7 +222,7 @@ class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
                         ),
                         WidgetField(
                           obscure: false,
-                          enabled: true,
+                          enabled: false,
                           titre: AppLocalizations.of(context)!
                               .depensesGestionGDATitre,
                           textEditingController:
@@ -227,7 +230,7 @@ class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
                         ),
                         WidgetField(
                           obscure: false,
-                          enabled: true,
+                          enabled: false,
                           titre: AppLocalizations.of(context)!
                               .depensesdInvestissementTitre,
                           textEditingController:
@@ -235,7 +238,7 @@ class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
                         ),
                         WidgetField(
                           obscure: false,
-                          enabled: true,
+                          enabled: false,
                           titre:
                               AppLocalizations.of(context)!.autresDepensesTitre,
                           textEditingController:
@@ -269,7 +272,14 @@ class _SpecificDepensesPageState extends State<SpecificDepensesPage> {
                                             MaterialStateProperty.all<Color>(
                                                 Colors.white),
                                       ),
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        context.gNavigationService
+                                            .openSpecificFicheGDAScreen(
+                                                context,
+                                                widget.month,
+                                                widget.year,
+                                                widget.gda);
+                                      },
                                       child: Text(AppLocalizations.of(context)!
                                           .envoyerTitre),
                                     ),

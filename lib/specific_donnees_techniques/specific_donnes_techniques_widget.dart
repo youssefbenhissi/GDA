@@ -127,7 +127,7 @@ class _SpecificDonneesTechniquesPageState
             children: [
               GestureDetector(
                 onTap: () {
-                  context.gNavigationService.openFicheGDAScreen(context);
+                  Navigator.pop(context);
                 },
                 child: SvgPicture.asset(
                   fit: BoxFit.contain,
@@ -141,8 +141,8 @@ class _SpecificDonneesTechniquesPageState
               ),
               GestureDetector(
                 onTap: () {
-                  context.gNavigationService
-                      .openRecettesRealiseesScreen(context);
+                  context.gNavigationService.openSpecificRecettesRealisees(
+                      context, widget.gda, widget.month, widget.year);
                 },
                 child: SvgPicture.asset(
                   fit: BoxFit.contain,

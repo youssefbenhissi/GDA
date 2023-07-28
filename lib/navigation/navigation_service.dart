@@ -60,7 +60,7 @@ class NavigationService {
       BuildContext context, String gda, int month, int year) {
     return Navigator.of(context).pushNamed(
       _specificRecettesRealiseesRouteName,
-      arguments: _SpecificDonneesTechniquesArguments(gda, month, year),
+      arguments: _SpecificRecettesRealiseesArguments(gda, month, year),
     );
   }
 
