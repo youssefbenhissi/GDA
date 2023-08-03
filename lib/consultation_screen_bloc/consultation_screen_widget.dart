@@ -303,7 +303,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                 MaterialStateProperty.all<Color>(Colors.white),
                           ),
                           onPressed: () {
-                            if (gdaValue.isEmpty) {
+                            if (gdaValue.isEmpty || gdaValue == null) {
                               context.currentConsultationBloc
                                   .choseMonthAndYear(month, year);
                               context.gNavigationService
