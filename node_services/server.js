@@ -593,7 +593,7 @@ app.post('/donneestechniques', function (req, res) {
   let month = req.body.month;
   let year = req.body.year;
   con.query('INSERT INTO `indicateur_saisie_value`(`created_by` , `date_creation`, `input_value`, `id_indicateur`, `id_saisie`, `month`, `year`) ' +
-  'VALUES (?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?)',[createdby,inputvaluevolumepompe,idindicateurvolumepompe,idsaisie,month,year,createdby,inputvaluevolumedistribue,idindicateurvolumedistribue,idsaisie,month,year,createdby,inputvaluevolumeeaudejavel,idindicateurvolumeeaudejavel,idsaisie,month,year,createdby,inputvaluetarifadopte,idindicateurtarifadopte,idsaisie,month,year,createdby,inputvaluecouteau,idindicateurcouteau,idsaisie,month,year,createdby,inputvaluenombredejoursarret,idindicateur,idsaisie,month,year],function (err,result,fields) {
+  'VALUES (?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?)',[createdby,inputvaluevolumepompe,idindicateurvolumepompe,idsaisie,month,year,createdby,inputvaluevolumedistribue,idindicateurvolumedistribue,idsaisie,month,year,createdby,inputvaluevolumeeaudejavel,idindicateurvolumeeaudejavel,idsaisie,month,year,createdby,inputvaluetarifadopte,idindicateurtarifadopte,idsaisie,month,year,createdby,inputvaluecouteau,idindicateurcouteau,idsaisie,month,year,createdby,inputvaluenombredejoursarret,idindicateur,idsaisie,month,year],function (err,result,fields) {
   if (err) throw err;
 //	sendVerificationEmail(email,randomCode);
   res.status(200).send()})

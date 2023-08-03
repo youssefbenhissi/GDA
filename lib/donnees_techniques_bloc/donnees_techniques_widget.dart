@@ -266,7 +266,7 @@ class _SaisirDonneesTechniquesPageState
                                 inputValueNombreDeJoursArret:
                                     nombreJourTextEditingController.text,
                                 idIndicateur: 1,
-                                idSaisie: state.model.id,
+                                idSaisie: 19,
                                 month: monthNumber,
                                 year: int.tryParse(year) ?? 2023,
                               );
@@ -292,7 +292,7 @@ class _SaisirDonneesTechniquesPageState
                                 inputValueNombreDeJoursArret:
                                     nombreJourTextEditingController.text,
                                 idIndicateur: 1,
-                                idSaisie: state.model.id,
+                                idSaisie: 19,
                                 month: monthNumber,
                                 year: int.tryParse(year) ?? 2023,
                               );
@@ -318,7 +318,7 @@ class _SaisirDonneesTechniquesPageState
                                 inputValueNombreDeJoursArret:
                                     nombreJourTextEditingController.text,
                                 idIndicateur: 1,
-                                idSaisie: state.model.id,
+                                idSaisie: 19,
                                 month: monthNumber,
                                 year: int.tryParse(year) ?? 2023,
                               );
