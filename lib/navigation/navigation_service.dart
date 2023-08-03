@@ -76,8 +76,10 @@ class NavigationService {
     return Navigator.of(context).pushNamed(_saisirDonneesTechniquesRouteName);
   }
 
-  Future<void> openRecettesRealiseesScreen(BuildContext context) {
-    return Navigator.of(context).pushNamed(_saisirRecettesRealiseesRouteName);
+  Future<void> openRecettesRealiseesScreen(
+      BuildContext context, int month, int year) {
+    return Navigator.of(context).pushNamed(_saisirRecettesRealiseesRouteName,
+        arguments: _SpecificIndicateurArguments(month, year));
   }
 
   Future<void> openDepensesRealiseesScreen(BuildContext context) {

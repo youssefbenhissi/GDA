@@ -598,3 +598,25 @@ app.post('/donneestechniques', function (req, res) {
 //	sendVerificationEmail(email,randomCode);
   res.status(200).send()})
 });
+
+app.post('/recettesrealisees', function (req, res) {
+  let createdby = req.body.createdby;
+  let inputvaluerecettesventeeau = req.body.inputvaluerecettesventeeau;
+  let idindicateurrecettesventeeau = req.body.idindicateurrecettesventeeau;
+  let inputvaluerecettesadhesion = req.body.inputvaluerecettesadhesion;
+  let idindicateurrecettesadhesion = req.body.idindicateurrecettesadhesion;
+  let inputvaluerecettesabonnement = req.body.inputvaluerecettesabonnement;
+  let idindicateurrecettesabonnement = req.body.idindicateurrecettesabonnement;
+  let inputvaluerecettescotisations = req.body.inputvaluerecettescotisations;
+  let idindicateurrecettescotisations = req.body.idindicateurrecettescotisations;
+  let inputvalueautresrecettes = req.body.inputvalueautresrecettes;
+  let idindicateurautresrecettes = req.body.idindicateurautresrecettes;
+  let idsaisie = req.body.idsaisie;
+  let month = req.body.month;
+  let year = req.body.year;
+  con.query('INSERT INTO `indicateur_saisie_value`(`created_by` , `date_creation`, `input_value`, `id_indicateur`, `id_saisie`, `month`, `year`) ' +
+  'VALUES (?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?)',[createdby,inputvaluerecettesventeeau,idindicateurrecettesventeeau,idsaisie,month,year,createdby,inputvaluerecettesadhesion,idindicateurrecettesadhesion,idsaisie,month,year,createdby,inputvaluerecettesabonnement,idindicateurrecettesabonnement,idsaisie,month,year,createdby,inputvaluerecettescotisations,idindicateurrecettescotisations,idsaisie,month,year,createdby,inputvalueautresrecettes,idindicateurautresrecettes,idsaisie,month,year,month,year],function (err,result,fields) {
+  if (err) throw err;
+//	sendVerificationEmail(email,randomCode);
+  res.status(200).send()})
+});

@@ -77,8 +77,8 @@ class _SaisirDonneesTechniquesPageState
               ),
               GestureDetector(
                 onTap: () {
-                  context.gNavigationService
-                      .openRecettesRealiseesScreen(context);
+                  context.gNavigationService.openRecettesRealiseesScreen(
+                      context, monthNumber, int.tryParse(year) ?? 2023);
                 },
                 child: SvgPicture.asset(
                   fit: BoxFit.contain,
@@ -324,7 +324,8 @@ class _SaisirDonneesTechniquesPageState
                               );
                             }
                             context.gNavigationService
-                                .openRecettesRealiseesScreen(context);
+                                .openRecettesRealiseesScreen(context,
+                                    monthNumber, int.tryParse(year) ?? 2023);
                           },
                           child: Text(AppLocalizations.of(context)!
                               .saisirLesRecettesTitre),

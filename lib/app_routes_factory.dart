@@ -101,9 +101,12 @@ class AppRoutesFactory extends RoutesFactory {
   }
 
   @override
-  Route<dynamic> createRecettesRealiseesPageRoute() {
+  Route<dynamic> createRecettesRealiseesPageRoute(
+    int month,
+    int year,
+  ) {
     return MaterialPageRoute<String?>(
-      builder: RecettesRealiseesScreenRouteBuilder(),
+      builder: RecettesRealiseesScreenRouteBuilder(month: month, year: year),
     );
   }
 

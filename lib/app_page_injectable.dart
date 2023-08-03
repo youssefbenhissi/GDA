@@ -15,11 +15,14 @@ import 'package:pfe_iheb/weather_bloc/weather_bloc.dart';
 
 import 'donnees_techniques_bloc/donnees_techniques_bloc.dart';
 import 'indicateur_bloc/indicateur_bloc.dart';
+import 'recettes_realisees_screen/recettes_realisees_bloc.dart';
 
 extension AppPageInjectable on BuildContext {
   NavigationService get gNavigationService =>
       read<ServiceLocator>().navigationService;
   LoginBloc get currentLoginBloc => read<ServiceLocator>().loginBloc;
+  RecettesRealiseesBloc get currentRecettesRealiseesBloc =>
+      read<ServiceLocator>().recettesRealiseesBloc;
   SpecificDepensesBloc get currentDepensesBloc =>
       read<ServiceLocator>().specificDepensesBloc;
   SpecificRecettesRealiseesBloc get currentSpecificRecettesRealiseesBloc =>

@@ -44,5 +44,22 @@ class InsertDonneesTechniquesFuncEvent extends DonneesTechniquesEvent {
     this.year,
   ) : super._();
   @override
-  List<Object?> get props => [createdBy];
+  List<Object?> get props => [
+        createdBy,
+        inputValueVolumePompe,
+        idIndicateurVolumePompe,
+        inputValueVolumeDistribue,
+        idIndicateurVolumeDistribue,
+        inputValueVolumeEauDeJavel,
+        idIndicateurVolumeEauDeJavel,
+        inputValueTarifAdopte,
+        idIndicateurTarifAdopte,
+        inputValueCoutEau,
+        idIndicateurCoutEau,
+        inputValueNombreDeJoursArret,
+        idIndicateur,
+        idSaisie,
+        month,
+        year,
+      ];
 }

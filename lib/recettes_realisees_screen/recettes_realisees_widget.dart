@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
+import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pfe_iheb/utils/field_widget.dart';
 
 class RecettesRealiseePage extends StatelessWidget {
-  const RecettesRealiseePage({super.key});
+  final int month;
+  final int year;
+  const RecettesRealiseePage(
+      {super.key, required this.month, required this.year});
 
   @override
   Widget build(BuildContext context) {
@@ -112,6 +116,78 @@ class RecettesRealiseePage extends StatelessWidget {
                               MaterialStateProperty.all<Color>(Colors.white),
                         ),
                         onPressed: () {
+                          var state = context.currentLoginBloc.state;
+
+                          if (state is GDALoginState) {
+                            context.currentRecettesRealiseesBloc
+                                .insertRecettesRealisees(
+                              createdBy: state.model.login,
+                              inputValueRecettesVenteEau:
+                                  recetteVenteTextEditingController.text,
+                              idIndicateurRecettesVenteEau: 21,
+                              inputValueRecettesAdhesion:
+                                  recetteAdhesionTextEditingController.text,
+                              idIndicateurRecettesAdhesion: 24,
+                              inputValueRecettesAbonnement:
+                                  recetteAbonnementTextEditingController.text,
+                              idIndicateurRecettesAbonnement: 23,
+                              inputValueRecettesCotisations:
+                                  recetteCotisationTextEditingController.text,
+                              idIndicateurRecettesCotisations: 22,
+                              inputValueAutresRecettes:
+                                  autresRecettesTextEditingController.text,
+                              idIndicateurAutresRecettes: 25,
+                              idSaisie: 19,
+                              month: month,
+                              year: year,
+                            );
+                          } else if (state is DecideurCentralLoginState) {
+                            context.currentRecettesRealiseesBloc
+                                .insertRecettesRealisees(
+                              createdBy: state.model.login,
+                              inputValueRecettesVenteEau:
+                                  recetteVenteTextEditingController.text,
+                              idIndicateurRecettesVenteEau: 21,
+                              inputValueRecettesAdhesion:
+                                  recetteAdhesionTextEditingController.text,
+                              idIndicateurRecettesAdhesion: 24,
+                              inputValueRecettesAbonnement:
+                                  recetteAbonnementTextEditingController.text,
+                              idIndicateurRecettesAbonnement: 23,
+                              inputValueRecettesCotisations:
+                                  recetteCotisationTextEditingController.text,
+                              idIndicateurRecettesCotisations: 22,
+                              inputValueAutresRecettes:
+                                  autresRecettesTextEditingController.text,
+                              idIndicateurAutresRecettes: 25,
+                              idSaisie: 19,
+                              month: month,
+                              year: year,
+                            );
+                          } else if (state is DecideurGouvernoratLoginState) {
+                            context.currentRecettesRealiseesBloc
+                                .insertRecettesRealisees(
+                              createdBy: state.model.login,
+                              inputValueRecettesVenteEau:
+                                  recetteVenteTextEditingController.text,
+                              idIndicateurRecettesVenteEau: 21,
+                              inputValueRecettesAdhesion:
+                                  recetteAdhesionTextEditingController.text,
+                              idIndicateurRecettesAdhesion: 24,
+                              inputValueRecettesAbonnement:
+                                  recetteAbonnementTextEditingController.text,
+                              idIndicateurRecettesAbonnement: 23,
+                              inputValueRecettesCotisations:
+                                  recetteCotisationTextEditingController.text,
+                              idIndicateurRecettesCotisations: 22,
+                              inputValueAutresRecettes:
+                                  autresRecettesTextEditingController.text,
+                              idIndicateurAutresRecettes: 25,
+                              idSaisie: 19,
+                              month: month,
+                              year: year,
+                            );
+                          }
                           context.gNavigationService
                               .openDepensesRealiseesScreen(context);
                         },

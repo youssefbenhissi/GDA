@@ -42,7 +42,8 @@ class DepensesPage extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                context.gNavigationService.openRecettesRealiseesScreen(context);
+                context.gNavigationService.openRecettesRealiseesScreen(
+                    context, 12, int.tryParse("2019") ?? 2023);
               },
               child: SvgPicture.asset(
                 fit: BoxFit.contain,
