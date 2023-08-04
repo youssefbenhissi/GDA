@@ -294,6 +294,8 @@ class DepensesPage extends StatelessWidget {
                                     year: year,
                                   );
                                 }
+                                context.gNavigationService
+                                    .openFicheGDAScreen(context);
                               },
                               child: Text(
                                   AppLocalizations.of(context)!.envoyerTitre),
