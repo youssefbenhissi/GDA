@@ -38,7 +38,9 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
         return routesFactory.createRecettesRealiseesPageRoute(
             args.month, args.year);
       case _saisirDepensesRealiseesRouteName:
-        return routesFactory.createDepensesRealiseesPageRoute();
+        final args = settings.arguments as _SpecificIndicateurArguments;
+        return routesFactory.createDepensesRealiseesPageRoute(
+            args.month, args.year);
       case _specificDonneesTechniquesRouteName:
         final args = settings.arguments as _SpecificDonneesTechniquesArguments;
         return routesFactory.createSpecificDonneesTechniquesScreenPageRoute(

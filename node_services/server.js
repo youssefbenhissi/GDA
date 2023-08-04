@@ -620,3 +620,33 @@ app.post('/recettesrealisees', function (req, res) {
 //	sendVerificationEmail(email,randomCode);
   res.status(200).send()})
 });
+
+app.post('/depenses', function (req, res) {
+  let createdby = req.body.createdby;
+  let inputvaluedepensesachateau = req.body.inputvaluedepensesachateau;
+  let idindicateurdepensesachateau = req.body.idindicateurdepensesachateau;
+  let inputvaluedepensesenergie = req.body.inputvaluedepensesenergie;
+  let idindicateurdepensesenergie = req.body.idindicateurdepensesenergie;
+  let inputvaluedepensessalairesprimes = req.body.inputvaluedepensessalairesprimes;
+  let idindicateurdepensessalairesprimes = req.body.idindicateurdepensessalairesprimes;
+  let inputvaluedepensesmaintenanceentretien = req.body.inputvaluedepensesmaintenanceentretien;
+  let idindicateurdepensesmaintenanceentretien = req.body.idindicateurdepensesmaintenanceentretien;
+  let inputvaluedepenseslocation = req.body.inputvaluedepenseslocation;
+  let idindicateurdepenseslocation = req.body.idindicateurdepenseslocation;
+  let inputvaluedepensesrenouvellement = req.body.inputvaluedepensesrenouvellement;
+  let idindicateurdepensesrenouvellement = req.body.idindicateurdepensesrenouvellement;
+  let inputvaluedepensesgestiongda = req.body.inputvaluedepensesgestiongda;
+  let idindicateurdepensesgestiongda = req.body.idindicateurdepensesgestiongda;
+  let inputvaluedepensesinvestissement = req.body.inputvaluedepensesinvestissement;
+  let idindicateurdepensesinvestissement = req.body.idindicateurdepensesinvestissement;
+  let inputvalueautresdepenses = req.body.inputvalueautresdepenses;
+  let idindicateurautresdepenses = req.body.idindicateurautresdepenses;
+  let idsaisie = req.body.idsaisie;
+  let month = req.body.month;
+  let year = req.body.year;
+  con.query('INSERT INTO `indicateur_saisie_value`(`created_by` , `date_creation`, `input_value`, `id_indicateur`, `id_saisie`, `month`, `year`) ' +
+  'VALUES (?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?),(?,NOW(),?,?,?,?,?)',[createdby,inputvaluedepensesachateau,idindicateurdepensesachateau,idsaisie,month,year,createdby,inputvaluedepensesenergie,idindicateurdepensesenergie,idsaisie,month,year,createdby,inputvaluedepensessalairesprimes,idindicateurdepensessalairesprimes,idsaisie,month,year,createdby,inputvaluedepensesmaintenanceentretien,idindicateurdepensesmaintenanceentretien,idsaisie,month,year,createdby,inputvaluedepenseslocation,idindicateurdepenseslocation,idsaisie,month,year,createdby,inputvaluedepensesrenouvellement,idindicateurdepensesrenouvellement,idsaisie,month,year,createdby,inputvaluedepensesgestiongda,idindicateurdepensesgestiongda,idsaisie,month,year,createdby,inputvaluedepensesinvestissement,idindicateurdepensesinvestissement,idsaisie,month,year,createdby,inputvalueautresdepenses,idindicateurautresdepenses,idsaisie,month,year],function (err,result,fields) {
+  if (err) throw err;
+//	sendVerificationEmail(email,randomCode);
+  res.status(200).send()})
+});

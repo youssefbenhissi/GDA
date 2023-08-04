@@ -82,8 +82,10 @@ class NavigationService {
         arguments: _SpecificIndicateurArguments(month, year));
   }
 
-  Future<void> openDepensesRealiseesScreen(BuildContext context) {
-    return Navigator.of(context).pushNamed(_saisirDepensesRealiseesRouteName);
+  Future<void> openDepensesRealiseesScreen(
+      BuildContext context, int month, int year) {
+    return Navigator.of(context).pushNamed(_saisirDepensesRealiseesRouteName,
+        arguments: _SpecificIndicateurArguments(month, year));
   }
 
   Future<void> openWeatherScreen(BuildContext context, String location) {

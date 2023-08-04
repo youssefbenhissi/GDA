@@ -50,7 +50,8 @@ class RecettesRealiseePage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                context.gNavigationService.openDepensesRealiseesScreen(context);
+                context.gNavigationService
+                    .openDepensesRealiseesScreen(context, month, year);
               },
               child: SvgPicture.asset(
                 fit: BoxFit.contain,
@@ -189,7 +190,8 @@ class RecettesRealiseePage extends StatelessWidget {
                             );
                           }
                           context.gNavigationService
-                              .openDepensesRealiseesScreen(context);
+                              .openDepensesRealiseesScreen(
+                                  context, month, year);
                         },
                         child: Text(
                             AppLocalizations.of(context)!.saisirDepenseTitre),

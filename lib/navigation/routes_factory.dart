@@ -19,7 +19,7 @@ abstract class RoutesFactory {
       String gda, int month, int year);
   Route<dynamic> createDonneesTechniquesPageRoute();
   Route<dynamic> createRecettesRealiseesPageRoute(int month, int year);
-  Route<dynamic> createDepensesRealiseesPageRoute();
+  Route<dynamic> createDepensesRealiseesPageRoute(int month, int year);
   Route<dynamic> createWeatherPageRoute(String location);
   Route<dynamic> createSpecificFicheGDAScreenPageRoute(
       int month, int year, String gda);

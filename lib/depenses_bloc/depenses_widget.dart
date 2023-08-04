@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pfe_iheb/app_page_injectable.dart';
+import 'package:pfe_iheb/login_bloc/login_bloc.dart';
 import 'package:pfe_iheb/utils/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:pfe_iheb/utils/field_widget.dart';
 
 class DepensesPage extends StatelessWidget {
-  const DepensesPage({super.key});
+  final int month;
+  final int year;
+  const DepensesPage({super.key, required this.month, required this.year});
 
   @override
   Widget build(BuildContext context) {
@@ -42,8 +45,8 @@ class DepensesPage extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                context.gNavigationService.openRecettesRealiseesScreen(
-                    context, 12, int.tryParse("2019") ?? 2023);
+                context.gNavigationService
+                    .openRecettesRealiseesScreen(context, month, year);
               },
               child: SvgPicture.asset(
                 fit: BoxFit.contain,
@@ -152,7 +155,146 @@ class DepensesPage extends StatelessWidget {
                                     MaterialStateProperty.all<Color>(
                                         Colors.white),
                               ),
-                              onPressed: () {},
+                              onPressed: () {
+                                var state = context.currentLoginBloc.state;
+                                if (state is GDALoginState) {
+                                  context.currentDepensesBloc
+                                      .insertDonneesTechniques(
+                                    createdBy: state.model.login,
+                                    inputValueDepensesAchatEau:
+                                        depensesAchatEauTextEditingController
+                                            .text,
+                                    idIndicateurDepensesAchatEau: 26,
+                                    inputValueDepensesEnergie:
+                                        depensesEnergieTextEditingController
+                                            .text,
+                                    idIndicateurDepensesEnergie: 27,
+                                    inputValueDepensesSalairesPrimes:
+                                        depensesSalairesEtPrimesTextEditingController
+                                            .text,
+                                    idIndicateurDepensesSalairesPrimes: 28,
+                                    inputValueDepensesMaintenanceEntretien:
+                                        depensesMaintenaceEtEntretienTextEditingController
+                                            .text,
+                                    idIndicateurDepensesMaintenanceEntretien:
+                                        29,
+                                    inputValueDepensesLocation:
+                                        depensesLocationTextEditingController
+                                            .text,
+                                    idIndicateurDepensesLocation: 30,
+                                    inputValueDepensesRenouvellement:
+                                        depensesRenouvellementDesEquipementTextEditingController
+                                            .text,
+                                    idIndicateurDepensesRenouvellement: 32,
+                                    inputValueDepensesGestionGDA:
+                                        depensesGestionDGATextEditingController
+                                            .text,
+                                    idIndicateurDepensesGestionGDA: 33,
+                                    inputValueDepensesInvestissement:
+                                        depensesDInvestissementTextEditingController
+                                            .text,
+                                    idIndicateurDepensesInvestissement: 34,
+                                    inputValueAutresDepenses:
+                                        depensesAutresDepensesTextEditingController
+                                            .text,
+                                    idIndicateurAutresDepenses: 35,
+                                    idSaisie: 19,
+                                    month: month,
+                                    year: year,
+                                  );
+                                } else if (state is DecideurCentralLoginState) {
+                                  context.currentDepensesBloc
+                                      .insertDonneesTechniques(
+                                    createdBy: state.model.login,
+                                    inputValueDepensesAchatEau:
+                                        depensesAchatEauTextEditingController
+                                            .text,
+                                    idIndicateurDepensesAchatEau: 26,
+                                    inputValueDepensesEnergie:
+                                        depensesEnergieTextEditingController
+                                            .text,
+                                    idIndicateurDepensesEnergie: 27,
+                                    inputValueDepensesSalairesPrimes:
+                                        depensesSalairesEtPrimesTextEditingController
+                                            .text,
+                                    idIndicateurDepensesSalairesPrimes: 28,
+                                    inputValueDepensesMaintenanceEntretien:
+                                        depensesMaintenaceEtEntretienTextEditingController
+                                            .text,
+                                    idIndicateurDepensesMaintenanceEntretien:
+                                        29,
+                                    inputValueDepensesLocation:
+                                        depensesLocationTextEditingController
+                                            .text,
+                                    idIndicateurDepensesLocation: 30,
+                                    inputValueDepensesRenouvellement:
+                                        depensesRenouvellementDesEquipementTextEditingController
+                                            .text,
+                                    idIndicateurDepensesRenouvellement: 32,
+                                    inputValueDepensesGestionGDA:
+                                        depensesGestionDGATextEditingController
+                                            .text,
+                                    idIndicateurDepensesGestionGDA: 33,
+                                    inputValueDepensesInvestissement:
+                                        depensesDInvestissementTextEditingController
+                                            .text,
+                                    idIndicateurDepensesInvestissement: 34,
+                                    inputValueAutresDepenses:
+                                        depensesAutresDepensesTextEditingController
+                                            .text,
+                                    idIndicateurAutresDepenses: 35,
+                                    idSaisie: 19,
+                                    month: month,
+                                    year: year,
+                                  );
+                                } else if (state
+                                    is DecideurGouvernoratLoginState) {
+                                  context.currentDepensesBloc
+                                      .insertDonneesTechniques(
+                                    createdBy: state.model.login,
+                                    inputValueDepensesAchatEau:
+                                        depensesAchatEauTextEditingController
+                                            .text,
+                                    idIndicateurDepensesAchatEau: 26,
+                                    inputValueDepensesEnergie:
+                                        depensesEnergieTextEditingController
+                                            .text,
+                                    idIndicateurDepensesEnergie: 27,
+                                    inputValueDepensesSalairesPrimes:
+                                        depensesSalairesEtPrimesTextEditingController
+                                            .text,
+                                    idIndicateurDepensesSalairesPrimes: 28,
+                                    inputValueDepensesMaintenanceEntretien:
+                                        depensesMaintenaceEtEntretienTextEditingController
+                                            .text,
+                                    idIndicateurDepensesMaintenanceEntretien:
+                                        29,
+                                    inputValueDepensesLocation:
+                                        depensesLocationTextEditingController
+                                            .text,
+                                    idIndicateurDepensesLocation: 30,
+                                    inputValueDepensesRenouvellement:
+                                        depensesRenouvellementDesEquipementTextEditingController
+                                            .text,
+                                    idIndicateurDepensesRenouvellement: 32,
+                                    inputValueDepensesGestionGDA:
+                                        depensesGestionDGATextEditingController
+                                            .text,
+                                    idIndicateurDepensesGestionGDA: 33,
+                                    inputValueDepensesInvestissement:
+                                        depensesDInvestissementTextEditingController
+                                            .text,
+                                    idIndicateurDepensesInvestissement: 34,
+                                    inputValueAutresDepenses:
+                                        depensesAutresDepensesTextEditingController
+                                            .text,
+                                    idIndicateurAutresDepenses: 35,
+                                    idSaisie: 19,
+                                    month: month,
+                                    year: year,
+                                  );
+                                }
+                              },
                               child: Text(
                                   AppLocalizations.of(context)!.envoyerTitre),
                             ),

@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:pfe_iheb/consultation_screen_bloc/consultation_screen_bloc.dart';
+import 'package:pfe_iheb/depenses_bloc/depenses_bloc.dart';
 import 'package:pfe_iheb/donnees_techniques_bloc/donnees_techniques_bloc.dart';
 import 'package:pfe_iheb/fiche_gda_bloc/fiche_gda_bloc.dart';
 import 'package:pfe_iheb/indicateur_bloc/indicateur_bloc.dart';
@@ -22,6 +23,7 @@ class ServiceLocator {
   RecettesRealiseesBloc get recettesRealiseesBloc =>
       _registry.get<RecettesRealiseesBloc>();
   LoginBloc get loginBloc => _registry.get<LoginBloc>();
+  DepensesBloc get depensesBloc => _registry.get<DepensesBloc>();
   SpecificDepensesBloc get specificDepensesBloc =>
       _registry.get<SpecificDepensesBloc>();
   SpecificRecettesRealiseesBloc get specificRecettesRealiseesBloc =>
@@ -46,6 +48,9 @@ class ServiceLocator {
     );
     _registry.registerLazySingleton(
       () => RecettesRealiseesBloc(),
+    );
+    _registry.registerLazySingleton(
+      () => DepensesBloc(),
     );
     _registry.registerLazySingleton(
       () => LoginBloc(),

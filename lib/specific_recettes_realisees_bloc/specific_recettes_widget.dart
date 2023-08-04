@@ -82,7 +82,8 @@ class _SpecificRecettesRealiseePageState
             ),
             GestureDetector(
               onTap: () {
-                context.gNavigationService.openDepensesRealiseesScreen(context);
+                context.gNavigationService.openDepensesRealiseesScreen(
+                    context, widget.month, widget.year);
               },
               child: SvgPicture.asset(
                 fit: BoxFit.contain,
