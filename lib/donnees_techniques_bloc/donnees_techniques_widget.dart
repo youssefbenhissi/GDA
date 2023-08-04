@@ -69,7 +69,9 @@ class _SaisirDonneesTechniquesPageState
                   fit: BoxFit.contain,
                   width: 25,
                   color: Colors.white,
-                  "assets/images/arrow-left-solid.svg",
+                  Directionality.of(context) == TextDirection.ltr
+                      ? "assets/images/arrow-left-solid.svg"
+                      : "assets/images/arrow-right-solid.svg",
                 ),
               ),
               Text(
@@ -84,7 +86,9 @@ class _SaisirDonneesTechniquesPageState
                   fit: BoxFit.contain,
                   width: 25,
                   color: Colors.white,
-                  "assets/images/arrow-right-solid.svg",
+                  Directionality.of(context) == TextDirection.ltr
+                      ? "assets/images/arrow-right-solid.svg"
+                      : "assets/images/arrow-left-solid.svg",
                 ),
               ),
             ],
@@ -99,7 +103,9 @@ class _SaisirDonneesTechniquesPageState
                 child: Column(
                   children: [
                     Align(
-                      alignment: Alignment.centerLeft,
+                      alignment: Directionality.of(context) == TextDirection.rtl
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft,
                       child: Text(
                         AppLocalizations.of(context)!.moisTitre,
                         style: const TextStyle(color: Colors.lightBlue),
@@ -163,7 +169,9 @@ class _SaisirDonneesTechniquesPageState
                       ),
                     ),
                     Align(
-                      alignment: Alignment.centerLeft,
+                      alignment: Directionality.of(context) == TextDirection.rtl
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft,
                       child: Text(
                         AppLocalizations.of(context)!.anneeTitre,
                         style: const TextStyle(color: Colors.lightBlue),
@@ -232,7 +240,9 @@ class _SaisirDonneesTechniquesPageState
                           .nombreDeJoursdarretTitre,
                     ),
                     Align(
-                      alignment: Alignment.centerRight,
+                      alignment: Directionality.of(context) == TextDirection.ltr
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft,
                       child: Padding(
                         padding: const EdgeInsets.only(right: 8.0, left: 8.0),
                         child: TextButton(

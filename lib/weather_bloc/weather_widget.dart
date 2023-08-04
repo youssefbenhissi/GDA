@@ -17,35 +17,33 @@ class WeatherPage extends StatefulWidget {
 }
 
 class _WeatherPageState extends State<WeatherPage> {
-  String selectedOption = "Option 1";
-  String gouvernoratValue = "TUNIS";
-  List<String> gouvernorats = [
-    'TUNIS',
-    'ARIANA',
-    'BEN AROUS',
-    'MANOUBA',
-    'NABEUL',
-    'BEJA',
-    'JENDOUBA',
-    'KEF',
-    'SILIANA',
-    'SOUSSE',
-    'MONASTIR',
-    'MEHDIA',
-    'SFAX',
-    'KAIROUAN',
-    'KASSERINE',
-    'SIDI BOUZID',
-    'GABES',
-    'MEDENINE',
-    'TATAOUINE',
-    'GAFSA',
-    'TOZEUR',
-    'KEBELI',
-  ];
-
   @override
   Widget build(BuildContext context) {
+    List<String> gouvernorats = [
+      AppLocalizations.of(context)!.tunisTitre,
+      AppLocalizations.of(context)!.arianaTitre,
+      AppLocalizations.of(context)!.benArousTitre,
+      AppLocalizations.of(context)!.manoubaTitre,
+      AppLocalizations.of(context)!.nabeulTitre,
+      AppLocalizations.of(context)!.bejaTitre,
+      AppLocalizations.of(context)!.jendoubaTitre,
+      AppLocalizations.of(context)!.kefTitre,
+      AppLocalizations.of(context)!.silianaTitre,
+      AppLocalizations.of(context)!.sousseTitre,
+      AppLocalizations.of(context)!.monastirTitre,
+      AppLocalizations.of(context)!.mehdiaTitre,
+      AppLocalizations.of(context)!.sfaxTitre,
+      AppLocalizations.of(context)!.kairouanTitre,
+      AppLocalizations.of(context)!.kasserineTitre,
+      AppLocalizations.of(context)!.sidibouzidTitre,
+      AppLocalizations.of(context)!.gabesTitre,
+      AppLocalizations.of(context)!.medenineTitre,
+      AppLocalizations.of(context)!.tataouineTitre,
+      AppLocalizations.of(context)!.gafsaTitre,
+      AppLocalizations.of(context)!.tozeurTitre,
+      AppLocalizations.of(context)!.kebeliTitre,
+    ];
+
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -213,9 +211,8 @@ class _WeatherPageState extends State<WeatherPage> {
                       }).toList(),
                       onChanged: (String? newValue) {
                         setState(() {
-                          gouvernoratValue = newValue!;
                           context.gNavigationService
-                              .openWeatherScreen(context, newValue);
+                              .openWeatherScreen(context, newValue!);
                         });
                       },
                     ),

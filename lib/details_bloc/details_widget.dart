@@ -521,7 +521,7 @@ class DetailsPage extends StatelessWidget {
                     height: 10,
                   ),
                   Align(
-                    alignment: Alignment.centerRight,
+                    alignment:Directionality.of(context) == TextDirection.rtl ? Alignment.centerLeft : Alignment.centerRight,
                     child: Padding(
                       padding: const EdgeInsets.only(right: 8.0, left: 8.0),
                       child: TextButton(

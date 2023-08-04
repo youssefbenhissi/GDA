@@ -52,7 +52,9 @@ class DepensesPage extends StatelessWidget {
                 fit: BoxFit.contain,
                 width: 25,
                 color: Colors.white,
-                "assets/images/arrow-left-solid.svg",
+                Directionality.of(context) == TextDirection.ltr
+                    ? "assets/images/arrow-left-solid.svg"
+                    : "assets/images/arrow-right-solid.svg",
               ),
             ),
             Text(
@@ -142,7 +144,10 @@ class DepensesPage extends StatelessWidget {
                     child: Column(
                       children: [
                         Align(
-                          alignment: Alignment.centerRight,
+                          alignment:
+                              Directionality.of(context) == TextDirection.ltr
+                                  ? Alignment.centerRight
+                                  : Alignment.centerLeft,
                           child: Padding(
                             padding:
                                 const EdgeInsets.only(right: 8.0, left: 8.0),

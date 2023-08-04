@@ -42,7 +42,9 @@ class RecettesRealiseePage extends StatelessWidget {
                 fit: BoxFit.contain,
                 width: 25,
                 color: Colors.white,
-                "assets/images/arrow-left-solid.svg",
+                Directionality.of(context) == TextDirection.ltr
+                    ? "assets/images/arrow-left-solid.svg"
+                    : "assets/images/arrow-right-solid.svg",
               ),
             ),
             Text(
@@ -57,7 +59,9 @@ class RecettesRealiseePage extends StatelessWidget {
                 fit: BoxFit.contain,
                 width: 25,
                 color: Colors.white,
-                "assets/images/arrow-right-solid.svg",
+                Directionality.of(context) == TextDirection.ltr
+                    ? "assets/images/arrow-right-solid.svg"
+                    : "assets/images/arrow-left-solid.svg",
               ),
             ),
           ],
@@ -106,7 +110,9 @@ class RecettesRealiseePage extends StatelessWidget {
                     textEditingController: autresRecettesTextEditingController,
                   ),
                   Align(
-                    alignment: Alignment.centerRight,
+                    alignment: Directionality.of(context) == TextDirection.ltr
+                        ? Alignment.centerRight
+                        : Alignment.centerLeft,
                     child: Padding(
                       padding: const EdgeInsets.only(right: 8.0, left: 8.0),
                       child: TextButton(

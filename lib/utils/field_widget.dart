@@ -18,7 +18,7 @@ class WidgetField extends StatelessWidget {
     return Column(
       children: [
         Align(
-          alignment: Alignment.centerLeft,
+          alignment: Directionality.of(context) == TextDirection.rtl ? Alignment.centerRight : Alignment.centerLeft,
           child: Text(
             titre,
             style: const TextStyle(color: Colors.lightBlue),

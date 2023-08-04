@@ -16,7 +16,7 @@ class ApplicationDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           SizedBox(
-            height: 100,
+            height: 110,
             child: DrawerHeader(
               child: Text(AppLocalizations.of(context)!.menuTitre,
                   style: const TextStyle(color: Colors.white, fontSize: 30)),
@@ -73,7 +73,7 @@ class ApplicationDrawer extends StatelessWidget {
             title: Text(AppLocalizations.of(context)!.meteoTitre,
                 style: const TextStyle(color: Colors.white)),
             onTap: () {
-              context.gNavigationService.openWeatherScreen(context, 'TUNIS');
+              context.gNavigationService.openWeatherScreen(context, AppLocalizations.of(context)!.tunisTitre);
             },
           ),
           const Divider(

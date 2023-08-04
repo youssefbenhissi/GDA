@@ -96,7 +96,9 @@ class _ConsultationPageState extends State<ConsultationPage> {
                 child: Column(
                   children: [
                     Align(
-                      alignment: Alignment.centerLeft,
+                      alignment: Directionality.of(context) == TextDirection.rtl
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft,
                       child: Text(
                         AppLocalizations.of(context)!.moisTitre,
                         style: const TextStyle(color: Colors.lightBlue),
@@ -161,7 +163,9 @@ class _ConsultationPageState extends State<ConsultationPage> {
                       ),
                     ),
                     Align(
-                      alignment: Alignment.centerLeft,
+                      alignment: Directionality.of(context) == TextDirection.rtl
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft,
                       child: Text(
                         AppLocalizations.of(context)!.anneeTitre,
                         style: const TextStyle(color: Colors.lightBlue),
@@ -187,83 +191,85 @@ class _ConsultationPageState extends State<ConsultationPage> {
                         },
                       ),
                     ),
-                    state is! DecideurCentralLoginState
-                        ? Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              AppLocalizations.of(context)!.gouvernoratTitre,
-                              style: const TextStyle(color: Colors.lightBlue),
-                            ),
-                          )
-                        : const SizedBox.shrink(),
-                    state is! DecideurCentralLoginState
-                        ? InkWell(
-                            onTap: () {
-                              showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: Column(
-                                      children: [
-                                        Text(AppLocalizations.of(context)!
-                                            .gouvernoratTitre),
-                                        const Divider(
-                                          color: Colors.black,
-                                        )
-                                      ],
-                                    ),
-                                    content: SizedBox(
-                                      height: 200,
-                                      child: StatefulBuilder(
-                                          builder: (context, setState) {
-                                        return ListView.builder(
-                                          itemCount: _gouvernorats.length,
-                                          itemBuilder: (context, index) {
-                                            return RadioListTile(
-                                                title:
-                                                    Text(_gouvernorats[index]),
-                                                value: _gouvernorats[index],
-                                                groupValue: _selectedOption,
-                                                onChanged: (value) =>
-                                                    setState(() {
-                                                      _selectedOption = value!;
-                                                    }));
-                                          },
-                                        );
-                                      }),
-                                    ),
-                                    actions: [
-                                      TextButton(
-                                        onPressed: () => Navigator.pop(context),
-                                        child: Text(
-                                            AppLocalizations.of(context)!
-                                                .annulerTitre),
-                                      ),
-                                      TextButton(
-                                        onPressed: () => Navigator.pop(
-                                            context, _selectedOption),
-                                        child: Text(
-                                            AppLocalizations.of(context)!
-                                                .okTitre),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              ).then((value) => gouvernoratValue = value);
-                            },
-                            child: DropdownButton<String>(
-                              isExpanded: true,
-                              items: const [],
-                              iconDisabledColor: Colors.black,
-                              onChanged: (String? newValue) {},
-                            ),
-                          )
-                        : const SizedBox.shrink(),
+                    // state is! DecideurCentralLoginState
+                    //     ? Align(
+                    //         alignment: Alignment.centerLeft,
+                    //         child: Text(
+                    //           AppLocalizations.of(context)!.gouvernoratTitre,
+                    //           style: const TextStyle(color: Colors.lightBlue),
+                    //         ),
+                    //       )
+                    //     : const SizedBox.shrink(),
+                    // state is! DecideurCentralLoginState
+                    //     ? InkWell(
+                    //         onTap: () {
+                    //           showDialog(
+                    //             context: context,
+                    //             builder: (BuildContext context) {
+                    //               return AlertDialog(
+                    //                 title: Column(
+                    //                   children: [
+                    //                     Text(AppLocalizations.of(context)!
+                    //                         .gouvernoratTitre),
+                    //                     const Divider(
+                    //                       color: Colors.black,
+                    //                     )
+                    //                   ],
+                    //                 ),
+                    //                 content: SizedBox(
+                    //                   height: 200,
+                    //                   child: StatefulBuilder(
+                    //                       builder: (context, setState) {
+                    //                     return ListView.builder(
+                    //                       itemCount: _gouvernorats.length,
+                    //                       itemBuilder: (context, index) {
+                    //                         return RadioListTile(
+                    //                             title:
+                    //                                 Text(_gouvernorats[index]),
+                    //                             value: _gouvernorats[index],
+                    //                             groupValue: _selectedOption,
+                    //                             onChanged: (value) =>
+                    //                                 setState(() {
+                    //                                   _selectedOption = value!;
+                    //                                 }));
+                    //                       },
+                    //                     );
+                    //                   }),
+                    //                 ),
+                    //                 actions: [
+                    //                   TextButton(
+                    //                     onPressed: () => Navigator.pop(context),
+                    //                     child: Text(
+                    //                         AppLocalizations.of(context)!
+                    //                             .annulerTitre),
+                    //                   ),
+                    //                   TextButton(
+                    //                     onPressed: () => Navigator.pop(
+                    //                         context, _selectedOption),
+                    //                     child: Text(
+                    //                         AppLocalizations.of(context)!
+                    //                             .okTitre),
+                    //                   ),
+                    //                 ],
+                    //               );
+                    //             },
+                    //           ).then((value) => gouvernoratValue = value);
+                    //         },
+                    //         child: DropdownButton<String>(
+                    //           isExpanded: true,
+                    //           items: const [],
+                    //           iconDisabledColor: Colors.black,
+                    //           onChanged: (String? newValue) {},
+                    //         ),
+                    //       )
+                    //     : const SizedBox.shrink(),
                     const SizedBox(
                       height: 10,
                     ),
                     Align(
-                      alignment: Alignment.centerLeft,
+                      alignment: Directionality.of(context) == TextDirection.rtl
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft,
                       child: Text(
                         AppLocalizations.of(context)!.gdaTitre,
                         style: const TextStyle(color: Colors.lightBlue),
@@ -292,7 +298,9 @@ class _ConsultationPageState extends State<ConsultationPage> {
                       ),
                     ),
                     Align(
-                      alignment: Alignment.centerRight,
+                      alignment: Directionality.of(context) == TextDirection.ltr
+                          ? Alignment.centerRight
+                          : Alignment.centerLeft,
                       child: Padding(
                         padding: const EdgeInsets.only(right: 8.0, left: 8.0),
                         child: TextButton(
