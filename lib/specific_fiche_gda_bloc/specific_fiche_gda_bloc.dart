@@ -21,7 +21,7 @@ class SpecificFicheGDABloc
     Emitter<SpecificFicheGDAState> emitter,
   ) async {
     emitter(const LoadingSpecificFicheGDAState._());
-    String url = '$link/getspecificdonneesidentification';
+    var url = Uri.http(link, 'getspecificdonneesidentification');
     Map<String, String> headers = {"Content-type": "application/json"};
     String json =
         '{"gda": "${event.gda}","month" : "${event.month}","year":"${event.year}","gda":"${event.gda}"}';

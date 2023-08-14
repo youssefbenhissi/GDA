@@ -19,14 +19,15 @@ class FicheGDABloc extends Bloc<FicheGDAEvent, FicheGDAState> {
     Emitter<FicheGDAState> emitter,
   ) async {
     emitter(const LoadingFicheGDAState._());
-    String url = '$link/getdonneesidentification';
+    var url = Uri.http(link, 'getdonneesidentification');
     Map<String, String> headers = {"Content-type": "application/json"};
     String json = '{"login": "${event.login}"}';
     http.Response response = await http.post(url, headers: headers, body: json);
     if (response.statusCode == 400) {
       emitter(const FailedFicheGDAState._());
     } else if (response.statusCode == 200) {
-      FicheGDAModel model = FicheGDAModel.getFicheGDAModel(jsonDecode(response.body));
+      FicheGDAModel model =
+          FicheGDAModel.getFicheGDAModel(jsonDecode(response.body));
       emitter(LoadedFicheGDAState._(model));
     }
   }

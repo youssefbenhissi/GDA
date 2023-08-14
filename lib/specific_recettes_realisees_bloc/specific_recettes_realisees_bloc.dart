@@ -22,7 +22,7 @@ class SpecificRecettesRealiseesBloc extends Bloc<SpecificRecettesRealiseesEvent,
   ) async {
     emitter(const LoadingSpecificRecettesRealiseesState._());
     List<IndicateurModel> models = [];
-    String url = '$link/specificrecettevente';
+    var url = Uri.http(link, 'specificrecettevente');
     Map<String, String> headers = {"Content-type": "application/json"};
     String json =
         '{"gda": "${event.gda}","month":"${event.month}","year":"${event.year}"}';
@@ -30,22 +30,19 @@ class SpecificRecettesRealiseesBloc extends Bloc<SpecificRecettesRealiseesEvent,
     IndicateurModel model =
         IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/specificrecetteadhesion';
+    url = Uri.http(link, 'specificrecetteadhesion');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-    url = '$link/specificrecetteabonnement';
+    url = Uri.http(link, 'specificrecetteabonnement');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/specificrecettecotisation';
+    url = Uri.http(link, 'specificrecettecotisation');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/specificautresrecettes';
+    url = Uri.http(link, 'specificautresrecettes');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);

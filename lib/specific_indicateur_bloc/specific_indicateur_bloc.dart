@@ -22,7 +22,7 @@ class SpecificIndicateurBloc
   ) async {
     emitter(const LoadingSpecificIndicateurState._());
     List<IndicateurModel> models = [];
-    String url = '$link/specifiqueindicateurtauxdeperte';
+    var url = Uri.http(link, 'specifiqueindicateurtauxdeperte');
     Map<String, String> headers = {"Content-type": "application/json"};
     String json =
         '{"login": "${event.login}","month": "${event.month}","year": "${event.year}"}';
@@ -30,26 +30,24 @@ class SpecificIndicateurBloc
     IndicateurModel model =
         IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-    url = '$link/specifiqueindicateurtauxderecouvrement';
+    url = Uri.http(link, 'specifiqueindicateurtauxderecouvrement');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/specifiqueindicateurconsommationspecifique';
+    url = Uri.http(link, 'specifiqueindicateurconsommationspecifique');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/specifiqueindicateurconsommationspecifiqueeaudejavel';
+    url =
+        Uri.http(link, 'specifiqueindicateurconsommationspecifiqueeaudejavel');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/specifiqueindicateurrecettemoyenne';
+    url = Uri.http(link, 'specifiqueindicateurrecettemoyenne');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-    url = '$link/specifiqueindicateurnombredejourarret';
+    url = Uri.http(link, 'specifiqueindicateurnombredejourarret');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);

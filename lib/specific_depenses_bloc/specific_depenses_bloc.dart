@@ -21,7 +21,7 @@ class SpecificDepensesBloc
   ) async {
     emitter(const LoadingSpecificDepensesState._());
     List<IndicateurModel> models = [];
-    String url = '$link/specificdepensesachateau';
+    var url = Uri.http(link, 'specificdepensesachateau');
     Map<String, String> headers = {"Content-type": "application/json"};
     String json =
         '{"gda": "${event.gda}","month":"${event.month}","year":"${event.year}"}';
@@ -29,39 +29,35 @@ class SpecificDepensesBloc
     IndicateurModel model =
         IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/specificdepensesenergie';
+    url = Uri.http(link, 'specificdepensesenergie');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/specificdepensessalairesetprimes';
+    url = Uri.http(link, 'specificdepensessalairesetprimes');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/specificdepensesmaintenaceetentretien';
+    url = Uri.http(link, 'specificdepensesmaintenaceetentretien');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/specificdepenseslocation';
+    url = Uri.http(link, 'specificdepenseslocation');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-    url = '$link/specificdepensesrenouvellementdesequipement';
+    url = Uri.http(link, 'specificdepensesrenouvellementdesequipement');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-    url = '$link/specificdepensesgestiondga';
+    url = Uri.http(link, 'specificdepensesgestiondga');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-    url = '$link/specificdepensesdinvestissement';
+    url = Uri.http(link, 'specificdepensesdinvestissement');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-    url = '$link/specificautredepenses';
+    url = Uri.http(link, 'specificautredepenses');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);

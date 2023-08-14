@@ -17,7 +17,7 @@ class RecettesRealiseesBloc
     InsertRecettesRealiseesFuncEvent event,
     Emitter<RecettesRealiseesState> emitter,
   ) async {
-    String url = '$link/recettesrealisees';
+    var url = Uri.http(link, 'recettesrealisees');
     Map<String, String> headers = {"Content-type": "application/json"};
     String json =
         '{"createdby": "${event.createdBy}", "inputvaluerecettesventeeau" : "${event.inputValueRecettesVenteEau}" , "idindicateurrecettesventeeau": "${event.idIndicateurRecettesVenteEau}","inputvaluerecettesadhesion": "${event.inputValueRecettesAdhesion}","idindicateurrecettesadhesion": "${event.idIndicateurRecettesAdhesion}" , "inputvaluerecettesabonnement": "${event.inputValueRecettesAbonnement}","idindicateurrecettesabonnement": "${event.idIndicateurRecettesAbonnement}","inputvaluerecettescotisations": "${event.inputValueRecettesCotisations}","idindicateurrecettescotisations": "${event.idIndicateurRecettesCotisations}","inputvalueautresrecettes": "${event.inputValueAutresRecettes}","idindicateurautresrecettes": "${event.idIndicateurAutresRecettes}","idsaisie": "${event.idSaisie}","month": "${event.month}","year": "${event.year}"}';

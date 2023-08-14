@@ -17,7 +17,7 @@ class DonneesTechniquesBloc
     InsertDonneesTechniquesFuncEvent event,
     Emitter<DonneesTechniquesState> emitter,
   ) async {
-    String url = '$link/donneestechniques';
+    var url = Uri.http(link, 'donneestechniques');
     Map<String, String> headers = {"Content-type": "application/json"};
     String json =
         '{"createdby": "${event.createdBy}", "inputvaluevolumepompe" : "${event.inputValueVolumePompe}" , "idindicateurvolumepompe": "${event.idIndicateurVolumePompe}","inputvaluevolumedistribue": "${event.inputValueVolumeDistribue}","idindicateurvolumedistribue": "${event.idIndicateurVolumeDistribue}" , "inputvaluevolumeeaudejavel": "${event.inputValueVolumeEauDeJavel}","idindicateurvolumeeaudejavel": "${event.idIndicateurVolumeEauDeJavel}","inputvaluetarifadopte": "${event.inputValueTarifAdopte}","idindicateurtarifadopte": "${event.idIndicateurTarifAdopte}","inputvaluecouteau": "${event.inputValueCoutEau}","idindicateurcouteau": "${event.idIndicateurCoutEau}","inputvaluenombredejoursarret": "${event.inputValueNombreDeJoursArret}","idindicateur": "${event.idIndicateur}","idsaisie": "${event.idSaisie}","month": "${event.month}","year": "${event.year}"}';

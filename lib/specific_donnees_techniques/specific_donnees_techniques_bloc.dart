@@ -22,7 +22,7 @@ class SpecificDonneesTechniquesBloc extends Bloc<SpecificDonneesTechniquesEvent,
   ) async {
     emitter(const LoadingSpecificDonneesTechniquesState._());
     List<IndicateurModel> models = [];
-    String url = '$link/volumepompe';
+    var url = Uri.http(link, 'volumepompe');
     Map<String, String> headers = {"Content-type": "application/json"};
     String json =
         '{"gda": "${event.gda}","month":"${event.month}","year":"${event.year}"}';
@@ -30,27 +30,23 @@ class SpecificDonneesTechniquesBloc extends Bloc<SpecificDonneesTechniquesEvent,
     IndicateurModel model =
         IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/volumedistribue';
+    url = Uri.http(link, 'volumedistribue');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/volumeeaujavel';
+    url = Uri.http(link, 'volumeeaujavel');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/tarifadapte';
+    url = Uri.http(link, 'tarifadapte');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/couteau';
+    url = Uri.http(link, 'couteau');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-    url = '$link/nombredejourarret';
+    url = Uri.http(link, 'nombredejourarret');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);

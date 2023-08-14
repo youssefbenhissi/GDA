@@ -20,8 +20,8 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   ) async {
     emitter(const LoadingWeatherState._());
     WeatherModel model;
-    String url =
-        'https://api.openweathermap.org/data/2.5/weather?q=${event.location}&appid=65a0a4c91ec65aa07f83a60edee8748d&units=metric';
+    var url = Uri.https('api.openweathermap.org', '/data/2.5/weather',
+        {'q': event.location, 'appid': '65a0a4c91ec65aa07f83a60edee8748d','units':'metric'});
     Map<String, String> headers = {"Content-type": "application/json"};
     http.Response response = await http.get(url, headers: headers);
     model = WeatherModel.fromJson(jsonDecode(response.body));

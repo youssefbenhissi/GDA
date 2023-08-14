@@ -21,34 +21,30 @@ class IndicateurBloc extends Bloc<IndicateurEvent, IndicateurState> {
   ) async {
     emitter(const LoadingIndicateurState._());
     List<IndicateurModel> models = [];
-    String url = '$link/tauxdeperte';
+    var url = Uri.http(link, 'tauxdeperte');
     Map<String, String> headers = {"Content-type": "application/json"};
     String json = '{"login": "${event.login}"}';
     http.Response response = await http.post(url, headers: headers, body: json);
     IndicateurModel model =
         IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/tauxderecouvrement';
+    url = Uri.http(link, 'tauxderecouvrement');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/consommationspecifique';
+    url = Uri.http(link, 'consommationspecifique');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/consommationspecifiqueeaudejavel';
+    url = Uri.http(link, 'consommationspecifiqueeaudejavel');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-
-    url = '$link/recettemoyenne';
+    url = Uri.http(link, 'recettemoyenne');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);
-    url = '$link/nombredejourarret';
+    url = Uri.http(link, 'nombredejourarret');
     response = await http.post(url, headers: headers, body: json);
     model = IndicateurModel.getIndicateurModel(jsonDecode(response.body));
     models.add(model);

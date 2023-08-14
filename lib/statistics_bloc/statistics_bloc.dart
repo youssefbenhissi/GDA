@@ -21,7 +21,7 @@ class StatisticsBloc extends Bloc<StatisticsEvent, StatisticsState> {
   ) async {
     emitter(const LoadingStaticsState._());
     List<StaticsModel> models = [];
-    String url = '$link/tauxdepertestatistics';
+    var url = Uri.http(link, 'tauxdepertestatistics');
     Map<String, String> headers = {"Content-type": "application/json"};
     String json = '{"login": "${event.login}"}';
     http.Response response = await http.post(url, headers: headers, body: json);
@@ -30,22 +30,19 @@ class StatisticsBloc extends Bloc<StatisticsEvent, StatisticsState> {
     for (StaticsModel m in model) {
       models.add(m);
     }
-
-    url = '$link/consommationspecifiquestatics';
+    url = Uri.http(link, 'consommationspecifiquestatics');
     response = await http.post(url, headers: headers, body: json);
     model = StaticsModel.getIndicateurModel(jsonDecode(response.body));
     for (StaticsModel m in model) {
       models.add(m);
     }
-
-    url = '$link/consommationspecifiqueeaudejavelstatics';
+    url = Uri.http(link, 'consommationspecifiqueeaudejavelstatics');
     response = await http.post(url, headers: headers, body: json);
     model = StaticsModel.getIndicateurModel(jsonDecode(response.body));
     for (StaticsModel m in model) {
       models.add(m);
     }
-
-    url = '$link/recettemoyennestatics';
+    url = Uri.http(link, 'recettemoyennestatics');
     response = await http.post(url, headers: headers, body: json);
     model = StaticsModel.getIndicateurModel(jsonDecode(response.body));
     for (StaticsModel m in model) {
