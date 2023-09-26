@@ -19,7 +19,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     LoginFuncEvent event,
     Emitter<LoginState> emitter,
   ) async {
-    String url = '$link/login';
+    var url = Uri.http(link, 'login');
     Map<String, String> headers = {"Content-type": "application/json"};
     String json =
         '{"login": "${event.username}","password": "${event.password}"}';
