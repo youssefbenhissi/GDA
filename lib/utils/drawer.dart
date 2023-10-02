@@ -70,6 +70,16 @@ class ApplicationDrawer extends StatelessWidget {
             color: Colors.white,
           ),
           ListTile(
+            title: Text(AppLocalizations.of(context)!.chartsTitre,
+                style: const TextStyle(color: Colors.white)),
+            onTap: () {
+              context.gNavigationService.openChartsScreen(context);
+            },
+          ),
+          const Divider(
+            color: Colors.white,
+          ),
+          ListTile(
             title: Text(AppLocalizations.of(context)!.meteoTitre,
                 style: const TextStyle(color: Colors.white)),
             onTap: () {

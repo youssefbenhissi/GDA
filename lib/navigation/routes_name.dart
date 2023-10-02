@@ -17,3 +17,4 @@ const _specificFicheGDARouteName = "/specificFicheGDA";
 const _specificDonneesTechniquesRouteName = "/specificDonneesTechniques";
 const _specificRecettesRealiseesRouteName = "/specificRecettesRealisees";
 const _specificDepensesRouteName = "/specificDepenses";
+const _chartsRouteName = "/charts";

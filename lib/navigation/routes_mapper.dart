@@ -14,6 +14,8 @@ Route<dynamic>? Function(RouteSettings settings) onGenerateAppRoute(
         return routesFactory.createModifyPasswordScreenPageRoute();
       case _statisticsRouteName:
         return routesFactory.createStatisticsScreenPageRoute();
+      case _chartsRouteName:
+        return routesFactory.createChartsPageRoute();
       case _indicateursRouteName:
         return routesFactory.createIndicateursScreenPageRoute();
       case _indicateursSpecifiqueRouteName:

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pfe_iheb/charts_bloc/charts_page_route_builder.dart';
 import 'package:pfe_iheb/consultation_screen_bloc/consultation_screen_page_route_builder.dart';
 import 'package:pfe_iheb/depenses_bloc/depenses_page_toute_builder.dart';
 import 'package:pfe_iheb/details_bloc/details_page_route_builder.dart';
@@ -46,6 +47,13 @@ class AppRoutesFactory extends RoutesFactory {
   Route<dynamic> createStatisticsScreenPageRoute() {
     return MaterialPageRoute<String?>(
       builder: StatisticsScreenRouteBuilder(),
+    );
+  }
+  
+  @override
+  Route<dynamic> createChartsPageRoute() {
+    return MaterialPageRoute<String?>(
+      builder: ChartsScreenRouteBuilder(),
     );
   }
 
